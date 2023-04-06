@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Tree
   - Material
+  - SceneTrigger
   layers:
   - Default
   - TransparentFX

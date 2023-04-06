@@ -5,6 +5,7 @@ using UnityEngine;
 public class CollisionManager : MonoBehaviour
 {
     public Player player;
+    public SceneManager sceneManager;
 
     void OnCollisionStay2D(Collision2D collision)
     {
@@ -25,12 +26,37 @@ public class CollisionManager : MonoBehaviour
         // Actions that player has to interact to achieve (E)
         else if (player.isInteract)
         {
+            // Changing Scene
+            if (collision.gameObject.tag == "SceneTrigger")
+            {
+                ChangeScene(collision.gameObject);
+            }
+
+            // using a tool on an item
             if (CorrectTool(collision.gameObject))
             {
                 Debug.Log("Damage Taken");
                 collision.gameObject.GetComponent<Resource>().TakeDamage();
             }
         }
+    }
+
+    void ChangeScene(UnityEngine.GameObject obj)
+    {
+        string nextScene = obj.GetComponent<SceneTrigger>().nextScene; 
+        switch (nextScene)
+        {
+            case "Pangea":
+                sceneManager.LoadPangea();
+                break;
+            case "Eden":
+                sceneManager.LoadEden();
+                break;
+            case "Purgatory":
+                sceneManager.LoadPurgatory();
+                break;
+        }
+
     }
 
     public bool CorrectTool(UnityEngine.GameObject obj)
