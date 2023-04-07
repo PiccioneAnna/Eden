@@ -1,16 +1,7 @@
 fileFormatVersion: 2
-guid: bd135375692f7b941947c36d3c3fc9ba
+guid: daab477c88f8f624a8e6cdc3f7067c6f
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: 5878203096085206695
-    second: spritesheet (4)_0
-  - first:
-      213: 8541543648840734694
-    second: spritesheet (4)_1
-  - first:
-      213: 3316518890299791053
-    second: spritesheet (4)_2
+  internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -89,7 +80,19 @@ TextureImporter:
     buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: 4
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -101,7 +104,7 @@ TextureImporter:
     buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: 4
+    textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -113,12 +116,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: spritesheet (4)_0
+      name: spritesheet (11) 1_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 64
+        width: 128
         height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -127,40 +130,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7a692c36292939150800000000000000
-      internalID: 5878203096085206695
+      spriteID: bea72267675072744a41e98d474e8bb2
+      internalID: 1545770777
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet (4)_1
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 0
-        width: 64
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6e755ae81b8a98670800000000000000
-      internalID: 8541543648840734694
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spritesheet (4)_2
+      name: spritesheet (11) 1_1
       rect:
         serializedVersion: 2
         x: 128
         y: 0
-        width: 64
+        width: 128
         height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -169,8 +151,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dc6113beb54a60e20800000000000000
-      internalID: 3316518890299791053
+      spriteID: 53f7a653a2bf72941a129c8b214147ec
+      internalID: 2120273268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet (11) 1_2
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e125579e538a5d447ad1d45097feba74
+      internalID: 1716268297
       vertices: []
       indices: 
       edges: []
@@ -186,9 +189,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      spritesheet (4)_2: 3316518890299791053
-      spritesheet (4)_1: 8541543648840734694
-      spritesheet (4)_0: 5878203096085206695
+      spritesheet (11) 1_1: 2120273268
+      spritesheet (11) 1_2: 1716268297
+      spritesheet (11) 1_0: 1545770777
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

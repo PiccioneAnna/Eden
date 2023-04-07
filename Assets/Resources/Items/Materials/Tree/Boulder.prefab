@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 1204935880875582564}
   - component: {fileID: 1204935880875582565}
   - component: {fileID: 1204935880875582566}
-  - component: {fileID: 1204935880875582567}
   - component: {fileID: 1204935880875582585}
+  - component: {fileID: 1304535695204397648}
   m_Layer: 0
   m_Name: Boulder
   m_TagString: Untagged
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 1204935880875582586}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.6729522, y: 0.27356076, z: -0.25099367}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -107,8 +107,35 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!61 &1204935880875582567
-BoxCollider2D:
+--- !u!114 &1204935880875582585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1204935880875582586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba8162fe9235a244c82767e44d613b9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 1204935880875582566}
+  title: Boulder
+  type: Rock
+  position: {x: 0, y: 0, z: 0}
+  CanDestroy: 0
+  instance: {fileID: 1204935880875582585}
+  properTool: {fileID: 11400000, guid: 3473f411a5d106046a5f2fdb9f12e346, type: 2}
+  drops: []
+  sprites:
+  - {fileID: 1545770777, guid: daab477c88f8f624a8e6cdc3f7067c6f, type: 3}
+  - {fileID: 2120273268, guid: daab477c88f8f624a8e6cdc3f7067c6f, type: 3}
+  - {fileID: 1716268297, guid: daab477c88f8f624a8e6cdc3f7067c6f, type: 3}
+  health: 25
+  droppedObjs:
+  - {fileID: 2256325366030707764, guid: a9e18dcba3345da4f94ff2d9481f75e1, type: 3}
+--- !u!60 &1304535695204397648
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -130,29 +157,20 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.64, y: 0.64}
-  m_EdgeRadius: 0
---- !u!114 &1204935880875582585
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1204935880875582586}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba8162fe9235a244c82767e44d613b9f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  anim: {fileID: 1204935880875582566}
-  title: Boulder
-  type: Rock
-  position: {x: 0, y: 0, z: 0}
-  CanDestroy: 0
-  instance: {fileID: 1204935880875582585}
-  properTool: {fileID: 11400000, guid: 3473f411a5d106046a5f2fdb9f12e346, type: 2}
-  drops: []
-  health: 25
-  droppedObjs:
-  - {fileID: 2256325366030707764, guid: a9e18dcba3345da4f94ff2d9481f75e1, type: 3}
+  m_Points:
+    m_Paths:
+    - - {x: 0.46875, y: -0.125}
+      - {x: 0.40625, y: -0.046875}
+      - {x: 0.40625, y: 0.234375}
+      - {x: 0.390625, y: 0.375}
+      - {x: 0.34375, y: 0.4375}
+      - {x: -0.078125, y: 0.4375}
+      - {x: -0.296875, y: 0.234375}
+      - {x: -0.34375, y: 0.15625}
+      - {x: -0.421875, y: -0.1875}
+      - {x: -0.421875, y: -0.328125}
+      - {x: -0.265625, y: -0.390625}
+      - {x: 0.1875, y: -0.390625}
+      - {x: 0.328125, y: -0.359375}
+      - {x: 0.4375, y: -0.328125}
+      - {x: 0.46875, y: -0.265625}
