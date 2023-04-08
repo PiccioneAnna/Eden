@@ -4,8 +4,24 @@ using UnityEngine;
 
 public class CollisionManager : MonoBehaviour
 {
+    public static CollisionManager collisionManager;
+    
     public Player player;
     public SceneManager sceneManager;
+
+    void Awake()
+    {
+        DontDestroyOnLoad(this);
+
+        if (collisionManager == null)
+        {
+            collisionManager = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
 
     void OnCollisionStay2D(Collision2D collision)
     {
@@ -62,7 +78,7 @@ public class CollisionManager : MonoBehaviour
     public bool CorrectTool(UnityEngine.GameObject obj)
     {
         // Checks for tool & resource iteraction
-        if (player.selectedItem != null && 
+        if (player != null && player.selectedItem != null &&
             player.selectedItem.itemName == obj.GetComponentInChildren<Resource>().properTool.itemName)
         {
             return true;

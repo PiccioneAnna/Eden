@@ -8,26 +8,26 @@ public class Resource : GameObject
     public Resource instance;
     public Item properTool;
     public int maxDropCount = 5;
+    public int minDropCount = 1;
     private int dropCount;
 
     public Item[] drops;
+    public UnityEngine.GameObject[] droppedObjs;
     public Sprite[] sprites;
     public int health;
-    public UnityEngine.GameObject[] droppedObjs;
 
-    Vector3 position;
     Quaternion rotation;
 
     void Awake()
     {
-        position = transform.position;
-        rotation = transform.rotation;
+        position = instance.transform.position;
+        rotation = instance.transform.rotation;
 
         System.Random random = new System.Random();
 
         instance.transform.GetComponent<SpriteRenderer>().sprite = sprites[random.Next(sprites.Length)];
 
-        dropCount = random.Next(5);
+        dropCount = random.Next(maxDropCount) + minDropCount;
     }
 
     public void Shake()
@@ -40,19 +40,34 @@ public class Resource : GameObject
         Shake();
         health--;
         Debug.Log(health);
-        System.Random random = new System.Random();
-        float offset = (float)random.NextDouble()/2;
-        float multplier = offset % 2 == 2 ? 1 : -1;
+
+        // Randomized drops
+        UnityEngine.GameObject drop;
+        System.Random random;
+        float offsetX;
+        float offsetY;
+        int multplierX;
+        int multplierY;
 
         if (health <= 0)
         {
-            foreach (UnityEngine.GameObject drop in droppedObjs)
+            Debug.Log("Drop Count:" + dropCount);
+            for (int i = 0; i < dropCount; i++)
             {
-                for (int i = 0; i < dropCount; i++)
-                {
-                    position = new Vector3(position.x, position.y + (multplier * offset), position.z);
-                    Instantiate(drop, position, rotation);
-                }
+                random = new System.Random();
+                drop = droppedObjs[random.Next(droppedObjs.Length)];
+
+                // Randomized drop positoning
+                random = new System.Random();
+                offsetX = (float)random.NextDouble() / 4;
+                random = new System.Random();
+                offsetY = (float)random.NextDouble() / 8;
+                multplierX = offsetX % 2 == 2 ? 1 : -1;
+                multplierY = offsetY % 2 == 2 ? 1 : -1;
+
+                // Randomized drop
+                position = new Vector3(position.x + (multplierX * offsetX), position.y + (multplierY * offsetY), position.z);
+                Instantiate(drop, position, rotation);
             }
             Destroy(instance.gameObject);
         }

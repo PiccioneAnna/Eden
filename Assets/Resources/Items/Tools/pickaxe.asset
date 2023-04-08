@@ -10,12 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 63baacb602b46044f932c5d17940cf5f, type: 3}
-  m_Name: pickaxe
+  m_Name: Pickaxe
   m_EditorClassIdentifier: 
   tile: {fileID: 0}
   itemName: Pickaxe
-  type: 1
+  type: 2
   actionType: 1
   range: {x: 5, y: 4}
   stackable: 1
+  obj: {fileID: 0}
   image: {fileID: 21300000, guid: 716b9d310e0ba824b96e9264d1246c2f, type: 3}

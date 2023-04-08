@@ -30,5 +30,7 @@ public enum ActionType
 {
     Dig,
     Mine,
+    Chop,
+    Hoe,
     None
 }

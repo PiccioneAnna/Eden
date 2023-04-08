@@ -5,13 +5,19 @@ using UnityEngine.SceneManagement;
 
 public class SceneManager : MonoBehaviour
 {
-    public GameObject[] objs;
+    public static SceneManager sceneManager;
 
     void Awake()
     {
-        foreach (var obj in objs)
+        DontDestroyOnLoad(this);
+
+        if (sceneManager == null)
         {
-            DontDestroyOnLoad(obj);
+            sceneManager = this;
+        }
+        else
+        {
+            Destroy(gameObject);
         }
     }
 

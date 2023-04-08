@@ -4,10 +4,25 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
+    public static CameraController cameraController;
     //Public variable to store a reference to the player game object
     public Player player;        
     //Private variable to store the offset distance between the player and camera
-    private Vector3 offset;            
+    private Vector3 offset;
+
+    void Awake()
+    {
+        DontDestroyOnLoad(this);
+
+        if (cameraController == null)
+        {
+            cameraController = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
 
     void Start()
     {

@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 63baacb602b46044f932c5d17940cf5f, type: 3}
-  m_Name: Axe
+  m_Name: Sap
   m_EditorClassIdentifier: 
   tile: {fileID: 0}
-  itemName: Axe
-  type: 2
-  actionType: 1
+  itemName: Sap
+  type: 1
+  actionType: 4
   range: {x: 5, y: 4}
   stackable: 1
-  obj: {fileID: 0}
-  image: {fileID: 21300000, guid: ec68422a9e751f1448881015bbf787c3, type: 3}
+  obj: {fileID: 3540848023464446278, guid: b6c107233f15ef041ad77fce02504825, type: 3}
+  image: {fileID: 21300000, guid: 58e876c9c504f414aa3aaa8eb6e86b31, type: 3}

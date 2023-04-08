@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
+    public static Player player;
+
     private Rigidbody2D rigidBody;
     public Vector3 position;
     private Vector2 direction;
@@ -13,6 +15,10 @@ public class Player : MonoBehaviour
 
     private SpriteRenderer spriteRenderer;
     public Image inventoryUI;
+    public Image statsUI;
+    public Image craftingUI;
+    public Image settingsUI;
+    public Image[] mainInteractionUI;
     public Sprite[] spriteArray;
     public Animator animator;
 
@@ -25,6 +31,21 @@ public class Player : MonoBehaviour
     public CollisionManager collisionManager;
     public Item selectedItem;
     public Item[] itemsToPickup;
+
+    void Awake()
+    {
+        DontDestroyOnLoad(this);
+        mainInteractionUI = new Image[] { inventoryUI, craftingUI, settingsUI };
+
+        if (player == null)
+        {
+            player = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
 
     public void PickupItem(int id)
     {
@@ -52,7 +73,8 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     public void Update()
     {
-        processMovement();
+        ProcessMovement();
+        OpenMenus();
 
         if (Input.GetKey(KeyCode.E))
         {
@@ -66,7 +88,49 @@ public class Player : MonoBehaviour
         selectedItem = inventoryManager.selectedItem;
     }
 
-    public void processMovement()
+    public void OpenMenus()
+    {
+        // Check for open inventory
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            bool isActive = !inventoryUI.gameObject.activeSelf;
+            inventoryUI.gameObject.SetActive(isActive);
+            SetUIHidden(inventoryUI);
+        }
+        // Checks for open crafting menu
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            bool isActive = !craftingUI.gameObject.activeSelf;
+            craftingUI.gameObject.SetActive(isActive);
+            SetUIHidden(craftingUI);
+        }
+        // Checks for open settings menu
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            bool isActive = !settingsUI.gameObject.activeSelf;
+            settingsUI.gameObject.SetActive(isActive);
+            SetUIHidden(settingsUI);
+        }
+        // Checks for open stats menu
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            bool isActive = !statsUI.gameObject.activeSelf;
+            statsUI.gameObject.SetActive(isActive);
+        }
+    }
+
+    public void SetUIHidden(Image openUI)
+    {
+        foreach (Image img in mainInteractionUI)
+        {
+            if (img != openUI)
+            {
+                img.gameObject.SetActive(false);
+            }
+        }
+    }
+
+    public void ProcessMovement()
     {
         if (true)
         {
@@ -75,13 +139,6 @@ public class Player : MonoBehaviour
             float horizontalInput = Input.GetAxis("Horizontal");
             float verticalInput = Input.GetAxis("Vertical");
             inputVector = new Vector2(horizontalInput, verticalInput);
-
-            // Check for open inventory
-            if (Input.GetKeyDown(KeyCode.I))
-            {
-                bool isActive = !inventoryUI.gameObject.activeSelf;
-                inventoryUI.gameObject.SetActive(isActive);
-            }
 
             // Check for sprint
             speed = Input.GetKey(KeyCode.LeftShift) ? sprintSpeed : normalSpeed;

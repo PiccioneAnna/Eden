@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 63baacb602b46044f932c5d17940cf5f, type: 3}
-  m_Name: Log
+  m_Name: Vine
   m_EditorClassIdentifier: 
   tile: {fileID: 0}
-  itemName: Log
+  itemName: Vine
   type: 1
-  actionType: 2
+  actionType: 4
   range: {x: 5, y: 4}
   stackable: 1
-  obj: {fileID: 8826884741429276230, guid: 6c725a8521865e3498ca8569aed1843a, type: 3}
-  image: {fileID: 21300000, guid: aedaacab31021c8458bdec33c57d7ccc, type: 3}
+  obj: {fileID: 3540848023464446278, guid: 623edc32a7e7a4946a6f0a29acfe9107, type: 3}
+  image: {fileID: 21300000, guid: d35f3aa1ef0765843a095f30d4924a24, type: 3}

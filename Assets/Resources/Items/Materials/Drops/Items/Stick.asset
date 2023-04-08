@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 63baacb602b46044f932c5d17940cf5f, type: 3}
-  m_Name: Axe
+  m_Name: Stick
   m_EditorClassIdentifier: 
   tile: {fileID: 0}
-  itemName: Axe
-  type: 2
-  actionType: 1
+  itemName: Stick
+  type: 1
+  actionType: 4
   range: {x: 5, y: 4}
   stackable: 1
-  obj: {fileID: 0}
-  image: {fileID: 21300000, guid: ec68422a9e751f1448881015bbf787c3, type: 3}
+  obj: {fileID: 3540848023464446278, guid: 6a4d3d8749a7a7b42baee733bafdf4d9, type: 3}
+  image: {fileID: 21300000, guid: a1f7b867889f4234aa1065261a3ae398, type: 3}

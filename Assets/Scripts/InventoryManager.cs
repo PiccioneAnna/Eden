@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class InventoryManager : MonoBehaviour
 {
+    public static InventoryManager inventoryManager;
+
     public InventorySlot[] inventorySlots;
     public UnityEngine.GameObject inventoryItemPrefab;
     public int maxCount = 999;
@@ -11,6 +13,20 @@ public class InventoryManager : MonoBehaviour
     public Item selectedItem;
 
     int selectedSlot = -1;
+
+    void Awake()
+    {
+        DontDestroyOnLoad(this);
+
+        if (inventoryManager == null)
+        {
+            inventoryManager = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
 
     private void Start()
     {
@@ -26,8 +42,6 @@ public class InventoryManager : MonoBehaviour
             if (isNumber && number > 0 && number < toolbarCount)
             {
                 ChangeSelectedSlot(number - 1);
-                selectedItem = inventorySlots[selectedSlot].GetComponentInChildren<InventoryItem>().item;
-                Debug.Log("Selected Item: " + selectedItem.itemName);
             }
         }
     }
@@ -39,9 +53,14 @@ public class InventoryManager : MonoBehaviour
             inventorySlots[selectedSlot].Deselect();
         }
 
+        // Selects the item the player picked in the toolbar, checks if slot is empty first
         inventorySlots[newValue].Select();
         selectedSlot = newValue;
-        selectedItem = inventorySlots[selectedSlot].GetComponentInChildren<InventoryItem>().item;
+        if (inventorySlots[selectedSlot].GetComponentInChildren<InventoryItem>() != null)
+        {
+            selectedItem = inventorySlots[selectedSlot].GetComponentInChildren<InventoryItem>().item;
+            Debug.Log("Selected Item: " + selectedItem.itemName);
+        }
     }
 
     public bool AddItem(Item item)
