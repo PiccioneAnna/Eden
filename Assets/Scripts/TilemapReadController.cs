@@ -8,6 +8,7 @@ public class TilemapReadController : MonoBehaviour
     [SerializeField] Tilemap tilemap;
     [SerializeField] List<TileData> tileDatas;
     Dictionary<TileBase, TileData> dataFromTiles;
+    Vector3 worldPosition;
 
     public Player player;
 
@@ -26,7 +27,6 @@ public class TilemapReadController : MonoBehaviour
 
     public Vector3Int GetGridPosition(Vector2 position, bool mousePosition)
     {
-        Vector3 worldPosition;
 
         if (mousePosition)
         {
@@ -44,7 +44,9 @@ public class TilemapReadController : MonoBehaviour
 
     public TileBase GetTileBase(Vector3Int gridPosition)
     {
+        gridPosition = tilemap.WorldToCell(new Vector3(worldPosition.x, worldPosition.y, 0));
         TileBase tile = tilemap.GetTile(gridPosition);
+        Debug.Log(tile);
 
         return tile;
     }
