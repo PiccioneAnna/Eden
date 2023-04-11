@@ -13,6 +13,7 @@ public class Item : ScriptableObject
 
     [Header("Only UI")]
     public bool stackable = true;
+    public ItemRecipe recipe;
 
     [Header("Both")]
     public GameObject obj;

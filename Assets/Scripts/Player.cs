@@ -7,6 +7,9 @@ public class Player : MonoBehaviour
 {
     public static Player player;
 
+    [SerializeField] MarkerManager markerManager;
+    [SerializeField] TilemapReadController tileMapReadController;
+
     private Rigidbody2D rigidBody;
     public Vector3 position;
     private Vector2 direction;
@@ -26,6 +29,7 @@ public class Player : MonoBehaviour
     private float normalSpeed;
     private float sprintSpeed;
     public bool isInteract = false;
+    public bool isBuild = false;
 
     public InventoryManager inventoryManager;
     public CollisionManager collisionManager;
@@ -73,23 +77,22 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     public void Update()
     {
+        isInteract = Input.GetKey(KeyCode.E) ? true : false;
+        isBuild = Input.GetKeyDown(KeyCode.B) ? !isBuild : isBuild;
+
         ProcessMovement();
         OpenMenus();
-
-        if (Input.GetKey(KeyCode.E))
-        {
-            isInteract = true;
-        }
-        else
-        {
-            isInteract = false;
-        }
 
         selectedItem = inventoryManager.selectedItem;
     }
 
     public void OpenMenus()
     {
+        if (isBuild)
+        {
+            Marker();
+        }
+
         // Check for open inventory
         if (Input.GetKeyDown(KeyCode.I))
         {
@@ -222,6 +225,19 @@ public class Player : MonoBehaviour
             }
 
             rigidBody.velocity = inputVector * speed * Time.fixedDeltaTime;
+        }
+    }
+
+    private void Marker()
+    {
+        if (isBuild)
+        {
+            Vector3Int gridPositon = tileMapReadController.GetGridPosition(Input.mousePosition, true);
+            markerManager.markedCellPosition = gridPositon;
+        }
+        else
+        {
+            markerManager.ClearMarker();
         }
     }
 }

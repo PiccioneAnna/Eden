@@ -23,36 +23,36 @@ public class CollisionManager : MonoBehaviour
         }
     }
 
-    void OnCollisionStay2D(Collision2D collision)
+    void OnTriggerStay2D(Collider2D collider)
     {
-        DetermineCollisionType(collision);
+        DetermineCollisionType(collider);
     }
 
-    void DetermineCollisionType(Collision2D collision)
+    void DetermineCollisionType(Collider2D collider)
     {
         // Collect dropped materials
-        if (collision.gameObject.tag == "Material")
+        if (collider.gameObject.tag == "Material")
         {
-            Debug.Log("Dropped" + collision.gameObject.GetComponentInChildren<Drop>().item);
-            if (player.inventoryManager.AddItem(collision.gameObject.GetComponentInChildren<Drop>().item))
+            Debug.Log("Dropped " + collider.gameObject.GetComponentInChildren<Drop>().item);
+            if (player.inventoryManager.AddItem(collider.gameObject.GetComponentInChildren<Drop>().item))
             {
-                Destroy(collision.gameObject); 
+                Destroy(collider.gameObject); 
             }
         }
         // Actions that player has to interact to achieve (E)
         else if (player.isInteract)
         {
             // Changing Scene
-            if (collision.gameObject.tag == "SceneTrigger")
+            if (collider.gameObject.tag == "SceneTrigger")
             {
-                ChangeScene(collision.gameObject);
+                ChangeScene(collider.gameObject);
             }
 
             // using a tool on an item
-            if (CorrectTool(collision.gameObject))
+            if (CorrectTool(collider.gameObject))
             {
                 Debug.Log("Damage Taken");
-                collision.gameObject.GetComponent<Resource>().TakeDamage();
+                collider.gameObject.GetComponent<Resource>().TakeDamage();
             }
         }
     }

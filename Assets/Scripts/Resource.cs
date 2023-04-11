@@ -25,9 +25,11 @@ public class Resource : GameObject
 
         System.Random random = new System.Random();
 
-        instance.transform.GetComponent<SpriteRenderer>().sprite = sprites[random.Next(sprites.Length)];
+        if (instance.transform.GetComponent<SpriteRenderer>() != null)
+        {
+            instance.transform.GetComponent<SpriteRenderer>().sprite = sprites[random.Next(sprites.Length)];
 
-        dropCount = random.Next(maxDropCount) + minDropCount;
+        }
     }
 
     public void Shake()
@@ -43,11 +45,13 @@ public class Resource : GameObject
 
         // Randomized drops
         UnityEngine.GameObject drop;
-        System.Random random;
+        System.Random random = new System.Random();
         float offsetX;
         float offsetY;
         int multplierX;
         int multplierY;
+
+        dropCount = random.Next(maxDropCount) + minDropCount;
 
         if (health <= 0)
         {
