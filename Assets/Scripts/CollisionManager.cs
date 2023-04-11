@@ -47,9 +47,8 @@ public class CollisionManager : MonoBehaviour
             {
                 ChangeScene(collider.gameObject);
             }
-
             // using a tool on an item
-            if (CorrectTool(collider.gameObject))
+            else if (CorrectTool(collider.gameObject))
             {
                 Debug.Log("Damage Taken");
                 collider.gameObject.GetComponent<Resource>().TakeDamage();

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 using UnityEngine.UI;
 
 public class Player : MonoBehaviour
@@ -9,6 +10,8 @@ public class Player : MonoBehaviour
 
     [SerializeField] MarkerManager markerManager;
     [SerializeField] TilemapReadController tileMapReadController;
+    [SerializeField] CropsManager cropsManager;
+    [SerializeField] TileData plowableTiles;
 
     private Rigidbody2D rigidBody;
     public Vector3 position;
@@ -25,7 +28,11 @@ public class Player : MonoBehaviour
     public Sprite[] spriteArray;
     public Animator animator;
 
+    Vector3Int selectedTilePosition;
+    bool selectable;
+
     [SerializeField] private float speed;
+    [SerializeField] float maxDistance = 1.5f;
     private float normalSpeed;
     private float sprintSpeed;
     public bool isInteract = false;
@@ -80,8 +87,15 @@ public class Player : MonoBehaviour
         isInteract = Input.GetKey(KeyCode.E) ? true : false;
         isBuild = Input.GetKeyDown(KeyCode.B) ? !isBuild : isBuild;
 
+        SelectTile();
+        CanSelectCheck();
         ProcessMovement();
         OpenMenus();
+        // Check if user is using world tool or grid tool
+        if (Input.GetMouseButtonDown(0))
+        {
+            UseToolGrid();
+        }
 
         selectedItem = inventoryManager.selectedItem;
     }
@@ -228,16 +242,45 @@ public class Player : MonoBehaviour
         }
     }
 
+    private void SelectTile()
+    {
+        selectedTilePosition = tileMapReadController.GetGridPosition(Input.mousePosition, true);
+    }
+
+    // Method checks if it is possible for the user to select the tile 
+    // based on its position and the camera's posiiton
+    void CanSelectCheck()
+    {
+        Vector2 characterPosition = transform.position;
+        Vector2 cameraPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        selectable = Vector2.Distance(characterPosition, cameraPosition) < maxDistance;
+        markerManager.Show(selectable);
+    }
+
     private void Marker()
     {
-        if (isBuild)
+        markerManager.markedCellPosition = selectedTilePosition;
+    }
+
+    public void UseToolGrid()
+    {
+        if (selectable)
         {
-            Vector3Int gridPositon = tileMapReadController.GetGridPosition(Input.mousePosition, true);
-            markerManager.markedCellPosition = gridPositon;
-        }
-        else
-        {
-            markerManager.ClearMarker();
+            Debug.Log(selectedTilePosition);
+            TileBase tileBase = tileMapReadController.GetTileBase(selectedTilePosition);
+            Debug.Log(tileBase);
+            TileData tileData = tileMapReadController.GetTileData(tileBase);
+
+            if (tileData != plowableTiles) { return; }
+
+            if (cropsManager.Check(selectedTilePosition))
+            {
+                cropsManager.Seed(selectedTilePosition);
+            }
+            else
+            {
+                cropsManager.Plow(selectedTilePosition);
+            }
         }
     }
 }

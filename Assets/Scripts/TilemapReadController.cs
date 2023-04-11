@@ -38,8 +38,7 @@ public class TilemapReadController : MonoBehaviour
         }
 
         Vector3Int gridPosition = tilemap.WorldToCell(worldPosition);
-        gridPosition = new Vector3Int(gridPosition.x, gridPosition.y, 0);
-
+        gridPosition = new Vector3Int(gridPosition.x, gridPosition.y, (int)(worldPosition.y - player.transform.position.y) + gridPosition.z);
         return gridPosition;
     }
 
@@ -52,6 +51,7 @@ public class TilemapReadController : MonoBehaviour
 
     public TileData GetTileData(TileBase tilebase)
     {
+        if (dataFromTiles.ContainsKey(tilebase) == false) { return null; }
         return dataFromTiles[tilebase];
     }
 }

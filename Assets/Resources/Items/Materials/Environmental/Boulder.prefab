@@ -133,7 +133,6 @@ MonoBehaviour:
   droppedObjs:
   - {fileID: 2256325366030707764, guid: a9e18dcba3345da4f94ff2d9481f75e1, type: 3}
   sprites:
-  - {fileID: 1545770777, guid: daab477c88f8f624a8e6cdc3f7067c6f, type: 3}
   - {fileID: 2120273268, guid: daab477c88f8f624a8e6cdc3f7067c6f, type: 3}
   - {fileID: 1716268297, guid: daab477c88f8f624a8e6cdc3f7067c6f, type: 3}
   health: 25
