@@ -10,9 +10,13 @@ public class Crops
 
 public class CropsManager : MonoBehaviour
 {
+    public Player player;
+
     [SerializeField] TileBase plowed;
     [SerializeField] TileBase seeded;
+    [SerializeField] TileBase tilled;
     [SerializeField] Tilemap targetTilemap;
+    [SerializeField] Tilemap parentTilemap;
 
     Dictionary<Vector2Int, Crops> crops;
 
@@ -35,6 +39,11 @@ public class CropsManager : MonoBehaviour
         }
 
         CreatePlowedTile(position);
+    }
+
+    public void Till(Vector3Int position)
+    {
+        parentTilemap.SetTile(new Vector3Int(position.x, position.y, position.z * -1), tilled);
     }
 
     public void Seed(Vector3Int position)

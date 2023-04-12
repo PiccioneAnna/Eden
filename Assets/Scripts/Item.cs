@@ -9,6 +9,7 @@ public class Item : ScriptableObject
     public string itemName;
     public ItemType type;
     public ActionType actionType;
+    public bool usesGrid = false;
     public Vector2Int range = new Vector2Int(5, 4);
 
     [Header("Only UI")]
@@ -24,6 +25,7 @@ public enum ItemType
 {
     BuildingBlock,
     Material,
+    Seed,
     Tool
 }
 
@@ -33,5 +35,6 @@ public enum ActionType
     Mine,
     Chop,
     Hoe,
+    Seed,
     None
 }

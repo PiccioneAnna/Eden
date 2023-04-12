@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
     [SerializeField] TilemapReadController tileMapReadController;
     [SerializeField] CropsManager cropsManager;
     [SerializeField] TileData plowableTiles;
+    [SerializeField] TileData tillableTiles;
 
     private Rigidbody2D rigidBody;
     public Vector3 position;
@@ -36,7 +37,8 @@ public class Player : MonoBehaviour
     private float normalSpeed;
     private float sprintSpeed;
     public bool isInteract = false;
-    public bool isBuild = false;
+    public bool useGrid = false;
+    //public bool isBuild = false;
 
     public InventoryManager inventoryManager;
     public CollisionManager collisionManager;
@@ -84,29 +86,47 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     public void Update()
     {
-        isInteract = Input.GetKey(KeyCode.E) ? true : false;
-        isBuild = Input.GetKeyDown(KeyCode.B) ? !isBuild : isBuild;
+        isInteract = Input.GetMouseButtonDown(0) ? true : false;
+        //isBuild = Input.GetKeyDown(KeyCode.B) ? !isBuild : isBuild;
+        selectedItem = inventoryManager.selectedItem;
 
-        SelectTile();
-        CanSelectCheck();
-        ProcessMovement();
-        OpenMenus();
-        // Check if user is using world tool or grid tool
-        if (Input.GetMouseButtonDown(0))
+        // Checks if grid needs to be displayed
+        if (selectedItem.usesGrid)
         {
-            UseToolGrid();
+            useGrid = true;
+        }
+        else
+        {
+            useGrid = false;
         }
 
-        selectedItem = inventoryManager.selectedItem;
+        // Determines if UI for grid selection should be shown
+        if (useGrid)
+        {
+            SelectTile();
+            CanSelectCheck();
+        }
+        else
+        {
+            markerManager.Show(false);
+        }
+
+        ProcessMovement();
+        OpenMenus();
+
+        if (selectedItem != null && isInteract)
+        {
+            // Check if user is using world tool or grid tool
+            if (Input.GetMouseButtonDown(0))
+            {
+                UseToolGrid();
+                // Marks UI
+            }
+        }
     }
 
     public void OpenMenus()
     {
-        if (isBuild)
-        {
-            Marker();
-        }
-
         // Check for open inventory
         if (Input.GetKeyDown(KeyCode.I))
         {
@@ -245,6 +265,7 @@ public class Player : MonoBehaviour
     private void SelectTile()
     {
         selectedTilePosition = tileMapReadController.GetGridPosition(Input.mousePosition, true);
+        Marker();
     }
 
     // Method checks if it is possible for the user to select the tile 
@@ -264,23 +285,34 @@ public class Player : MonoBehaviour
 
     public void UseToolGrid()
     {
+
         if (selectable)
         {
+
             Debug.Log(selectedTilePosition);
             TileBase tileBase = tileMapReadController.GetTileBase(selectedTilePosition);
             Debug.Log(tileBase);
             TileData tileData = tileMapReadController.GetTileData(tileBase);
 
-            if (tileData != plowableTiles) { return; }
+            if (tileData != plowableTiles && tileData != tillableTiles) { return; }
 
-            if (cropsManager.Check(selectedTilePosition))
+            // Checks if plot can be seeded (if holding seeds and if tile is hoed)
+            if (cropsManager.Check(selectedTilePosition) 
+                && selectedItem != null && selectedItem.itemName.Equals("Seed"))
             {
                 cropsManager.Seed(selectedTilePosition);
             }
-            else
+            // Checks if plot can be hoed (if dirt)
+            else if (selectedItem != null && selectedItem.itemName.Equals("Hoe"))
             {
                 cropsManager.Plow(selectedTilePosition);
             }
+            // Checks if plot can be tilled (if grass)
+            if (selectedItem != null && selectedItem.itemName.Equals("Shovel"))
+            {
+                cropsManager.Till(selectedTilePosition);
+            }
+
         }
     }
 }

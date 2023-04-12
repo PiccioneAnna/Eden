@@ -9,7 +9,13 @@ public class MarkerManager : MonoBehaviour
     [SerializeField] TileBase tile;
     public Vector3Int markedCellPosition;
     Vector3Int oldCellPosition;
-    bool show;
+    bool show = false;
+
+    // Defaults marker to not shown
+    private void Awake()
+    {
+        Show(false);
+    }
 
     private void Update()
     {
