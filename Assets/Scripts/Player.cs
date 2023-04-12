@@ -298,8 +298,9 @@ public class Player : MonoBehaviour
 
             // Checks if plot can be seeded (if holding seeds and if tile is hoed)
             if (cropsManager.Check(selectedTilePosition) 
-                && selectedItem != null && selectedItem.itemName.Equals("Seed"))
+                && selectedItem != null && selectedItem.type == ItemType.Seed)
             {
+                Debug.Log("Planted" + selectedItem.itemName);
                 cropsManager.Seed(selectedTilePosition);
             }
             // Checks if plot can be hoed (if dirt)
