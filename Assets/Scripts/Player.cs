@@ -320,7 +320,7 @@ public class Player : MonoBehaviour
             if(selectedItem == null) { return; }
             if(selectedItem.onTileMapAction == null) { return; }
 
-            bool complete = selectedItem.onTileMapAction.OnApplyToTileMap(selectedTilePosition, tileMapReadController);
+            bool complete = selectedItem.onTileMapAction.OnApplyToTileMap(selectedTilePosition, tileMapReadController, selectedItem);
 
             // Checks if item used can be removed from inventory
             if (complete)
