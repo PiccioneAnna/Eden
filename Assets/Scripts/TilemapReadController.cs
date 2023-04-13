@@ -38,7 +38,7 @@ public class TilemapReadController : MonoBehaviour
         }
 
         Vector3Int gridPosition = tilemap.WorldToCell(worldPosition);
-        gridPosition = new Vector3Int(gridPosition.x, gridPosition.y, (int)(worldPosition.y - player.transform.position.y) + gridPosition.z);
+        gridPosition = new Vector3Int(gridPosition.x, gridPosition.y, 0);
         return gridPosition;
     }
 

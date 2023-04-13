@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tile: {fileID: 0}
   itemName: Hoe
-  type: 2
+  type: 3
   actionType: 3
   usesGrid: 1
   range: {x: 5, y: 4}

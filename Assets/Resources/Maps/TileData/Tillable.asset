@@ -15,4 +15,4 @@ MonoBehaviour:
   tiles:
   - {fileID: 11400000, guid: 055f2c6deea3596478bc0cd539895cdb, type: 2}
   plowable: 0
-  diggable: 1
+  tillable: 1

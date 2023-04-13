@@ -18,6 +18,7 @@ MonoBehaviour:
   actionType: 4
   usesGrid: 1
   range: {x: 5, y: 4}
+  crop: {fileID: 11400000, guid: 800b1d700afc806408ce31bff5f6689a, type: 2}
   stackable: 1
   recipe: {fileID: 0}
   obj: {fileID: 0}

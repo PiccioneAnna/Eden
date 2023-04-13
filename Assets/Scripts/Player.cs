@@ -301,15 +301,15 @@ public class Player : MonoBehaviour
                 && selectedItem != null && selectedItem.type == ItemType.Seed)
             {
                 Debug.Log("Planted" + selectedItem.itemName);
-                cropsManager.Seed(selectedTilePosition);
+                cropsManager.Seed(selectedTilePosition, selectedItem.crop);
             }
             // Checks if plot can be hoed (if dirt)
-            else if (selectedItem != null && selectedItem.itemName.Equals("Hoe"))
+            else if (selectedItem != null && selectedItem.itemName.Equals("Hoe") && tileData == plowableTiles)
             {
                 cropsManager.Plow(selectedTilePosition);
             }
             // Checks if plot can be tilled (if grass)
-            if (selectedItem != null && selectedItem.itemName.Equals("Shovel"))
+            if (selectedItem != null && selectedItem.itemName.Equals("Shovel") && tileData == tillableTiles)
             {
                 cropsManager.Till(selectedTilePosition);
             }

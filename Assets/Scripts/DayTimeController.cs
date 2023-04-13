@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class DayTimeController : MonoBehaviour
 {
     const float secondsInDay = 86400f;
+    const float phaseLength = 900f; // 15 minutes in seconds
 
     [SerializeField] Color nightLightColor;
     [SerializeField] AnimationCurve nightTimeCurve;
@@ -16,8 +17,22 @@ public class DayTimeController : MonoBehaviour
 
     float time;
     [SerializeField] float timeScale = 60f;
+    [SerializeField] float startAtTime = 28800f; // in seconds
+
     [SerializeField] UnityEngine.Rendering.Universal.Light2D globalLight;
     private int days;
+
+    List<TimeAgent> agents;
+
+    private void Awake()
+    {
+        agents = new List<TimeAgent>();
+    }
+
+    private void Start()
+    {
+        time = startAtTime;
+    }
 
     float Hours
     {
@@ -33,22 +48,61 @@ public class DayTimeController : MonoBehaviour
     private void Update()
     {
         time += Time.deltaTime * timeScale;
-        int hh = (int)Hours;
-        int mm = (int)Minutes;
-        text.text = hh.ToString("00") + ":" + mm.ToString("00");
-        float v = nightTimeCurve.Evaluate(Hours);
-        Color c = Color.Lerp(dayLightColor, nightLightColor, v);
-        globalLight.color = c;
+
+        TimeValueCalculation();
+        DayLight();
+
         if(time > secondsInDay)
         {
             NextDay();
         }
+
+        TimeAgents();
+    }
+
+    int oldPhase = 0;
+    private void TimeAgents()
+    {
+        int currentPhase = (int)(time / phaseLength);
+
+        if(oldPhase != currentPhase)
+        {
+            oldPhase = currentPhase;
+            for (int i = 0; i < agents.Count; i++)
+            {
+                agents[i].Invoke();
+            }
+        }
+    }
+
+    private void TimeValueCalculation()
+    {
+        int hh = (int)Hours;
+        int mm = (int)Minutes;
+        text.text = hh.ToString("00") + ":" + mm.ToString("00");
+    }
+
+    private void DayLight()
+    {
+        float v = nightTimeCurve.Evaluate(Hours);
+        Color c = Color.Lerp(dayLightColor, nightLightColor, v);
+        globalLight.color = c;
     }
 
     private void NextDay()
     {
         time = 0;
         days += 1;
+    }
+
+    public void Subscribe(TimeAgent timeAgent)
+    {
+        agents.Add(timeAgent);
+    }
+
+    public void UnSubscribe(TimeAgent timeAgent)
+    {
+        agents.Remove(timeAgent);
     }
 
 }
