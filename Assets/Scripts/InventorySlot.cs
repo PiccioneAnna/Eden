@@ -4,8 +4,11 @@ using UnityEngine.EventSystems;
 
 public class InventorySlot : MonoBehaviour, IDropHandler
 {
+    public Item item;
     public Image image;
     public Color selectedColor, notSelectedColor;
+
+    public Item ItemInSlot { get{ return item; } set { item = value; } }
 
     private void Awake()
     {
@@ -30,5 +33,11 @@ public class InventorySlot : MonoBehaviour, IDropHandler
             InventoryItem inventoryItem = eventData.pointerDrag.GetComponent<InventoryItem>();
             inventoryItem.parentAfterDrag = transform;
         }
+    }
+
+    public void Clear()
+    {
+        InventoryItem inventoryItem = GetComponentInChildren<InventoryItem>();
+        inventoryItem = null;
     }
 }

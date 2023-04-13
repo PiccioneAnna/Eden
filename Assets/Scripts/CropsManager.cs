@@ -75,11 +75,11 @@ public class CropsManager : TimeAgent
         parentTilemap.SetTile(new Vector3Int(position.x, position.y, 0), tilled);
     }
 
-    public void Seed(Vector3Int position, Crop toSeed)
+    public void Seed(Vector3Int position)
     {
         //targetTilemap.SetTile(position, seeded);
 
-        crops[(Vector2Int)position].crop = toSeed;
+        //crops[(Vector2Int)position].crop = toSeed;
     }
 
     private void CreatePlowedTile(Vector3Int position)

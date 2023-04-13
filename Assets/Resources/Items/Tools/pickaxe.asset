@@ -18,7 +18,9 @@ MonoBehaviour:
   actionType: 1
   usesGrid: 0
   range: {x: 5, y: 4}
+  crop: {fileID: 0}
   stackable: 1
   recipe: {fileID: 0}
   obj: {fileID: 0}
   image: {fileID: 21300000, guid: 716b9d310e0ba824b96e9264d1246c2f, type: 3}
+  onAction: {fileID: 11400000, guid: b1348a9c94beb1542845a3cce6ec30f1, type: 2}

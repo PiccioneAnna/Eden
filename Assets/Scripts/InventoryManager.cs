@@ -89,10 +89,52 @@ public class InventoryManager : MonoBehaviour
             if (itemInSlot == null)
             {
                 SpawnNewItem(item, slot);
+                slot.ItemInSlot = item;
                 return true;
             }
         }
         return false;
+    }
+
+    public void RemoveItem(Item item, int count = 1)
+    {
+        if (item.stackable)
+        {
+            InventorySlot inventorySlot = null;
+            foreach (InventorySlot slot in inventorySlots)
+            {
+                if(slot.ItemInSlot == item)
+                {
+                    inventorySlot = slot;
+                }
+            }
+            if (inventorySlot == null) { return; }
+
+            inventorySlot.GetComponent<InventoryItem>().count -= count;
+            if(inventorySlot.GetComponent<InventoryItem>().count < 0)
+            {
+                inventorySlot.Clear();
+            }
+        }
+        else
+        {
+            while(count > 0)
+            {
+                count -= 1;
+
+                InventorySlot inventorySlot = null;
+                foreach (InventorySlot slot in inventorySlots)
+                {
+                    if (slot.ItemInSlot == item)
+                    {
+                        inventorySlot = slot;
+                    }
+                }
+                if (inventorySlot == null) { return; }
+
+                inventorySlot.Clear();
+            }
+        }
     }
 
     void SpawnNewItem(Item item, InventorySlot slot)

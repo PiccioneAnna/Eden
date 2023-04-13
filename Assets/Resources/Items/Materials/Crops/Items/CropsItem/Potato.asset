@@ -23,3 +23,6 @@ MonoBehaviour:
   recipe: {fileID: 0}
   obj: {fileID: 0}
   image: {fileID: 0}
+  onAction: {fileID: 0}
+  onTileMapAction: {fileID: 0}
+  onItemUsed: {fileID: 0}

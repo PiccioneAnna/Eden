@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1204935880875582566}
   - component: {fileID: 1204935880875582585}
   - component: {fileID: 7923679703390392504}
+  - component: {fileID: -547703759522847632}
   m_Layer: 0
   m_Name: Boulder
   m_TagString: Untagged
@@ -126,6 +127,7 @@ MonoBehaviour:
   position: {x: 0, y: 0, z: 0}
   CanDestroy: 0
   instance: {fileID: 1204935880875582585}
+  toolHit: {fileID: -547703759522847632}
   properTool: {fileID: 11400000, guid: 3473f411a5d106046a5f2fdb9f12e346, type: 2}
   maxDropCount: 5
   minDropCount: 1
@@ -162,6 +164,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &-547703759522847632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1204935880875582586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d81832ac04260a34a87aedfa97663c84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resource: {fileID: 1204935880875582585}
+  nodeType: 2
 --- !u!1 &2413421777888864826
 GameObject:
   m_ObjectHideFlags: 0

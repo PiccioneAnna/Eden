@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class Resource : GameObject
 {
     public Resource instance;
+    public ToolHit toolHit;
     public Item properTool;
     public int maxDropCount = 5;
     public int minDropCount = 1;
@@ -43,38 +44,6 @@ public class Resource : GameObject
         health--;
         Debug.Log(health);
 
-        // Randomized drops
-        UnityEngine.GameObject drop;
-        System.Random random = new System.Random();
-        float offsetX;
-        float offsetY;
-        int multplierX;
-        int multplierY;
-
-        dropCount = random.Next(maxDropCount) + minDropCount;
-
-        if (health <= 0)
-        {
-            Debug.Log("Drop Count:" + dropCount);
-            for (int i = 0; i < dropCount; i++)
-            {
-                random = new System.Random();
-                drop = droppedObjs[random.Next(droppedObjs.Length)];
-
-                // Randomized drop positoning
-                random = new System.Random();
-                offsetX = (float)random.NextDouble() / 4;
-                random = new System.Random();
-                offsetY = (float)random.NextDouble() / 8;
-                multplierX = offsetX % 2 == 2 ? 1 : -1;
-                multplierY = offsetY % 2 == 2 ? 1 : -1;
-
-                // Randomized drop
-                position = new Vector3(position.x + (multplierX * offsetX), position.y + (multplierY * offsetY), position.z);
-                Instantiate(drop, position, rotation);
-            }
-            Destroy(instance.gameObject);
-        }
+        toolHit.Hit();
     }
-
 }

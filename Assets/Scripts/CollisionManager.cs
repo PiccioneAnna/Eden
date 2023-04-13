@@ -40,7 +40,7 @@ public class CollisionManager : MonoBehaviour
             }
         }
         // Actions that player has to interact to achieve (E)
-        else if (player.isInteract)
+        /*else if (player.isInteract)
         {
             // Changing Scene
             if (collider.gameObject.tag == "SceneTrigger")
@@ -53,7 +53,7 @@ public class CollisionManager : MonoBehaviour
                 Debug.Log("Damage Taken");
                 collider.gameObject.GetComponent<Resource>().TakeDamage();
             }
-        }
+        }(*/
     }
 
     void ChangeScene(UnityEngine.GameObject obj)

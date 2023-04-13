@@ -200,6 +200,7 @@ GameObject:
   - component: {fileID: 4947889941481394424}
   - component: {fileID: 4947889941481394420}
   - component: {fileID: 4947889941481394419}
+  - component: {fileID: 5175612594507616352}
   m_Layer: 0
   m_Name: Willow
   m_TagString: Untagged
@@ -243,6 +244,7 @@ MonoBehaviour:
   position: {x: 0, y: 0, z: 0}
   CanDestroy: 1
   instance: {fileID: 4947889941481394420}
+  toolHit: {fileID: 5175612594507616352}
   properTool: {fileID: 11400000, guid: ca7f346815de91c489c36074fa22e9f9, type: 2}
   maxDropCount: 10
   minDropCount: 5
@@ -282,6 +284,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.1511974, y: 1.8764143}
   m_EdgeRadius: 0
+--- !u!114 &5175612594507616352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4947889941481394425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d81832ac04260a34a87aedfa97663c84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resource: {fileID: 4947889941481394420}
+  nodeType: 1
 --- !u!1 &4947889941795493384
 GameObject:
   m_ObjectHideFlags: 0

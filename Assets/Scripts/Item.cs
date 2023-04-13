@@ -20,6 +20,10 @@ public class Item : ScriptableObject
     [Header("Both")]
     public GameObject obj;
     public Sprite image;
+
+    public ToolAction onAction;
+    public ToolAction onTileMapAction;
+    public ToolAction onItemUsed;
 }
 
 public enum ItemType

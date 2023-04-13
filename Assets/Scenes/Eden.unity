@@ -2708,10 +2708,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   markerManager: {fileID: 112793126}
   tileMapReadController: {fileID: 319420437}
-  cropsManager: {fileID: 1929762123}
-  plowableTiles: {fileID: 11400000, guid: 8bb9c042d32524b4fb9a0d6aaca77917, type: 2}
-  tillableTiles: {fileID: 11400000, guid: 603eab6e08cbe2045ab8fa9313a36552, type: 2}
   position: {x: 0, y: 0, z: 0}
+  direction: {x: 0, y: 0}
   inputVector: {x: 0, y: 0}
   inventoryUI: {fileID: 1899410431}
   statsUI: {fileID: 872031413}
@@ -2720,6 +2718,7 @@ MonoBehaviour:
   mainInteractionUI: []
   spriteArray: []
   animator: {fileID: 275464356}
+  offsetDistance: 1
   speed: 50
   maxDistance: 1.5
   isInteract: 0
@@ -2764,9 +2763,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tilemap: {fileID: 539381220}
-  tileDatas:
-  - {fileID: 11400000, guid: 8bb9c042d32524b4fb9a0d6aaca77917, type: 2}
-  - {fileID: 11400000, guid: 603eab6e08cbe2045ab8fa9313a36552, type: 2}
+  cropsManager: {fileID: 1929762123}
   player: {fileID: 275464363}
 --- !u!4 &319420438
 Transform:
