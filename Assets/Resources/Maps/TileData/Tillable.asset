@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Tillable
   m_EditorClassIdentifier: 
   tiles:
-  - {fileID: 11400000, guid: 055f2c6deea3596478bc0cd539895cdb, type: 2}
+  - {fileID: 11400000, guid: 73a83da5adcbcd84dbbee106fc314026, type: 2}
   plowable: 0
   tillable: 1

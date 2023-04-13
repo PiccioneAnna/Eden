@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: TopSeed
+  m_Name: dirtt
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: 21300000, guid: 8fc81d1b4aabd2443ad99d4755e9b245, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c3886c6e16e2f7b458f0586ff30af217, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1

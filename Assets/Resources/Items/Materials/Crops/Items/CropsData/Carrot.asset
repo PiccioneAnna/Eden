@@ -12,11 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c437bb003d9dc8342afcba4aa0539dab, type: 3}
   m_Name: Carrot
   m_EditorClassIdentifier: 
-  timeToGrow: 20
+  timeToGrow: 15
   yield: {fileID: 11400000, guid: 840addbd6688b3248a9ae4d989663af1, type: 2}
   count: 1
   sprites:
-  - {fileID: 749842310, guid: 106b0cb976bc81540929d0bb7c154afe, type: 3}
-  - {fileID: 965396467, guid: 106b0cb976bc81540929d0bb7c154afe, type: 3}
-  - {fileID: 555784340, guid: 106b0cb976bc81540929d0bb7c154afe, type: 3}
-  growthStageTime: 04000000070000000f000000
+  - {fileID: 2104030912, guid: 0ea1559de5e6b0e4496eff1c9bb8164b, type: 3}
+  - {fileID: -1446308863, guid: 0ea1559de5e6b0e4496eff1c9bb8164b, type: 3}
+  - {fileID: 35811378, guid: 0ea1559de5e6b0e4496eff1c9bb8164b, type: 3}
+  - {fileID: -268878014, guid: 0ea1559de5e6b0e4496eff1c9bb8164b, type: 3}
+  growthStageTime: 0000000004000000070000000f000000

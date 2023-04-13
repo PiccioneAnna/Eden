@@ -288,6 +288,10 @@ public class Player : MonoBehaviour
 
         if (selectable)
         {
+            // If your hands are empty you can harvest
+            if(selectedItem == null)
+            { 
+            }
 
             Debug.Log(selectedTilePosition);
             TileBase tileBase = tileMapReadController.GetTileBase(selectedTilePosition);

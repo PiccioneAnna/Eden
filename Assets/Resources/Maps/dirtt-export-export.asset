@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: GrassTile
+  m_Name: dirtt-export-export
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: 21300000, guid: 60c315ac700950c4faaadb7867033546, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 76cb9d0d70a7c5b4bb3f19f14f75a5bc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1

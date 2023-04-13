@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c437bb003d9dc8342afcba4aa0539dab, type: 3}
+  m_Name: Potato
+  m_EditorClassIdentifier: 
+  timeToGrow: 16
+  yield: {fileID: 11400000, guid: 55a9b8ff516e475489be60f702748924, type: 2}
+  count: 1
+  sprites:
+  - {fileID: -1141952952, guid: a7e24512adccafb49980d0befde1b63e, type: 3}
+  - {fileID: -1242774119, guid: a7e24512adccafb49980d0befde1b63e, type: 3}
+  - {fileID: -1921825489, guid: a7e24512adccafb49980d0befde1b63e, type: 3}
+  - {fileID: 1043863294, guid: a7e24512adccafb49980d0befde1b63e, type: 3}
+  growthStageTime: 00000000060000000900000010000000
