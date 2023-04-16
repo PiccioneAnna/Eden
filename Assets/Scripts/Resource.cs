@@ -10,12 +10,14 @@ public class Resource : GameObject
     public Item properTool;
     public int maxDropCount = 5;
     public int minDropCount = 1;
+    public bool multisprite = false;
     private int dropCount;
 
     public Item[] drops;
     public UnityEngine.GameObject[] droppedObjs;
     public Sprite[] sprites;
     public int health;
+    private int originalHealth;
 
     Quaternion rotation;
 
@@ -24,12 +26,13 @@ public class Resource : GameObject
         position = instance.transform.position;
         rotation = instance.transform.rotation;
 
+        originalHealth = health;
+
         System.Random random = new System.Random();
 
-        if (instance.transform.GetComponent<SpriteRenderer>() != null)
+        if (instance.transform.GetComponent<SpriteRenderer>() != null && multisprite)
         {
             instance.transform.GetComponent<SpriteRenderer>().sprite = sprites[random.Next(sprites.Length)];
-
         }
     }
 
@@ -37,10 +40,41 @@ public class Resource : GameObject
     {
         anim.SetTrigger("Shake");
     }
+    
+    // Changes a tree's display based on health
+    public void HitTree(int h)
+    {
+        float healthPercent = (float)h / (float)originalHealth;
+        Debug.Log("Current Health: " + h);
+        Debug.Log("Old Health: " + originalHealth);
+        Debug.Log("health percent" + healthPercent);
+        int sprite = 0;
+
+        if (healthPercent >= .9f)
+        {
+            return;
+        }
+        else if (healthPercent >= .7f)
+        {
+            sprite = 1;
+        }
+        else if (healthPercent >= .5f)
+        {
+            sprite = 2;
+        }
+        else
+        {
+            sprite = 3;
+        }
+
+        if (instance.transform.GetComponent<SpriteRenderer>() != null && sprites != null)
+        {
+            instance.transform.GetComponent<SpriteRenderer>().sprite = sprites[sprite];
+        }
+    }
 
     public void TakeDamage()
     {
-        Shake();
         health--;
         Debug.Log(health);
 

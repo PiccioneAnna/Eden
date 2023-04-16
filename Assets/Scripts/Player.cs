@@ -43,6 +43,8 @@ public class Player : MonoBehaviour
     public Item selectedItem;
     public Item[] itemsToPickup;
 
+    [SerializeField] ToolAction onTilePickUp;
+
     void Awake()
     {
         DontDestroyOnLoad(this);
@@ -89,7 +91,7 @@ public class Player : MonoBehaviour
         selectedItem = inventoryManager.selectedItem;
 
         // Checks if grid needs to be displayed
-        if (selectedItem!= null && selectedItem.usesGrid)
+        if (selectedItem == null || selectedItem.usesGrid)
         {
             useGrid = true;
         }
@@ -110,7 +112,7 @@ public class Player : MonoBehaviour
         }
 
         ProcessMovement();
-        //OpenMenus();
+        OpenMenus();
 
         // If player interacts
         if (Input.GetMouseButtonDown(0))
@@ -317,7 +319,11 @@ public class Player : MonoBehaviour
 
         if (selectable)
         {
-            if(selectedItem == null) { return; }
+            if(selectedItem == null) 
+            { 
+                PickUpTile();
+                return;
+            }
             if(selectedItem.onTileMapAction == null) { return; }
 
             bool complete = selectedItem.onTileMapAction.OnApplyToTileMap(selectedTilePosition, tileMapReadController, selectedItem);
@@ -331,5 +337,11 @@ public class Player : MonoBehaviour
                 }
             }
         }
+    }
+
+    private void PickUpTile()
+    {
+        if(onTilePickUp == null) { return; }
+        onTilePickUp.OnApplyToTileMap(selectedTilePosition, tileMapReadController, null);
     }
 }

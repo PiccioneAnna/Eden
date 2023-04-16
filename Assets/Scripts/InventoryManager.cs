@@ -61,6 +61,11 @@ public class InventoryManager : MonoBehaviour
             selectedItem = inventorySlots[selectedSlot].GetComponentInChildren<InventoryItem>().item;
             Debug.Log("Selected Item: " + selectedItem.itemName);
         }
+        else
+        {
+            selectedItem = null;
+            Debug.Log("Selected Item: Null");
+        }
     }
 
     public bool AddItem(Item item)

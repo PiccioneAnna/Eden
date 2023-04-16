@@ -9,6 +9,25 @@ public class CropTile
     public int growStage;
     public Crop crop;
     public SpriteRenderer renderer;
+    public float damage;
+    public Vector2Int position;
+
+    public bool Complete
+    {
+        get 
+        { 
+            if(crop == null) { return false; }
+            return growTimer >= crop.timeToGrow; 
+        }
+    }
+
+    internal void Harvested()
+    {
+        growTimer = 0;
+        growStage = 0;
+        crop = null;
+        renderer.gameObject.SetActive(false);
+    }
 }
 
 public class CropsManager : TimeAgent
@@ -37,6 +56,11 @@ public class CropsManager : TimeAgent
         {
             if(cropTile.crop == null) { continue; }
 
+            if (cropTile.Complete)
+            {
+                continue;
+            }
+
             cropTile.growTimer += 1;
 
             if (cropTile.growTimer >= cropTile.crop.growthStageTime[cropTile.growStage])
@@ -45,11 +69,6 @@ public class CropsManager : TimeAgent
                 cropTile.renderer.sprite = cropTile.crop.sprites[cropTile.growStage];
 
                 cropTile.growStage += 1;
-            }
-
-            if (cropTile.growTimer >= cropTile.crop.timeToGrow)
-            {
-                cropTile.crop = null;
             }
         }
     }
@@ -80,6 +99,23 @@ public class CropsManager : TimeAgent
         //targetTilemap.SetTile(position, seeded);
 
         crops[(Vector2Int)position].crop = toSeed;
+    }
+
+    public void PickUp(Vector3Int gridPosition)
+    {
+        Vector2Int position = (Vector2Int)gridPosition;
+        Vector3 p = targetTilemap.CellToWorld(gridPosition);
+        if (!crops.ContainsKey(position)) { return; }
+
+        CropTile cropTile = crops[position];
+
+        if (cropTile.Complete)
+        {
+            Instantiate(cropTile.crop.yield.obj, new Vector3(p.x, p.y, 0), cropTile.renderer.gameObject.transform.rotation);
+            Debug.Log("Crop yielded");
+            targetTilemap.SetTile(gridPosition, plowed);
+            cropTile.Harvested();
+        }
     }
 
     private void CreatePlowedTile(Vector3Int position)

@@ -18,7 +18,7 @@ public class Item : ScriptableObject
     public ItemRecipe recipe;
 
     [Header("Both")]
-    public GameObject obj;
+    public UnityEngine.GameObject obj;
     public Sprite image;
 
     public ToolAction onAction;

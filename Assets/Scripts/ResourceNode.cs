@@ -33,6 +33,10 @@ public class ResourceNode : ToolHit
     {
         health--;
         resource.Shake();
+        if (!resource.multisprite)
+        {
+            resource.HitTree(health);
+        }
         Debug.Log(health);
 
         if (health <= 0)

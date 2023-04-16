@@ -39,21 +39,11 @@ public class CollisionManager : MonoBehaviour
                 Destroy(collider.gameObject); 
             }
         }
-        // Actions that player has to interact to achieve (E)
-        /*else if (player.isInteract)
+        // Changing Scene
+        if (collider.gameObject.tag == "SceneTrigger")
         {
-            // Changing Scene
-            if (collider.gameObject.tag == "SceneTrigger")
-            {
-                ChangeScene(collider.gameObject);
-            }
-            // using a tool on an item
-            else if (CorrectTool(collider.gameObject))
-            {
-                Debug.Log("Damage Taken");
-                collider.gameObject.GetComponent<Resource>().TakeDamage();
-            }
-        }(*/
+            ChangeScene(collider.gameObject);
+        }
     }
 
     void ChangeScene(UnityEngine.GameObject obj)
