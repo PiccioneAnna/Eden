@@ -7,8 +7,8 @@ public class MarkerManager : MonoBehaviour
 {
     [SerializeField] Tilemap targetTilemap;
     [SerializeField] TileBase tile;
-    public Vector3Int markedCellPosition;
-    Vector3Int oldCellPosition;
+    public Vector3 markedCellPosition;
+    Vector3 oldCellPosition;
     bool show = false;
 
     // Defaults marker to not shown
@@ -20,8 +20,9 @@ public class MarkerManager : MonoBehaviour
     private void Update()
     {
         if (show == false) { return; }
-        targetTilemap.SetTile(oldCellPosition, null);
-        targetTilemap.SetTile(markedCellPosition, tile);
+        targetTilemap.SetTile(new Vector3Int((int)oldCellPosition.x, (int)oldCellPosition.y, 0), null);
+        Debug.Log((new Vector3Int((int)markedCellPosition.x, (int)markedCellPosition.y, 0)));
+        targetTilemap.SetTile(new Vector3Int((int)markedCellPosition.x, (int)markedCellPosition.y, 0), tile);
         oldCellPosition = markedCellPosition;
     }
 

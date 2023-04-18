@@ -26,7 +26,7 @@ public class Player : MonoBehaviour
     public Sprite[] spriteArray;
     public Animator animator;
 
-    Vector3Int selectedTilePosition;
+    Vector3 selectedTilePosition;
     bool selectable;
 
     [SerializeField] private float offsetDistance = 1f;
@@ -47,17 +47,8 @@ public class Player : MonoBehaviour
 
     void Awake()
     {
-        DontDestroyOnLoad(this);
         mainInteractionUI = new Image[] { inventoryUI, craftingUI, settingsUI };
-
-        if (player == null)
-        {
-            player = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+        player = this;
     }
 
     public void PickupItem(int id)

@@ -8,18 +8,9 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        DontDestroyOnLoad(this);
-
-        if (instance == null)
-        {
-            instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+        instance = this;
     }
 
-    public GameObject player;
+    public UnityEngine.GameObject player;
     public DayTimeController timeController;
 }

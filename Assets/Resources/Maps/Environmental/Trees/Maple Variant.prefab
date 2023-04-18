@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 3221257213517668648, guid: 1965736996279c34981ef14222dd8094, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -1062312155, guid: fffd3d718fb19f347a513211cdc5fce1, type: 3}
+      objectReference: {fileID: -1620418547, guid: 422c99a81f56dd84997bf5172303f64c, type: 3}
     - target: {fileID: 4947889941481394419, guid: 1965736996279c34981ef14222dd8094, type: 3}
       propertyPath: m_Size.x
       value: 0.09663859
@@ -29,7 +29,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4947889941481394419, guid: 1965736996279c34981ef14222dd8094, type: 3}
       propertyPath: m_SpriteTilingProperty.pivot.x
-      value: 0.45
+      value: 0.46
       objectReference: {fileID: 0}
     - target: {fileID: 4947889941481394419, guid: 1965736996279c34981ef14222dd8094, type: 3}
       propertyPath: m_SpriteTilingProperty.pivot.y
@@ -38,22 +38,30 @@ PrefabInstance:
     - target: {fileID: 4947889941481394420, guid: 1965736996279c34981ef14222dd8094, type: 3}
       propertyPath: sprites.Array.data[0]
       value: 
-      objectReference: {fileID: -1062312155, guid: fffd3d718fb19f347a513211cdc5fce1, type: 3}
+      objectReference: {fileID: -1620418547, guid: 422c99a81f56dd84997bf5172303f64c, type: 3}
     - target: {fileID: 4947889941481394420, guid: 1965736996279c34981ef14222dd8094, type: 3}
       propertyPath: sprites.Array.data[1]
       value: 
-      objectReference: {fileID: -427149052, guid: fffd3d718fb19f347a513211cdc5fce1, type: 3}
+      objectReference: {fileID: 708984476, guid: 422c99a81f56dd84997bf5172303f64c, type: 3}
     - target: {fileID: 4947889941481394420, guid: 1965736996279c34981ef14222dd8094, type: 3}
       propertyPath: sprites.Array.data[2]
       value: 
-      objectReference: {fileID: -253212380, guid: fffd3d718fb19f347a513211cdc5fce1, type: 3}
+      objectReference: {fileID: 1487357720, guid: 422c99a81f56dd84997bf5172303f64c, type: 3}
     - target: {fileID: 4947889941481394420, guid: 1965736996279c34981ef14222dd8094, type: 3}
       propertyPath: sprites.Array.data[3]
       value: 
-      objectReference: {fileID: -2111277299, guid: fffd3d718fb19f347a513211cdc5fce1, type: 3}
+      objectReference: {fileID: 559541985, guid: 422c99a81f56dd84997bf5172303f64c, type: 3}
     - target: {fileID: 4947889941481394424, guid: 1965736996279c34981ef14222dd8094, type: 3}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4947889941481394424, guid: 1965736996279c34981ef14222dd8094, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4947889941481394424, guid: 1965736996279c34981ef14222dd8094, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4947889941481394424, guid: 1965736996279c34981ef14222dd8094, type: 3}
       propertyPath: m_LocalPosition.x
@@ -113,11 +121,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8250239676916514538, guid: 1965736996279c34981ef14222dd8094, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.099
+      value: 0.084
       objectReference: {fileID: 0}
     - target: {fileID: 8250239676916514538, guid: 1965736996279c34981ef14222dd8094, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.009
+      value: -0.003
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1883216707478096980, guid: 1965736996279c34981ef14222dd8094, type: 3}

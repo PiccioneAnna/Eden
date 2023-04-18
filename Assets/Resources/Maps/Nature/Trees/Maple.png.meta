@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: fffd3d718fb19f347a513211cdc5fce1
+guid: 422c99a81f56dd84997bf5172303f64c
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -124,14 +124,14 @@ TextureImporter:
         width: 512
         height: 512
       alignment: 9
-      pivot: {x: 0.45, y: 0.1}
+      pivot: {x: 0.46, y: 0.1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 47afd059c969a7c4ab3eb866f12aa7a4
-      internalID: -1062312155
+      spriteID: 5686a2c74890e2b4599254079698ce34
+      internalID: -1620418547
       vertices: []
       indices: 
       edges: []
@@ -145,14 +145,14 @@ TextureImporter:
         width: 512
         height: 512
       alignment: 9
-      pivot: {x: 0.45, y: 0.1}
+      pivot: {x: 0.46, y: 0.1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 082e179b8c6012b4b8eaee17344d5ee1
-      internalID: -427149052
+      spriteID: 12631ea0c62af414a8d1230678285cc7
+      internalID: 708984476
       vertices: []
       indices: 
       edges: []
@@ -166,14 +166,14 @@ TextureImporter:
         width: 512
         height: 512
       alignment: 9
-      pivot: {x: 0.45, y: 0.1}
+      pivot: {x: 0.46, y: 0.1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d221a999fcda93a4c8f3dfc8ef1504bd
-      internalID: -253212380
+      spriteID: ecfbd4e1baa49bc49a50bde08c089c46
+      internalID: 1487357720
       vertices: []
       indices: 
       edges: []
@@ -187,14 +187,14 @@ TextureImporter:
         width: 512
         height: 512
       alignment: 9
-      pivot: {x: 0.45, y: 0.1}
+      pivot: {x: 0.46, y: 0.1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4c5342210d75b19479a2ee83ae89fe04
-      internalID: -2111277299
+      spriteID: 27954f948c7fa084c951dcd0f2992e31
+      internalID: 559541985
       vertices: []
       indices: 
       edges: []
@@ -210,10 +210,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Maple_1: -427149052
-      Maple_2: -253212380
-      Maple_3: -2111277299
-      Maple_0: -1062312155
+      Maple_1: 708984476
+      Maple_2: 1487357720
+      Maple_3: 559541985
+      Maple_0: -1620418547
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

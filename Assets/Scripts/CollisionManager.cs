@@ -7,7 +7,6 @@ public class CollisionManager : MonoBehaviour
     public static CollisionManager collisionManager;
     
     public Player player;
-    public SceneManager sceneManager;
 
     void Awake()
     {
@@ -39,29 +38,6 @@ public class CollisionManager : MonoBehaviour
                 Destroy(collider.gameObject); 
             }
         }
-        // Changing Scene
-        if (collider.gameObject.tag == "SceneTrigger")
-        {
-            ChangeScene(collider.gameObject);
-        }
-    }
-
-    void ChangeScene(UnityEngine.GameObject obj)
-    {
-        string nextScene = obj.GetComponent<SceneTrigger>().nextScene; 
-        switch (nextScene)
-        {
-            case "Pangea":
-                sceneManager.LoadPangea();
-                break;
-            case "Eden":
-                sceneManager.LoadEden();
-                break;
-            case "Purgatory":
-                sceneManager.LoadPurgatory();
-                break;
-        }
-
     }
 
     public bool CorrectTool(UnityEngine.GameObject obj)
