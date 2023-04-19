@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 3540848023464446278}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7894849123240636020}
@@ -134,12 +134,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_Sprite: {fileID: 21300000, guid: 3e1cd31f9c2e6d840b875f32695002f0, type: 3}
+  m_Sprite: {fileID: -904245686, guid: d2e466b2af1f12142af58f3ababa3737, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.64, y: 0.64}
+  m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -178,8 +178,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 5350486672830063512}
-  title: Leaves
+  title: Carrot
   type: Material
   position: {x: 0, y: 0, z: 0}
   CanDestroy: 0
-  item: {fileID: 11400000, guid: b67822b1281bf4146a56ac8ed4469df7, type: 2}
+  item: {fileID: 11400000, guid: 840addbd6688b3248a9ae4d989663af1, type: 2}

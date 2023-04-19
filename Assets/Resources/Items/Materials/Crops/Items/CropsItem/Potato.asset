@@ -21,8 +21,8 @@ MonoBehaviour:
   crop: {fileID: 11400000, guid: b6d0612adc22cc24bb2dc2423c6782f5, type: 2}
   stackable: 1
   recipe: {fileID: 0}
-  obj: {fileID: 0}
-  image: {fileID: 0}
+  obj: {fileID: 3540848023464446278, guid: 7b4df1002ad5f93488342cf2294ed8fc, type: 3}
+  image: {fileID: 1192011321, guid: 2f10d9999e714964994f357ddbb71b61, type: 3}
   onAction: {fileID: 0}
   onTileMapAction: {fileID: 0}
   onItemUsed: {fileID: 0}

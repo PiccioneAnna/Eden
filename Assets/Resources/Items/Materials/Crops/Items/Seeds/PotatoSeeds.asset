@@ -22,7 +22,7 @@ MonoBehaviour:
   stackable: 1
   recipe: {fileID: 0}
   obj: {fileID: 0}
-  image: {fileID: 1108138194, guid: a4c6f603a317ec8478403366152db4fc, type: 3}
+  image: {fileID: 1101530196, guid: 2f10d9999e714964994f357ddbb71b61, type: 3}
   onAction: {fileID: 0}
   onTileMapAction: {fileID: 11400000, guid: 23dee05aaa80bab4aa62e5668ff5e3c5, type: 2}
   onItemUsed: {fileID: 0}

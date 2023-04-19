@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeToGrow: 16
   yield: {fileID: 11400000, guid: 55a9b8ff516e475489be60f702748924, type: 2}
-  count: 1
+  count: 3
   sprites:
-  - {fileID: -1141952952, guid: a7e24512adccafb49980d0befde1b63e, type: 3}
-  - {fileID: -1242774119, guid: a7e24512adccafb49980d0befde1b63e, type: 3}
-  - {fileID: -1921825489, guid: a7e24512adccafb49980d0befde1b63e, type: 3}
-  - {fileID: 1043863294, guid: a7e24512adccafb49980d0befde1b63e, type: 3}
+  - {fileID: 1101530196, guid: 2f10d9999e714964994f357ddbb71b61, type: 3}
+  - {fileID: -1183486326, guid: 2f10d9999e714964994f357ddbb71b61, type: 3}
+  - {fileID: 1801870146, guid: 2f10d9999e714964994f357ddbb71b61, type: 3}
+  - {fileID: -1307569462, guid: 2f10d9999e714964994f357ddbb71b61, type: 3}
   growthStageTime: 00000000060000000900000010000000

@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c437bb003d9dc8342afcba4aa0539dab, type: 3}
+  m_Name: Yellow Squash
+  m_EditorClassIdentifier: 
+  timeToGrow: 15
+  yield: {fileID: 11400000, guid: 348f2f5f15bfa144cb6c2c6634f2791b, type: 2}
+  count: 1
+  sprites:
+  - {fileID: -1457200017, guid: e7826dd77f7ddf842992165401612efd, type: 3}
+  - {fileID: -82310731, guid: e7826dd77f7ddf842992165401612efd, type: 3}
+  - {fileID: -312633591, guid: e7826dd77f7ddf842992165401612efd, type: 3}
+  - {fileID: 784949221, guid: e7826dd77f7ddf842992165401612efd, type: 3}
+  growthStageTime: 0000000004000000070000000f000000

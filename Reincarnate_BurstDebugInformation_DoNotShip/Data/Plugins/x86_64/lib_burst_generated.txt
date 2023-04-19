@@ -121,6 +121,14 @@ Library: lib_burst_generated
 --compilation-defines=USING_ANIMATION_MODULE
 --compilation-defines=USING_PHYSICS2D_MODULE
 --compilation-defines=ENABLE_ANIMATION_BURST
+--compilation-defines=CINEMACHINE_TIMELINE
+--compilation-defines=CINEMACHINE_PHYSICS_2D
+--compilation-defines=CINEMACHINE_PHYSICS
+--compilation-defines=CINEMACHINE_UGUI
+--compilation-defines=CINEMACHINE_LWRP_7_3_1
+--compilation-defines=CINEMACHINE_PIXEL_PERFECT_2_0_3
+--compilation-defines=CINEMACHINE_UNITY_ANIMATION
+--compilation-defines=CINEMACHINE_UNITY_IMGUI
 --compilation-defines=TIMELINE_FRAMEACCURATE
 --compilation-defines=ENABLE_SPRITESHAPE_BURST
 --linker-options=PdbAltPath="Reincarnate_Data/Plugins/x86_64"
@@ -132,6 +140,7 @@ Library: lib_burst_generated
 --root-assembly=C:\Users\flash\Documents\GitHub\Adam and Eve\Temp\StagingArea\Data\Managed\Unity.Burst.dll
 --root-assembly=C:\Users\flash\Documents\GitHub\Adam and Eve\Temp\StagingArea\Data\Managed\Unity.2D.Animation.Runtime.dll
 --root-assembly=C:\Users\flash\Documents\GitHub\Adam and Eve\Temp\StagingArea\Data\Managed\Unity.TextMeshPro.dll
+--root-assembly=C:\Users\flash\Documents\GitHub\Adam and Eve\Temp\StagingArea\Data\Managed\Cinemachine.dll
 --root-assembly=C:\Users\flash\Documents\GitHub\Adam and Eve\Temp\StagingArea\Data\Managed\Unity.Timeline.dll
 --root-assembly=C:\Users\flash\Documents\GitHub\Adam and Eve\Temp\StagingArea\Data\Managed\Assembly-CSharp.dll
 --root-assembly=C:\Users\flash\Documents\GitHub\Adam and Eve\Temp\StagingArea\Data\Managed\Unity.RenderPipeline.Universal.ShaderLibrary.dll
@@ -281,6 +290,14 @@ Library: lib_burst_generated
 --compilation-defines=USING_ANIMATION_MODULE
 --compilation-defines=USING_PHYSICS2D_MODULE
 --compilation-defines=ENABLE_ANIMATION_BURST
+--compilation-defines=CINEMACHINE_TIMELINE
+--compilation-defines=CINEMACHINE_PHYSICS_2D
+--compilation-defines=CINEMACHINE_PHYSICS
+--compilation-defines=CINEMACHINE_UGUI
+--compilation-defines=CINEMACHINE_LWRP_7_3_1
+--compilation-defines=CINEMACHINE_PIXEL_PERFECT_2_0_3
+--compilation-defines=CINEMACHINE_UNITY_ANIMATION
+--compilation-defines=CINEMACHINE_UNITY_IMGUI
 --compilation-defines=TIMELINE_FRAMEACCURATE
 --compilation-defines=ENABLE_SPRITESHAPE_BURST
 --linker-options=PdbAltPath="Reincarnate_Data/Plugins/x86_64"
@@ -292,6 +309,7 @@ Library: lib_burst_generated
 --root-assembly=C:\Users\flash\Documents\GitHub\Adam and Eve\Temp\StagingArea\Data\Managed\Unity.Burst.dll
 --root-assembly=C:\Users\flash\Documents\GitHub\Adam and Eve\Temp\StagingArea\Data\Managed\Unity.2D.Animation.Runtime.dll
 --root-assembly=C:\Users\flash\Documents\GitHub\Adam and Eve\Temp\StagingArea\Data\Managed\Unity.TextMeshPro.dll
+--root-assembly=C:\Users\flash\Documents\GitHub\Adam and Eve\Temp\StagingArea\Data\Managed\Cinemachine.dll
 --root-assembly=C:\Users\flash\Documents\GitHub\Adam and Eve\Temp\StagingArea\Data\Managed\Unity.Timeline.dll
 --root-assembly=C:\Users\flash\Documents\GitHub\Adam and Eve\Temp\StagingArea\Data\Managed\Assembly-CSharp.dll
 --root-assembly=C:\Users\flash\Documents\GitHub\Adam and Eve\Temp\StagingArea\Data\Managed\Unity.RenderPipeline.Universal.ShaderLibrary.dll
