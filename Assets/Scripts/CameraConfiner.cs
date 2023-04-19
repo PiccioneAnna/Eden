@@ -5,7 +5,6 @@ using Cinemachine;
 
 public class CameraConfiner : MonoBehaviour
 {
-
     [SerializeField] CinemachineConfiner confiner;
 
     // Start is called before the first frame update

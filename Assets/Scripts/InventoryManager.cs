@@ -39,7 +39,7 @@ public class InventoryManager : MonoBehaviour
         if (Input.inputString != null)
         {
             bool isNumber = int.TryParse(Input.inputString, out int number);
-            if (isNumber && number > 0 && number < toolbarCount)
+            if (isNumber && number > 0 && number <= toolbarCount)
             {
                 ChangeSelectedSlot(number - 1);
             }

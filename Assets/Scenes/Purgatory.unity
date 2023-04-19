@@ -317,15 +317,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7410567841273614012, guid: 335995d3b76004544b80fcb94ce1df41, type: 3}
       propertyPath: targetPosition.x
-      value: 17.35
+      value: 22.95
       objectReference: {fileID: 0}
     - target: {fileID: 7410567841273614012, guid: 335995d3b76004544b80fcb94ce1df41, type: 3}
       propertyPath: targetPosition.y
-      value: -14.72
+      value: -16.17
       objectReference: {fileID: 0}
     - target: {fileID: 7410567841273614012, guid: 335995d3b76004544b80fcb94ce1df41, type: 3}
       propertyPath: targetPosition.z
-      value: 0.26573342
+      value: -0.1943707
       objectReference: {fileID: 0}
     - target: {fileID: 7410567841273614012, guid: 335995d3b76004544b80fcb94ce1df41, type: 3}
       propertyPath: sceneNameToTransition

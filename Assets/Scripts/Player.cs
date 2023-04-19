@@ -26,7 +26,7 @@ public class Player : MonoBehaviour
     public Sprite[] spriteArray;
     public Animator animator;
 
-    Vector3 selectedTilePosition;
+    Vector3Int selectedTilePosition;
     bool selectable;
 
     [SerializeField] private float offsetDistance = 1f;
@@ -85,20 +85,12 @@ public class Player : MonoBehaviour
         if (selectedItem == null || selectedItem.usesGrid)
         {
             useGrid = true;
-        }
-        else
-        {
-            useGrid = false;
-        }
-
-        // Determines if UI for grid selection should be shown
-        if (useGrid)
-        {
             CanSelectCheck();
             SelectTile();
         }
         else
         {
+            useGrid = false;
             markerManager.Show(false);
         }
 

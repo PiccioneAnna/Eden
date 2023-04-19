@@ -740,7 +740,7 @@ GameObject:
   - component: {fileID: 539381220}
   - component: {fileID: 539381219}
   m_Layer: 0
-  m_Name: Ground
+  m_Name: BaseTilemap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

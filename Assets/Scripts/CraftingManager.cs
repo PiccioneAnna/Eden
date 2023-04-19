@@ -13,16 +13,7 @@ public class CraftingManager : MonoBehaviour
 
     void Awake()
     {
-        DontDestroyOnLoad(this);
-
-        if (craftingManager == null)
-        {
-            craftingManager = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+        craftingManager = this;
     }
 
     // Start is called before the first frame update

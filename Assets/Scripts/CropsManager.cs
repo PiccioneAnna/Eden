@@ -40,28 +40,46 @@ public class CropsManager : TimeAgent
     [SerializeField] TileBase tilled;
     [SerializeField] Tilemap targetTilemap;
     [SerializeField] Tilemap parentTilemap;
+
+    Tilemap TargetTilemap
+    {
+        get
+        {
+            if(targetTilemap == null)
+            {
+                targetTilemap = UnityEngine.GameObject.Find("Crops").GetComponent<Tilemap>();
+            }
+            return targetTilemap;
+        }
+    }
+
+    Tilemap ParentTilemap
+    {
+        get
+        {
+            if (parentTilemap == null)
+            {
+                parentTilemap = UnityEngine.GameObject.Find("BaseTilemap").GetComponent<Tilemap>();
+            }
+            return parentTilemap;
+        }
+    }
+
     [SerializeField] UnityEngine.GameObject cropsSpritePrefab;
 
     Dictionary<Vector2Int, CropTile> crops;
 
     private void Start()
     {
-        FindCropsTilemap();
         crops = new Dictionary<Vector2Int, CropTile>();
         onTimeTick += Tick;
         Init();
     }
 
-    public void FindCropsTilemap()
-    {
-        if (UnityEngine.GameObject.Find("Crops"))
-        {
-            parentTilemap = UnityEngine.GameObject.Find("Crops").GetComponent<Tilemap>();
-        }
-    }
-
     public void Tick()
     {
+        if (TargetTilemap == null) { return; }
+
         foreach (CropTile cropTile in crops.Values)
         {
             if(cropTile.crop == null) { continue; }
@@ -89,23 +107,21 @@ public class CropsManager : TimeAgent
                 cropTile.growStage += 1;
             }
         }
-
-        // Checks for scene transition
-        if(parentTilemap == null)
-        {
-            FindCropsTilemap();
-        }
     }
 
-    public bool Check(Vector3 position)
+    public bool Check(Vector3Int position)
     {
-        return crops.ContainsKey((Vector2Int)(new Vector3Int((int)position.x, (int)position.y, 0)));
+        if (TargetTilemap == null) { return false; }
+
+        return crops.ContainsKey((Vector2Int)position);
     }
 
-    public void Plow(Vector3 position)
+    public void Plow(Vector3Int position)
     {
+        if (TargetTilemap == null) { return; }
+
         // Checks if there is already crop in the position, otherwise create new crop
-        if (crops.ContainsKey((Vector2Int)(new Vector3Int((int)position.x, (int)position.y, 0))))
+        if (crops.ContainsKey((Vector2Int)position))
         {
             return;
         }
@@ -113,25 +129,22 @@ public class CropsManager : TimeAgent
         CreatePlowedTile(position);
     }
 
-    public void Till(Vector3 position)
+    public void Till(Vector3Int position)
     {
-        if(parentTilemap != null)
-        {
-            parentTilemap.SetTile(new Vector3Int((int)position.x, (int)position.y, 0), tilled);
-        }
+        ParentTilemap.SetTile(new Vector3Int(position.x, position.y, 0), tilled);
     }
 
-    public void Seed(Vector3 position, Crop toSeed)
+    public void Seed(Vector3Int position, Crop toSeed)
     {
-        //targetTilemap.SetTile(position, seeded);
-
-        crops[(Vector2Int)(new Vector3Int((int)position.x, (int)position.y, 0))].crop = toSeed;
+        crops[(Vector2Int)position].crop = toSeed;
     }
 
-    public void PickUp(Vector3 gridPosition)
+    public void PickUp(Vector3Int gridPosition)
     {
-        Vector2Int position = (Vector2Int)(new Vector3Int((int)gridPosition.x, (int)gridPosition.y, 0));
-        Vector3 p = targetTilemap.LocalToWorld(gridPosition);
+        if(TargetTilemap == null) { return; }
+
+        Vector2Int position = (Vector2Int)gridPosition;
+        Vector3 p = TargetTilemap.CellToWorld(gridPosition);
         if (!crops.ContainsKey(position)) { return; }
 
         CropTile cropTile = crops[position];
@@ -140,23 +153,24 @@ public class CropsManager : TimeAgent
         {
             Instantiate(cropTile.crop.yield.obj, new Vector3(p.x, p.y, 0), cropTile.renderer.gameObject.transform.rotation);
             Debug.Log("Crop yielded");
-            targetTilemap.SetTile((new Vector3Int((int)gridPosition.x, (int)gridPosition.y, 0)), plowed);
+            TargetTilemap.SetTile(gridPosition, plowed);
             cropTile.Harvested();
         }
     }
 
-    private void CreatePlowedTile(Vector3 position)
+    private void CreatePlowedTile(Vector3Int position)
     {
+        if (TargetTilemap == null) { return; }
+
         CropTile crop = new CropTile();
-        crops.Add((Vector2Int)(new Vector3Int((int)position.x, (int)position.y, 0)), crop);
+        crops.Add((Vector2Int)position, crop);
 
         // Creates a hidden gameobject on the plowed dirt that will render any crop sprites
         UnityEngine.GameObject go = Instantiate(cropsSpritePrefab);
-        go.transform.position = targetTilemap.LocalToWorld(position);
+        go.transform.position = targetTilemap.CellToWorld(position);
         go.SetActive(false);
         crop.renderer = go.GetComponent<SpriteRenderer>();
 
-        targetTilemap.SetTile((new Vector3Int((int)position.x, (int)position.y, 0)), plowed);
+        TargetTilemap.SetTile(position, plowed);
     }
-
 }

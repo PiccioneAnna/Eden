@@ -46,8 +46,8 @@ public class GameSceneManager : MonoBehaviour
             yield return new WaitForSeconds(0.1f);
         }
 
-        cameraConfiner.UpdateBounds();
         screenTint.UnTint();
+        cameraConfiner.UpdateBounds();
     }
 
     public void SwitchScene(string to, Vector3 targetPosition)
