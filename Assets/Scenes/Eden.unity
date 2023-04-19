@@ -35914,6 +35914,7 @@ Transform:
   - {fileID: 1368781666}
   - {fileID: 1353543974}
   - {fileID: 1931678351}
+  - {fileID: 2146435842}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -41191,6 +41192,76 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4300131769419723399, guid: deb2d5bb0778d9145b1385b470237a23, type: 3}
   m_PrefabInstance: {fileID: 824203564}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2146435841
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2146435842}
+  - component: {fileID: 2146435843}
+  m_Layer: 0
+  m_Name: CameraConfiner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2146435842
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2146435841}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 845985380}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!60 &2146435843
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2146435841}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -15.944167, y: -11.501404}
+      - {x: -7.829385, y: -13.63848}
+      - {x: 4.2382107, y: -14.068088}
+      - {x: 17.317913, y: -9.579866}
+      - {x: 18.939945, y: -1.6020179}
+      - {x: 14.113293, y: 5.8488517}
+      - {x: 7.5854607, y: 10.398686}
+      - {x: -1.3794329, y: 11.87548}
+      - {x: -15.602492, y: 5.5281687}
+      - {x: -19.555923, y: -1.1183404}
+      - {x: -19.469753, y: -3.0393863}
+      - {x: -19.345999, y: -4.6481156}
+      - {x: -18.188574, y: -8.229286}
 --- !u!1001 &8400154987226190618
 PrefabInstance:
   m_ObjectHideFlags: 0

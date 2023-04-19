@@ -25,15 +25,15 @@ public class Transition : MonoBehaviour
 
     internal void InitiateTransition(Transform toTransition)
     {
-        //Cinemachine.CinemachineBrain currentCamera = Camera.main.GetComponent<Cinemachine.CinemachineBrain>();
-
         switch (transitionType)
         {
             case TransitionType.Warp:
-                /*currentCamera.ActiveVirtualCamera.OnTargetObjectWarped(
+                Cinemachine.CinemachineBrain currentCamera = Camera.main.GetComponent<Cinemachine.CinemachineBrain>();
+
+                currentCamera.ActiveVirtualCamera.OnTargetObjectWarped(
                     toTransition,
                     destination.position - toTransition.position
-                    );*/
+                    );
 
                 toTransition.position = new Vector3(
                     destination.position.x, 
@@ -42,7 +42,7 @@ public class Transition : MonoBehaviour
                     );
                 break;
             case TransitionType.Scene:
-                GameSceneManager.instance.SwitchScene(sceneNameToTransition, targetPosition);
+                GameSceneManager.instance.InitSwitchScene(sceneNameToTransition, targetPosition);
                 break;
         }
     }
