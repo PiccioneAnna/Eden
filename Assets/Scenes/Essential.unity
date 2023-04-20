@@ -9892,13 +9892,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41757db1c17977b4fb8687cfceee279f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 275464363}
-  plowed: {fileID: 11400000, guid: bbf613483c5126d4f9379364a8cc3c14, type: 2}
-  seeded: {fileID: 11400000, guid: 956475f6444a3f740a2e4bef5778fcf8, type: 2}
-  tilled: {fileID: 11400000, guid: c0888799171a28e4ab8b55d5d4d95026, type: 2}
-  targetTilemap: {fileID: 0}
-  parentTilemap: {fileID: 0}
-  cropsSpritePrefab: {fileID: 5635910543558292175, guid: 6c75785c97fe25e43aad12e6ce2a7607, type: 3}
+  cropsManager: {fileID: 0}
 --- !u!114 &1407656766
 MonoBehaviour:
   m_ObjectHideFlags: 0
