@@ -24,7 +24,7 @@ public class ResourceNode : ToolHit
         rotation = transform.rotation;
         maxDropCount = resource.maxDropCount;
         minDropCount = resource.minDropCount;
-        dropCount = random.Next(maxDropCount) + minDropCount;
+        dropCount = random.Next(maxDropCount) + minDropCount + (int)transform.localScale.x;
         droppedObjs = resource.droppedObjs;
         health = resource.health;
     }
@@ -48,9 +48,7 @@ public class ResourceNode : ToolHit
                 drop = droppedObjs[random.Next(droppedObjs.Length)];
 
                 // Randomized drop positoning
-                random = new System.Random();
                 offsetX = (float)random.NextDouble() / 4;
-                random = new System.Random();
                 offsetY = (float)random.NextDouble() / 8;
                 multplierX = offsetX % 2 == 2 ? 1 : -1;
                 multplierY = offsetY % 2 == 2 ? 1 : -1;

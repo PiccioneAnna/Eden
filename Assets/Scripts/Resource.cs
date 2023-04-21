@@ -10,6 +10,8 @@ public class Resource : GameObject
     public Item properTool;
     public int maxDropCount = 5;
     public int minDropCount = 1;
+    public int maxScale = 9;
+    public int minScale = 2;
     public bool multisprite = false;
     private int dropCount;
 

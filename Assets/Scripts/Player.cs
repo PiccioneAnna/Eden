@@ -251,7 +251,7 @@ public class Player : MonoBehaviour
                 }
             }
 
-            rigidBody.velocity = inputVector * speed * Time.fixedDeltaTime;
+            rigidBody.velocity = 2 * inputVector * speed * Time.fixedDeltaTime;
         }
     }
 

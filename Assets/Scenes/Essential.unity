@@ -9959,7 +9959,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   dayLightColor: {r: 1, g: 1, b: 1, a: 1}
   text: {fileID: 200185302}
-  timeScale: 1000
+  timeScale: 300
   startAtTime: 28800
   globalLight: {fileID: 2083362312}
 --- !u!114 &1407656767
@@ -9976,7 +9976,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 275464354}
   screenTint: {fileID: 565335987}
-  cameraConfiner: {fileID: 0}
+  cameraConfiner: {fileID: 84863718}
 --- !u!1001 &1418234662
 PrefabInstance:
   m_ObjectHideFlags: 0
