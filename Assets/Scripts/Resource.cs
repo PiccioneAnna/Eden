@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Resource : GameObject
+public class Resource : Object
 {
     public Resource instance;
     public ToolHit toolHit;

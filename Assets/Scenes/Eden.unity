@@ -268,12 +268,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f3262897df0a5a41af112cc34c502fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minSpawnCount: 50
-  maxSpawnCount: 100
+  minSpawnCount: 100
+  maxSpawnCount: 200
   spawnCount: 0
   objects:
   - {fileID: 1204935880875582586, guid: e40be2a7c4d685e43a383eed5c137609, type: 3}
   - {fileID: 4947889941481394425, guid: 1965736996279c34981ef14222dd8094, type: 3}
+  - {fileID: 1204935880875582586, guid: 3cadd126627dea647a06b76fd23d4cab, type: 3}
   outerSpawnArea: {fileID: 320574651}
   innerSpawnArea: {fileID: 1673801586}
 --- !u!4 &536396934
@@ -284,7 +285,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 536396932}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.01, y: -0.8, z: 0}
+  m_LocalPosition: {x: -2.01, y: 1.45, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -61195,7 +61196,7 @@ Tilemap:
   - m_RefCount: 0
     m_Data: {fileID: 0}
   - m_RefCount: 6032
-    m_Data: {fileID: 11400000, guid: 73a83da5adcbcd84dbbee106fc314026, type: 2}
+    m_Data: {fileID: 11400000, guid: b95097a0bba417f47af7a5845f892e7c, type: 2}
   - m_RefCount: 48
     m_Data: {fileID: 11400000, guid: c0888799171a28e4ab8b55d5d4d95026, type: 2}
   m_TileSpriteArray:
@@ -61204,7 +61205,7 @@ Tilemap:
   - m_RefCount: 0
     m_Data: {fileID: 0}
   - m_RefCount: 6032
-    m_Data: {fileID: 21300000, guid: c3886c6e16e2f7b458f0586ff30af217, type: 3}
+    m_Data: {fileID: 21300000, guid: 2360357b01d723642832a3d48214ba64, type: 3}
   - m_RefCount: 0
     m_Data: {fileID: 0}
   - m_RefCount: 48
@@ -61234,7 +61235,7 @@ Tilemap:
   - m_RefCount: 6080
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   - m_RefCount: 0
-    m_Data: {r: 7.62514e-40, g: 7.62514e-40, b: 7.62514e-40, a: 7.62514e-40}
+    m_Data: {r: 7.8543e-41, g: 7.8543e-41, b: 7.8543e-41, a: 7.8543e-41}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}

@@ -131,7 +131,7 @@ MonoBehaviour:
   properTool: {fileID: 11400000, guid: 3473f411a5d106046a5f2fdb9f12e346, type: 2}
   maxDropCount: 5
   minDropCount: 1
-  maxScale: 4
+  maxScale: 3
   minScale: 1
   multisprite: 1
   drops: []

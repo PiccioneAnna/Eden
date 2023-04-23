@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5524967611745176548}
   - component: {fileID: 1576646500317369282}
   m_Layer: 0
-  m_Name: MB1
+  m_Name: MHouse
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 151665593126150858}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -9.13, y: 5.55, z: -0.10752362}
-  m_LocalScale: {x: 30, y: 30, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: 139672157, guid: 43d1fad916b339b48be252d5d8afa604, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fb26d6e2cfe9c884c8b59e28b1c532dc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -102,11 +102,13 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: 0.04732005, y: 0.097176254}
-  - {x: -0.23376027, y: -0.06319699}
-  - {x: -0.09012262, y: -0.14634198}
-  - {x: 0.19140793, y: 0.020593688}
-  - {x: 0.04726582, y: 0.09567707}
+  - {x: 0.6355629, y: 2.2484646}
+  - {x: -5.9649267, y: -1.9791881}
+  - {x: -2.3254461, y: -3.927903}
+  - {x: 1.0359422, y: -1.9614913}
+  - {x: 4.6284404, y: 0.12143552}
+  - {x: 0.7531571, y: 2.381421}
+  - {x: 0.030458927, y: 1.8772128}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0

@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63baacb602b46044f932c5d17940cf5f, type: 3}
+  m_Name: Blueberries
+  m_EditorClassIdentifier: 
+  tile: {fileID: 0}
+  itemName: Blueberries
+  type: 1
+  actionType: 5
+  usesGrid: 0
+  range: {x: 5, y: 4}
+  crop: {fileID: 11400000, guid: 1700e8a81f9de6d459486e3cdd106a74, type: 2}
+  stackable: 1
+  recipe: {fileID: 0}
+  obj: {fileID: 3540848023464446278, guid: 2409a34bcbd550f4fb4da069d9f729e9, type: 3}
+  image: {fileID: -1109313102, guid: ca4739c72d4c1fe47aae419c67eee24e, type: 3}
+  onAction: {fileID: 0}
+  onTileMapAction: {fileID: 0}
+  onItemUsed: {fileID: 0}

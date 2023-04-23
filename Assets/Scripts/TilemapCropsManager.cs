@@ -49,27 +49,32 @@ public class TilemapCropsManager : TimeAgent
         {
             if (cropTile.crop == null) { continue; }
 
-            cropTile.damage += 0.02f;
+            //cropTile.damage += 0.02f;
 
+            // If crop ages beyond it's life then wither
             if (cropTile.damage > 1f)
             {
                 cropTile.Harvested();
                 continue;
             }
 
+            // If the crop is ready to harvest don't do anything
             if (cropTile.Complete)
             {
                 continue;
             }
 
             cropTile.growTimer += 1;
-
+            // Update sprite growth based on time
             if (cropTile.growTimer >= cropTile.crop.growthStageTime[cropTile.growStage])
             {
-                cropTile.renderer.gameObject.SetActive(true);
-                cropTile.renderer.sprite = cropTile.crop.sprites[cropTile.growStage];
+                if(cropTile.growStage < cropTile.crop.growthStageTime.Count)
+                {
+                    cropTile.renderer.gameObject.SetActive(true);
+                    cropTile.renderer.sprite = cropTile.crop.sprites[cropTile.growStage];
 
-                cropTile.growStage += 1;
+                    cropTile.growStage += 1;
+                }
             }
         }
     }
@@ -112,7 +117,14 @@ public class TilemapCropsManager : TimeAgent
             Instantiate(tile.crop.yield.obj, new Vector3(p.x, p.y, 0), tile.renderer.gameObject.transform.rotation);
             Debug.Log("Crop yielded");
 
-            tile.Harvested();
+            if (!tile.crop.multiHarvest)
+            {
+                tile.Harvested();
+            }
+            else
+            {
+                tile.Regrowth();
+            }
             VisualizeTile(tile);
         }
     }

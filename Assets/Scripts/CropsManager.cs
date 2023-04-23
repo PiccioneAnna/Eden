@@ -31,11 +31,18 @@ public class CropTile
         crop = null;
         renderer.gameObject.SetActive(false);
     }
+
+    internal void Regrowth()
+    {
+        growTimer = crop.growthStageTime[crop.growthStageTime.Count-2];
+        growStage = crop.sprites.Count-1;
+    }
 }
 
 public class CropsManager : MonoBehaviour
 {
     public TilemapCropsManager cropsManager;
+    public QuestManager questManager;
 
     public void PickUp(Vector3Int position)
     {
@@ -70,6 +77,7 @@ public class CropsManager : MonoBehaviour
             return;
         }
         cropsManager.Plow(position);
+        questManager.Hoe();
     }
 
     public void Till(Vector3Int position)

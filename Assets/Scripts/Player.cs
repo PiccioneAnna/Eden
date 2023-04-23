@@ -21,7 +21,10 @@ public class Player : MonoBehaviour
     public Image inventoryUI;
     public Image statsUI;
     public Image craftingUI;
+    public Image questsUI;
+    public QuestWindow questWindow;
     public Image settingsUI;
+    public GameObject[] invBtns;
     public Image[] mainInteractionUI;
     public Sprite[] spriteArray;
     public Animator animator;
@@ -47,7 +50,6 @@ public class Player : MonoBehaviour
 
     void Awake()
     {
-        mainInteractionUI = new Image[] { inventoryUI, craftingUI, settingsUI };
         player = this;
     }
 
@@ -113,35 +115,74 @@ public class Player : MonoBehaviour
         }
     }
 
+    #region UI
+
     public void OpenMenus()
     {
         // Check for open inventory
         if (Input.GetKeyDown(KeyCode.I))
         {
-            bool isActive = !inventoryUI.gameObject.activeSelf;
-            inventoryUI.gameObject.SetActive(isActive);
-            SetUIHidden(inventoryUI);
+            OpenInventory();
         }
         // Checks for open crafting menu
         if (Input.GetKeyDown(KeyCode.C))
         {
-            bool isActive = !craftingUI.gameObject.activeSelf;
-            craftingUI.gameObject.SetActive(isActive);
-            SetUIHidden(craftingUI);
+            OpenCrafting();
+        }
+        // Checks for open quests menu
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            OpenQuests();
         }
         // Checks for open settings menu
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            bool isActive = !settingsUI.gameObject.activeSelf;
-            settingsUI.gameObject.SetActive(isActive);
-            SetUIHidden(settingsUI);
+            OpenSettings();
         }
-        // Checks for open stats menu
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            bool isActive = !statsUI.gameObject.activeSelf;
-            statsUI.gameObject.SetActive(isActive);
-        }
+    }
+
+    public void OpenInventory()
+    {
+        bool isActive = !inventoryUI.gameObject.activeSelf;
+        inventoryUI.gameObject.SetActive(isActive);
+        invBtns[0].gameObject.SetActive(false);
+        invBtns[1].gameObject.SetActive(true);
+        invBtns[2].gameObject.SetActive(true);
+        invBtns[3].gameObject.SetActive(true);
+        SetUIHidden(inventoryUI);
+    }
+
+    public void OpenCrafting()
+    {
+        bool isActive = !craftingUI.gameObject.activeSelf;
+        craftingUI.gameObject.SetActive(isActive);
+        invBtns[0].gameObject.SetActive(true);
+        invBtns[1].gameObject.SetActive(false);
+        invBtns[2].gameObject.SetActive(true);
+        invBtns[3].gameObject.SetActive(true);
+        SetUIHidden(craftingUI);
+    }
+
+    public void OpenQuests()
+    {
+        bool isActive = !questsUI.gameObject.activeSelf;
+        questsUI.gameObject.SetActive(isActive);
+        invBtns[0].gameObject.SetActive(true);
+        invBtns[1].gameObject.SetActive(true);
+        invBtns[2].gameObject.SetActive(false);
+        invBtns[3].gameObject.SetActive(true);
+        SetUIHidden(questsUI);
+    }
+
+    public void OpenSettings()
+    {
+        bool isActive = !settingsUI.gameObject.activeSelf;
+        settingsUI.gameObject.SetActive(isActive);
+        invBtns[0].gameObject.SetActive(true);
+        invBtns[1].gameObject.SetActive(true);
+        invBtns[2].gameObject.SetActive(true);
+        invBtns[3].gameObject.SetActive(false);
+        SetUIHidden(settingsUI);
     }
 
     public void SetUIHidden(Image openUI)
@@ -153,7 +194,8 @@ public class Player : MonoBehaviour
                 img.gameObject.SetActive(false);
             }
         }
-    }
+    } 
+    #endregion
 
     public void ProcessMovement()
     {
@@ -173,82 +215,96 @@ public class Player : MonoBehaviour
             // Check for sprint
             speed = Input.GetKey(KeyCode.LeftShift) ? sprintSpeed : normalSpeed;
 
-            // Prevents movement if inventory is open
-            if (inventoryUI.gameObject.activeSelf)
+            // Prevents movement if menu is open
+            for (int i = 0; i < mainInteractionUI.Length; i++)
             {
-                speed = 0;
-                animator.SetFloat("Speed", 0.0f);
-            }
-            else
-            {
-                speed = normalSpeed;
-                // Checking for bottom diagonals first (WD & AS)
-                if ((horizontalInput > 0 && verticalInput > 0) || (horizontalInput < 0 && verticalInput < 0))
+                if (mainInteractionUI[i].gameObject.activeSelf == true)
                 {
-                    inputVector = new Vector2(inputVector.x, inputVector.y / 4);
-                    speed = speed * 1.2f;
-                }
-
-                // Player presses w
-                if (verticalInput > 0)
-                {
-                    animator.SetFloat("Speed", 1.0f);
-                    animator.SetInteger("Direction", 0);
-                }
-                // Player presses s
-                if (verticalInput < 0)
-                {
-                    animator.SetFloat("Speed", 1.0f);
-                    animator.SetInteger("Direction", 4);
-                }
-                // Player presses d
-                if (horizontalInput > 0)
-                {
-                    animator.SetFloat("Speed", 1.0f);
-                    animator.SetInteger("Direction", 2);
-                }
-                // Player presses a
-                if (horizontalInput < 0)
-                {
-                    animator.SetFloat("Speed", 1.0f);
-                    animator.SetInteger("Direction", 6);
-                }
-
-                // Setting Animator settings for diagonals
-                // WD Animation
-                if (horizontalInput > 0 && verticalInput > 0)
-                {
-                    animator.SetFloat("Speed", 1.0f);
-                    animator.SetInteger("Direction", 1);
-                }
-
-                // SD Animation
-                if (horizontalInput > 0 && verticalInput < 0)
-                {
-                    animator.SetFloat("Speed", 1.0f);
-                    animator.SetInteger("Direction", 3);
-                }
-
-                // SA Animation
-                if (horizontalInput < 0 && verticalInput < 0)
-                {
-                    animator.SetFloat("Speed", 1.0f);
-                    animator.SetInteger("Direction", 5);
-                }
-
-                // WA Animation
-                if (horizontalInput < 0 && verticalInput > 0)
-                {
-                    animator.SetFloat("Speed", 1.0f);
-                    animator.SetInteger("Direction", 7);
-                }
-
-                // If the player isn't pressing anythingw
-                if (horizontalInput == 0 && verticalInput == 0)
-                {
+                    speed = 0;
                     animator.SetFloat("Speed", 0.0f);
-                    rigidBody.velocity = new Vector2(0, 0);
+                    invBtns[0].gameObject.SetActive(true);
+                    invBtns[1].gameObject.SetActive(true);
+                    invBtns[2].gameObject.SetActive(true);
+                    invBtns[3].gameObject.SetActive(true);
+                    invBtns[i].gameObject.SetActive(false);
+
+                    return;
                 }
+            }
+
+            invBtns[0].gameObject.SetActive(false);
+            invBtns[1].gameObject.SetActive(false);
+            invBtns[2].gameObject.SetActive(false);
+            invBtns[3].gameObject.SetActive(false);
+            questWindow.CloseWindow();
+
+            speed = normalSpeed;
+            // Checking for bottom diagonals first (WD & AS)
+            if ((horizontalInput > 0 && verticalInput > 0) || (horizontalInput < 0 && verticalInput < 0))
+            {
+                inputVector = new Vector2(inputVector.x, inputVector.y / 4);
+                speed = speed * 1.2f;
+            }
+
+            // Player presses w
+            if (verticalInput > 0)
+            {
+                animator.SetFloat("Speed", 1.0f);
+                animator.SetInteger("Direction", 0);
+            }
+            // Player presses s
+            if (verticalInput < 0)
+            {
+                animator.SetFloat("Speed", 1.0f);
+                animator.SetInteger("Direction", 4);
+            }
+            // Player presses d
+            if (horizontalInput > 0)
+            {
+                animator.SetFloat("Speed", 1.0f);
+                animator.SetInteger("Direction", 2);
+            }
+            // Player presses a
+            if (horizontalInput < 0)
+            {
+                animator.SetFloat("Speed", 1.0f);
+                animator.SetInteger("Direction", 6);
+            }
+
+            // Setting Animator settings for diagonals
+            // WD Animation
+            if (horizontalInput > 0 && verticalInput > 0)
+            {
+                animator.SetFloat("Speed", 1.0f);
+                animator.SetInteger("Direction", 1);
+            }
+
+            // SD Animation
+            if (horizontalInput > 0 && verticalInput < 0)
+            {
+                animator.SetFloat("Speed", 1.0f);
+                animator.SetInteger("Direction", 3);
+            }
+
+            // SA Animation
+            if (horizontalInput < 0 && verticalInput < 0)
+            {
+                animator.SetFloat("Speed", 1.0f);
+                animator.SetInteger("Direction", 5);
+            }
+
+            // WA Animation
+            if (horizontalInput < 0 && verticalInput > 0)
+            {
+                animator.SetFloat("Speed", 1.0f);
+                animator.SetInteger("Direction", 7);
+            }
+
+            // If the player isn't pressing anything
+            if (horizontalInput == 0 && verticalInput == 0)
+            {
+                animator.SetFloat("Speed", 0.0f);
+                rigidBody.velocity = new Vector2(0, 0);
             }
 
             rigidBody.velocity = 2 * inputVector * speed * Time.fixedDeltaTime;
