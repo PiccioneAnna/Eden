@@ -34,6 +34,7 @@ public class Player : MonoBehaviour
 
     [SerializeField] private float offsetDistance = 1f;
     [SerializeField] private float speed;
+    [SerializeField] private float sizeOfIA;
     [SerializeField] float maxDistance = 1.5f;
     private float normalSpeed;
     private float sprintSpeed;
@@ -102,15 +103,19 @@ public class Player : MonoBehaviour
         // If player interacts
         if (Input.GetMouseButtonDown(0))
         {
-            // Check if user is using world tool or grid tool
-            if (useGrid)
+            Interact();
+            if (!isInteract)
             {
-                UseToolGrid();
-                // Marks UI
-            }
-            else
-            {
-                UseToolWorld();
+                // Check if user is using world tool or grid tool
+                if (useGrid)
+                {
+                    UseToolGrid();
+                    // Marks UI
+                }
+                else
+                {
+                    UseToolWorld();
+                }
             }
         }
     }
@@ -222,6 +227,8 @@ public class Player : MonoBehaviour
                 {
                     speed = 0;
                     animator.SetFloat("Speed", 0.0f);
+                    rigidBody.velocity = 2 * inputVector * speed * Time.fixedDeltaTime;
+
                     invBtns[0].gameObject.SetActive(true);
                     invBtns[1].gameObject.SetActive(true);
                     invBtns[2].gameObject.SetActive(true);
@@ -374,6 +381,22 @@ public class Player : MonoBehaviour
                 {
                     selectedItem.onItemUsed.OnItemUsed(selectedItem, inventoryManager);
                 }
+            }
+        }
+    }
+
+    private void Interact()
+    {
+        Vector2 position = rigidBody.position + direction * offsetDistance;
+
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(position, sizeOfIA);
+
+        foreach (Collider2D c in colliders)
+        {
+            Interactable obj = c.GetComponent<Interactable>();
+            if(obj != null)
+            {
+                obj.Interact(player);
             }
         }
     }

@@ -77,7 +77,6 @@ public class CropsManager : MonoBehaviour
             return;
         }
         cropsManager.Plow(position);
-        questManager.Hoe();
     }
 
     public void Till(Vector3Int position)

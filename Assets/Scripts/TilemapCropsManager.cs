@@ -14,10 +14,12 @@ public class TilemapCropsManager : TimeAgent
 
     Tilemap targetTilemap;
     public Tilemap parentTilemap;
+    private QuestManager questManager;
 
     private void Start()
     {
         GameManager.instance.GetComponent<CropsManager>().cropsManager = this; // Reporting this to this to prevent multi checks
+        questManager = GameManager.instance.GetComponent<CropsManager>().questManager;
         targetTilemap = GetComponent<Tilemap>();
         onTimeTick += Tick;
         Init();
@@ -88,6 +90,7 @@ public class TilemapCropsManager : TimeAgent
     {
         if(Check(position) == true) { return; }
         CreatePlowedTile(position);
+        questManager.Hoe();
     }
 
     public void Till(Vector3Int position)
@@ -102,6 +105,8 @@ public class TilemapCropsManager : TimeAgent
         if (tile == null) { return; }
 
         tile.crop = toSeed;
+        questManager.Seed(toSeed);
+        Tick();
     }
 
     public void PickUp(Vector3Int gridPosition)
@@ -116,6 +121,7 @@ public class TilemapCropsManager : TimeAgent
         {
             Instantiate(tile.crop.yield.obj, new Vector3(p.x, p.y, 0), tile.renderer.gameObject.transform.rotation);
             Debug.Log("Crop yielded");
+            questManager.Harvest(tile.crop);
 
             if (!tile.crop.multiHarvest)
             {
@@ -131,7 +137,7 @@ public class TilemapCropsManager : TimeAgent
 
     public void VisualizeTile(CropTile cropTile)
     {
-        parentTilemap.SetTile(new Vector3Int(cropTile.position.x, cropTile.position.y, 0), cropTile.crop != null ? plowed : tilled);
+        targetTilemap.SetTile(new Vector3Int(cropTile.position.x, cropTile.position.y, 0), plowed);
 
         if (cropTile.renderer == null)
         {

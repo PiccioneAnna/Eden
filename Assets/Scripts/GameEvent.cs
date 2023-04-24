@@ -21,7 +21,38 @@ public class HoeGameEvent : GameEvent
     public HoeGameEvent() { }
 }
 
-public class ChopTreeGameEvent : GameEvent
+public class SeedGameEvent : GameEvent
 {
-    public ChopTreeGameEvent() { }
+    public Crop crop;
+    public SeedGameEvent(Crop c)
+    {
+        crop = c;
+    }
+}
+
+public class HarvestGameEvent : GameEvent
+{
+    public Crop crop;
+    public HarvestGameEvent(Crop c)
+    {
+        crop = c;
+    }
+}
+
+public class ClearObjectGameEvent : GameEvent
+{
+    public Resource resource;
+    public ClearObjectGameEvent(Resource r) 
+    {
+        resource = r;
+    }
+}
+
+public class VisitGameEvent : GameEvent
+{
+    public string scene;
+    public VisitGameEvent(string s)
+    {
+        scene = s;
+    }
 }

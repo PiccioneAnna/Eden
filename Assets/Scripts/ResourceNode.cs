@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ResourceNode : ToolHit
 {
+    public QuestManager questManager;
     public Resource resource;
     private int health;
     // Randomized drops
@@ -42,6 +43,7 @@ public class ResourceNode : ToolHit
         if (health <= 0)
         {
             Debug.Log("Drop Count:" + dropCount);
+
             for (int i = 0; i < dropCount; i++)
             {
                 random = new System.Random();
@@ -55,9 +57,12 @@ public class ResourceNode : ToolHit
 
                 // Randomized drop
                 position = new Vector3(position.x + (multplierX * offsetX), position.y + (multplierY * offsetY), position.z);
+                Debug.Log(position);
                 Instantiate(drop, position, rotation);
             }
             Destroy(gameObject);
+            questManager = GameObject.Find("GameManager").GetComponent<GameManager>().questManager;
+            questManager.ClearObject(resource);
         }
     }
 

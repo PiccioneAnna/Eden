@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
         instance = this;
     }
 
-    public UnityEngine.GameObject player;
+    public Player player;
     public DayTimeController timeController;
+    public QuestManager questManager;
+    public DialogueSystem dialogueSystem;
 }

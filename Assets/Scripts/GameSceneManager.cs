@@ -48,6 +48,7 @@ public class GameSceneManager : MonoBehaviour
 
         UnityEngine.SceneManagement.SceneManager.SetActiveScene(UnityEngine.SceneManagement.SceneManager.GetSceneByName(currentScene));
 
+        instance.GetComponent<GameManager>().questManager.Visit(to);
         cameraConfiner.UpdateBounds();
         screenTint.UnTint();
     }

@@ -1,0 +1,77 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-9201499402032938193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 945461058e31ec44dbea379d32260b37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RequiredAmount: 10
+  GoalCompleted:
+    m_PersistentCalls:
+      m_Calls: []
+  obj: {fileID: 4947889941481394425, guid: 1965736996279c34981ef14222dd8094, type: 3}
+--- !u!114 &-7309320012681383697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 945461058e31ec44dbea379d32260b37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RequiredAmount: 5
+  GoalCompleted:
+    m_PersistentCalls:
+      m_Calls: []
+  obj: {fileID: 1204935880875582586, guid: 3cadd126627dea647a06b76fd23d4cab, type: 3}
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f62c75f3734215140895d8f9c4d169a5, type: 3}
+  m_Name: Cleaning Up
+  m_EditorClassIdentifier: 
+  Information:
+    Name: Cleaning Up
+    Icon: {fileID: 0}
+    Description: It's looking a bit overgrown around...
+  Reward:
+    currency: 10
+    items: []
+    xP: 10
+  Goals:
+  - {fileID: -9201499402032938193}
+  - {fileID: 6254155043334139050}
+  - {fileID: -7309320012681383697}
+--- !u!114 &6254155043334139050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 945461058e31ec44dbea379d32260b37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RequiredAmount: 10
+  GoalCompleted:
+    m_PersistentCalls:
+      m_Calls: []
+  obj: {fileID: 1204935880875582586, guid: e40be2a7c4d685e43a383eed5c137609, type: 3}

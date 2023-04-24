@@ -29,15 +29,7 @@ public class CollisionManager : MonoBehaviour
 
     void DetermineCollisionType(Collider2D collider)
     {
-        // Collect dropped materials
-        if (collider.gameObject.tag == "Material")
-        {
-            Debug.Log("Dropped " + collider.gameObject.GetComponentInChildren<Drop>().item);
-            if (player.inventoryManager.AddItem(collider.gameObject.GetComponentInChildren<Drop>().item))
-            {
-                Destroy(collider.gameObject); 
-            }
-        }
+
     }
 
     public bool CorrectTool(UnityEngine.GameObject obj)

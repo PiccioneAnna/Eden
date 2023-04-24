@@ -43,8 +43,27 @@ public class QuestManager : MonoBehaviour
 
     public void Hoe()
     {
-        Debug.Log("Hoe Event");
         EventManager.Instance.TriggerEvent(new HoeGameEvent());
+    }
+
+    public void Seed(Crop crop)
+    {
+        EventManager.Instance.TriggerEvent(new SeedGameEvent(crop));
+    }
+
+    public void Harvest(Crop crop)
+    {
+        EventManager.Instance.TriggerEvent(new HarvestGameEvent(crop));
+    }
+
+    public void ClearObject(Resource resource)
+    {
+        EventManager.Instance.TriggerEvent(new ClearObjectGameEvent(resource));
+    }
+
+    public void Visit(string scene)
+    {
+        EventManager.Instance.TriggerEvent(new VisitGameEvent(scene));
     }
 
     private void OnQuestCompleted(Quest quest)

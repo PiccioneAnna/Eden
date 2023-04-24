@@ -8,6 +8,7 @@ public class Resource : Object
     public Resource instance;
     public ToolHit toolHit;
     public Item properTool;
+    public string name;
     public int maxDropCount = 5;
     public int minDropCount = 1;
     public int maxScale = 9;

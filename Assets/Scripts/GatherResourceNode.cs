@@ -7,7 +7,6 @@ public enum ResourceNodeType
     Undefined,
     Tree,
     Mine,
-
 }
 
 [CreateAssetMenu(menuName="Data/Tool Action/Gather Resource Node")]

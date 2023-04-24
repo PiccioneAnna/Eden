@@ -27,13 +27,14 @@ public class QuestWindow : MonoBehaviour
 
             if (goal.Completed)
             {
-                countObj.SetActive(false);
                 goalObj.transform.Find("Done").gameObject.SetActive(true);
+                countObj.GetComponent<Text>().text = goal.RequiredAmount + "/" + goal.RequiredAmount;
             }
             else
             {
                 countObj.GetComponent<Text>().text = goal.CurrentAmount + "/" + goal.RequiredAmount;
             }
+
         }
     }
 
