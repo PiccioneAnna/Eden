@@ -14,7 +14,8 @@ public class DialogueSystem : MonoBehaviour
     DialogueContainer currentDialogue;
     int currentTextLine;
 
-    Player player;
+    public Player player;
+    public QuestManager questManager;
 
     [Range(0f,1f)]
     [SerializeField] float visibleTextPercent;
@@ -103,6 +104,37 @@ public class DialogueSystem : MonoBehaviour
     {
         Debug.Log("The dialogue has ended");
         player.isInteract = false;
+        RecieveItem();
+        RecieveQuest();
         Show(false);
+    }
+
+    // Adds amount of items to inventory if there are any to be added
+    private void RecieveItem()
+    {
+        if (currentDialogue.items.Count != 0)
+        {
+            for (int i = 0; i < currentDialogue.items.Count; i++)
+            {
+                for (int j = 0; j < currentDialogue.itemsCount.Count; j++)
+                {
+                    player.inventoryManager.AddItem(currentDialogue.items[i]);
+                    Debug.Log("Recieved " + currentDialogue.itemsCount[i] + " " + currentDialogue.items[i]);
+                }
+            }
+        }
+    }
+
+    // Adds a quest to quest manager
+    private void RecieveQuest()
+    {
+        if(currentDialogue.quests.Count != 0)
+        {
+            for (int i = 0; i < currentDialogue.quests.Count; i++)
+            {
+                questManager.AddQuest(currentDialogue.quests[i]);
+                Debug.Log("Quest Active : " + currentDialogue.quests[i].name);
+            }
+        }
     }
 }

@@ -7,4 +7,7 @@ public class DialogueContainer : ScriptableObject
 {
     public List<string> line;
     public Actor actor;
+    public List<Item> items;
+    public List<int> itemsCount;
+    public List<Quest> quests;
 }

@@ -43,6 +43,31 @@ public class InventoryManager : MonoBehaviour
             {
                 ChangeSelectedSlot(number - 1);
             }
+            if (Input.mouseScrollDelta.y != 0)
+            {
+                if (Input.mouseScrollDelta.y > 0)
+                {
+                    if(selectedSlot < toolbarCount && selectedSlot >= 1)
+                    {
+                        ChangeSelectedSlot(selectedSlot - 1); 
+                    }
+                    else
+                    {
+                        ChangeSelectedSlot(toolbarCount-1);
+                    }
+                }
+                if (Input.mouseScrollDelta.y < 0)
+                {
+                    if (selectedSlot < toolbarCount-1)
+                    {
+                        ChangeSelectedSlot(selectedSlot + 1); 
+                    }
+                    else
+                    {
+                        ChangeSelectedSlot(0);
+                    }
+                }
+            }
         }
     }
 

@@ -11,24 +11,21 @@ public class Resource : Object
     public string name;
     public int maxDropCount = 5;
     public int minDropCount = 1;
-    public int maxScale = 9;
-    public int minScale = 2;
+    public float maxScale = 3;
+    public float minScale = 2;
     public bool multisprite = false;
     private int dropCount;
 
     public Item[] drops;
     public UnityEngine.GameObject[] droppedObjs;
     public Sprite[] sprites;
+    public Vector3[] rotations;
+    public Vector3[] positions;
     public int health;
     private int originalHealth;
 
-    Quaternion rotation;
-
     void Awake()
     {
-        position = instance.transform.position;
-        rotation = instance.transform.rotation;
-
         originalHealth = health;
 
         System.Random random = new System.Random();
@@ -43,7 +40,7 @@ public class Resource : Object
     {
         anim.SetTrigger("Shake");
     }
-    
+
     // Changes a tree's display based on health
     public void HitTree(int h)
     {
@@ -51,36 +48,35 @@ public class Resource : Object
         Debug.Log("Current Health: " + h);
         Debug.Log("Old Health: " + originalHealth);
         Debug.Log("health percent" + healthPercent);
-        int sprite = 0;
+        int index = 0;
 
         if (healthPercent >= .9f)
         {
             return;
         }
-        else if (healthPercent >= .7f)
-        {
-            sprite = 1;
-        }
         else if (healthPercent >= .5f)
         {
-            sprite = 2;
+            index = 1;
         }
         else
         {
-            sprite = 3;
+            index = 2;
         }
 
-        if (instance.transform.GetComponent<SpriteRenderer>() != null && sprites != null)
-        {
-            instance.transform.GetComponent<SpriteRenderer>().sprite = sprites[sprite];
-        }
+        Vector3 newRotation = rotations[index];
+        Vector3 newPosition = positions[index];
+
+        gameObject.transform.rotation = Quaternion.Euler(newRotation);
+        gameObject.transform.localPosition = newPosition;
     }
 
-    public void TakeDamage()
+    public void TakeDamage() 
     {
+   
         health--;
+   
         Debug.Log(health);
-
-        toolHit.Hit();
+   
+        toolHit.Hit();  
     }
 }

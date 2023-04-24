@@ -15,6 +15,8 @@ public class EnviroSpawnManager : MonoBehaviour
     public SpriteRenderer outerSpawnArea;
     public SpriteRenderer innerSpawnArea;
 
+    public PolygonCollider2D collider2D;
+
     private float outerRadius;
     private float innerRadius;
 
@@ -65,10 +67,19 @@ public class EnviroSpawnManager : MonoBehaviour
     {
         // Randomized scale
         Resource resource = drop.GetComponent<ResourceNode>().resource;
-        int s = random.Next(resource.maxScale);
+        float s = Random.Range(resource.minScale, resource.maxScale);
         scale = new Vector3(s, s, 0);
-
         RandomPosition();
+
+        // Checks if object is trying to spawn somewhere it shouldn't
+        if (collider2D.OverlapPoint(new Vector2(position.x, position.y)))
+        {
+            Debug.Log("Collision detected in spawning object, fixing point");
+            while (collider2D.OverlapPoint(new Vector2(position.x, position.y)))
+            {
+                RandomPosition();
+            }
+        }
 
         UnityEngine.GameObject go = Instantiate(drop, position + transform.position, rotation, this.transform);
         go.gameObject.transform.localScale = scale;
