@@ -12,6 +12,8 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     [HideInInspector] public Image image;
     [HideInInspector] public Text countText;
 
+    public bool isCraftingSlot = false;
+
     public Item item;
     public int count = 1;
     [HideInInspector] public Transform parentAfterDrag;
@@ -40,22 +42,31 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     // Drag and Drop
     public void OnBeginDrag(PointerEventData eventData)
     {
-        image.raycastTarget = false;
-        countText.raycastTarget = false;
-        parentAfterDrag = transform.parent;
-        transform.SetParent(transform.parent.parent.parent);
-        transform.SetAsLastSibling();
+        if (!isCraftingSlot)
+        {
+            image.raycastTarget = false;
+            countText.raycastTarget = false;
+            parentAfterDrag = transform.parent;
+            transform.SetParent(transform.parent.parent.parent);
+            transform.SetAsLastSibling();
+        }
     }
 
     public void OnDrag(PointerEventData eventData)
     {
-        transform.position = Input.mousePosition;
+        if (!isCraftingSlot)
+        {
+            transform.position = Input.mousePosition;
+        }
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        image.raycastTarget = true;
-        countText.raycastTarget = true;
-        transform.SetParent(parentAfterDrag);
+        if (!isCraftingSlot)
+        {
+            image.raycastTarget = true;
+            countText.raycastTarget = true;
+            transform.SetParent(parentAfterDrag);
+        }
     }
 }

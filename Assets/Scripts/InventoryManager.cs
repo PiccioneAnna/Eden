@@ -159,7 +159,7 @@ public class InventoryManager : MonoBehaviour
 
         if(inventorySlot == null) { return false; }
 
-        if (itemtoCheck.item.stackable) { return inventorySlot.inventoryItem.count > itemtoCheck.count; }
+        if (itemtoCheck.item.stackable) { return inventorySlot.inventoryItem.count >= itemtoCheck.count; }
 
         return true;
     }
@@ -182,7 +182,7 @@ public class InventoryManager : MonoBehaviour
 
             inventorySlot.inventoryItem.RefreshCount();
 
-            if(inventorySlot.inventoryItem.count < 0)
+            if(inventorySlot.inventoryItem.count <= 0)
             {
                 inventorySlot.Clear();
             }

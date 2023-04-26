@@ -31,7 +31,7 @@ public class InventorySlot : MonoBehaviour, IDropHandler
     // Drag and Drop
     public void OnDrop(PointerEventData eventData)
     {
-        if (transform.childCount == 0)
+        if (transform.childCount == 0 && !inventoryItem.isCraftingSlot)
         {
             inventoryItem = eventData.pointerDrag.GetComponent<InventoryItem>();
             inventoryItem.parentAfterDrag = transform;
@@ -41,7 +41,7 @@ public class InventorySlot : MonoBehaviour, IDropHandler
     public void Clear()
     {
         inventoryItem = GetComponentInChildren<InventoryItem>();
-        inventoryItem = null;
+        Destroy(inventoryItem.gameObject);
     }
 
     public void CraftButton()

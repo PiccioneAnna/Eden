@@ -38,6 +38,8 @@ public class CraftingManager : MonoBehaviour
             {
                 SpawnNewItem(item, slot);
                 slot.ItemInSlot = item;
+                slot.GetComponentInChildren<InventoryItem>().isCraftingSlot = true;
+                slot.image.color = Color.clear;
                 return true;
             }
         }
