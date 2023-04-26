@@ -141,13 +141,17 @@ public class InventoryManager : MonoBehaviour
         return false;
     }
 
-    public bool CheckItem(InventorySlot itemtoCheck)
+    public bool CheckItem(RecipeElement itemtoCheck)
     {
         InventorySlot inventorySlot = null;
 
         foreach (InventorySlot slot in inventorySlots)
         {
-            if(slot.inventoryItem.item == itemtoCheck.inventoryItem.item)
+            slot.inventoryItem = slot.gameObject.GetComponentInChildren<InventoryItem>();
+
+            if (slot.inventoryItem != null && 
+                slot.inventoryItem.item != null && 
+                slot.inventoryItem.item == itemtoCheck.item)
             {
                 inventorySlot = slot;
             }
@@ -155,7 +159,7 @@ public class InventoryManager : MonoBehaviour
 
         if(inventorySlot == null) { return false; }
 
-        if (itemtoCheck.item.stackable) { return inventorySlot.inventoryItem.count > itemtoCheck.inventoryItem.count; }
+        if (itemtoCheck.item.stackable) { return inventorySlot.inventoryItem.count > itemtoCheck.count; }
 
         return true;
     }
@@ -174,8 +178,11 @@ public class InventoryManager : MonoBehaviour
             }
             if (inventorySlot == null) { return; }
 
-            inventorySlot.GetComponent<InventoryItem>().count -= count;
-            if(inventorySlot.GetComponent<InventoryItem>().count < 0)
+            inventorySlot.inventoryItem.count -= count;
+
+            inventorySlot.inventoryItem.RefreshCount();
+
+            if(inventorySlot.inventoryItem.count < 0)
             {
                 inventorySlot.Clear();
             }

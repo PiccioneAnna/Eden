@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 using UnityEngine.Tilemaps;
 using UnityEngine.UI;
 
@@ -29,6 +30,8 @@ public class Player : MonoBehaviour
     public Sprite[] spriteArray;
     public Animator animator;
 
+    CinemachineBrain currentCamera;
+
     Vector3Int selectedTilePosition;
     bool selectable;
 
@@ -52,6 +55,8 @@ public class Player : MonoBehaviour
     void Awake()
     {
         player = this;
+        currentCamera = Camera.main.GetComponent<CinemachineBrain>();
+
     }
 
     public void PickupItem(int id)
@@ -124,6 +129,25 @@ public class Player : MonoBehaviour
 
     public void OpenMenus()
     {
+        var brain = currentCamera.GetComponent<CinemachineBrain>();
+        CinemachineVirtualCamera vcam = brain.ActiveVirtualCamera as CinemachineVirtualCamera;
+
+        // Page up & Page down changes camera size
+        if (Input.GetKeyDown(KeyCode.PageUp))
+        {
+            if (vcam.m_Lens.OrthographicSize <= 10)
+            {
+                vcam.m_Lens.OrthographicSize += 1;
+            }
+        }
+        if (Input.GetKeyDown(KeyCode.PageDown))
+        {
+            if(vcam.m_Lens.OrthographicSize >= 2)
+            {
+                vcam.m_Lens.OrthographicSize -= 1;
+            }
+        }
+
         // Check for open inventory
         if (Input.GetKeyDown(KeyCode.I))
         {

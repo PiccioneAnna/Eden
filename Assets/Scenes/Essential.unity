@@ -12785,7 +12785,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 800af0beee6c3cf44a3ae742b8171a88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  crafting: {fileID: 0}
+  crafting: {fileID: 1515085603}
   knownRecipes:
   - {fileID: 11400000, guid: ae808d5bc471da7429f745729957cac8, type: 2}
   player: {fileID: 275464363}
@@ -14378,6 +14378,7 @@ GameObject:
   - component: {fileID: 1515085601}
   - component: {fileID: 1515085600}
   - component: {fileID: 1515085602}
+  - component: {fileID: 1515085603}
   m_Layer: 0
   m_Name: Player Crafting
   m_TagString: Untagged
@@ -14509,12 +14510,25 @@ MonoBehaviour:
     m_Top: 50
     m_Bottom: 0
   m_ChildAlignment: 4
-  m_StartCorner: 1
+  m_StartCorner: 0
   m_StartAxis: 0
   m_CellSize: {x: 80, y: 80}
   m_Spacing: {x: 5, y: 5}
   m_Constraint: 1
   m_ConstraintCount: 8
+--- !u!114 &1515085603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1515085598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7307f34f793344c4bbe6de2f4a8a610b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventory: {fileID: 1407656761}
 --- !u!1001 &1542460544
 PrefabInstance:
   m_ObjectHideFlags: 0

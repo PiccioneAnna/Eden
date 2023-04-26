@@ -20,7 +20,7 @@ MonoBehaviour:
   range: {x: 5, y: 4}
   crop: {fileID: 0}
   stackable: 0
-  recipe: {fileID: 0}
+  recipe: {fileID: 11400000, guid: ae808d5bc471da7429f745729957cac8, type: 2}
   obj: {fileID: 0}
   image: {fileID: 21300000, guid: ec68422a9e751f1448881015bbf787c3, type: 3}
   onAction: {fileID: 11400000, guid: 6791fd90741215742a7d0868ea4f87cc, type: 2}

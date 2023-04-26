@@ -1,16 +1,26 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using System;
+using System.Collections;
+using System.Collections.Generic;
 
+[Serializable]
 public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {  
     [Header("UI")]
-    public Image image;
-    public Text countText;
+    [HideInInspector] public Image image;
+    [HideInInspector] public Text countText;
 
-    [HideInInspector] public Item item;
-    [HideInInspector] public int count = 1;
+    public Item item;
+    public int count = 1;
     [HideInInspector] public Transform parentAfterDrag;
+
+    public InventoryItem(Item i, int c)
+    {
+        this.item = i;
+        this.count = c;
+    }
 
     public void InitialiseItem(Item newItem)
     {

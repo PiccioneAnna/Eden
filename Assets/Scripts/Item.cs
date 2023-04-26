@@ -15,7 +15,7 @@ public class Item : ScriptableObject
 
     [Header("Only UI")]
     public bool stackable = true;
-    public ItemRecipe recipe;
+    public CraftRecipe recipe;
 
     [Header("Both")]
     public UnityEngine.GameObject obj;

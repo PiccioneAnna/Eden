@@ -8,7 +8,7 @@ public class CraftingManager : MonoBehaviour
 
     public Crafting crafting;
 
-    public CraftRecipe[] knownRecipes;
+    public List<CraftRecipe> knownRecipes;
     public Player player;
     public InventorySlot[] inventorySlots;
     public UnityEngine.GameObject inventoryItemPrefab;
@@ -23,20 +23,21 @@ public class CraftingManager : MonoBehaviour
     {
         foreach (CraftRecipe recipe in knownRecipes)
         {
-            AddItem(recipe.output.item);
+            AddItem(recipe.output);
         }
     }
 
     public bool AddItem(Item item)
     {
         // Find any empty slot
-        for (int i = 0; i < knownRecipes.Length; i++)
+        for (int i = 0; i < knownRecipes.Count; i++)
         {
             InventorySlot slot = inventorySlots[i];
             InventoryItem itemInSlot = slot.GetComponentInChildren<InventoryItem>();
             if (itemInSlot == null)
             {
                 SpawnNewItem(item, slot);
+                slot.ItemInSlot = item;
                 return true;
             }
         }
@@ -48,12 +49,5 @@ public class CraftingManager : MonoBehaviour
         UnityEngine.GameObject newItemGo = Instantiate(inventoryItemPrefab, slot.transform);
         InventoryItem inventoryItem = newItemGo.GetComponent<InventoryItem>();
         inventoryItem.InitialiseItem(item);
-    }
-
-    public void OnClick(int id)
-    {
-        if (id >= knownRecipes.Length) { return; }
-
-        crafting.Craft(knownRecipes[id]);
     }
 }

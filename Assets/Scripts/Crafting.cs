@@ -15,9 +15,9 @@ public class Crafting : MonoBehaviour
             return;
         }
 
-        for (int i = 0; i < recipe.elements.Count; i++)
+        for (int i = 0; i < recipe.inputs.Count; i++)
         {
-            if(inventory.CheckItem(recipe.elements[i]) == false)
+            if(inventory.CheckItem(recipe.inputs[i]) == false)
             {
                 Debug.Log("Not enough required elements to craft item");
                 return;
@@ -25,15 +25,12 @@ public class Crafting : MonoBehaviour
         }
 
         // Remove crafting components from inventory
-        for (int i = 0; i < recipe.elements.Count; i++)
+        for (int i = 0; i < recipe.inputs.Count; i++)
         {
-            inventory.RemoveItem(recipe.elements[i].item, recipe.elements[i].inventoryItem.count);
+            inventory.RemoveItem(recipe.inputs[i].item, recipe.inputs[i].count);
         }
 
         // Add new crafted item
-        for (int i = 0; i < recipe.output.count; i++)
-        {
-            inventory.AddItem(recipe.output.item);
-        }
+        inventory.AddItem(recipe.output);
     }
 }
