@@ -126,6 +126,40 @@ public class InventoryManager : MonoBehaviour
         return false;
     }
 
+    public bool CheckFreeSpace()
+    {
+        // Find any empty slot
+        for (int i = 0; i < inventorySlots.Length; i++)
+        {
+            InventorySlot slot = inventorySlots[i];
+            InventoryItem itemInSlot = slot.GetComponentInChildren<InventoryItem>();
+            if (itemInSlot == null)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public bool CheckItem(InventorySlot itemtoCheck)
+    {
+        InventorySlot inventorySlot = null;
+
+        foreach (InventorySlot slot in inventorySlots)
+        {
+            if(slot.inventoryItem.item == itemtoCheck.inventoryItem.item)
+            {
+                inventorySlot = slot;
+            }
+        }
+
+        if(inventorySlot == null) { return false; }
+
+        if (itemtoCheck.item.stackable) { return inventorySlot.inventoryItem.count > itemtoCheck.inventoryItem.count; }
+
+        return true;
+    }
+
     public void RemoveItem(Item item, int count = 1)
     {
         if (item.stackable)

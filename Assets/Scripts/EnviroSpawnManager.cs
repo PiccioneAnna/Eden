@@ -16,6 +16,7 @@ public class EnviroSpawnManager : MonoBehaviour
     public SpriteRenderer innerSpawnArea;
 
     public PolygonCollider2D collider2D;
+    public PolygonCollider2D spawnArea;
 
     private float outerRadius;
     private float innerRadius;
@@ -53,7 +54,7 @@ public class EnviroSpawnManager : MonoBehaviour
         float radius = Mathf.Sqrt(Random.Range(ratio * ratio, 1f)) * outerRadius;
         Vector3 point = Random.insideUnitCircle.normalized * radius;
 
-        position = new Vector3(point.x,point.y,0);
+        position = new Vector3((int)point.x,(int)point.y,0);
     }
 
     // Get a random object to spawn;
@@ -72,10 +73,13 @@ public class EnviroSpawnManager : MonoBehaviour
         RandomPosition();
 
         // Checks if object is trying to spawn somewhere it shouldn't
-        if (collider2D.OverlapPoint(new Vector2(position.x, position.y)))
+        if (collider2D.OverlapPoint(new Vector2(position.x, position.y)) ||
+            !spawnArea.OverlapPoint(new Vector2(position.x, position.y)))
         {
+            // While object is spawned in non spawn area or outside of map, find new position
             Debug.Log("Collision detected in spawning object, fixing point");
-            while (collider2D.OverlapPoint(new Vector2(position.x, position.y)))
+            while (collider2D.OverlapPoint(new Vector2(position.x, position.y)) ||
+                !spawnArea.OverlapPoint(new Vector2(position.x, position.y)) )
             {
                 RandomPosition();
             }

@@ -6,7 +6,9 @@ public class CraftingManager : MonoBehaviour
 {
     public static CraftingManager craftingManager;
 
-    public ItemRecipe[] knownRecipes;
+    public Crafting crafting;
+
+    public CraftRecipe[] knownRecipes;
     public Player player;
     public InventorySlot[] inventorySlots;
     public UnityEngine.GameObject inventoryItemPrefab;
@@ -19,9 +21,9 @@ public class CraftingManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        foreach (ItemRecipe recipe in knownRecipes)
+        foreach (CraftRecipe recipe in knownRecipes)
         {
-            AddItem(recipe.output);
+            AddItem(recipe.output.item);
         }
     }
 
@@ -48,9 +50,10 @@ public class CraftingManager : MonoBehaviour
         inventoryItem.InitialiseItem(item);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void OnClick(int id)
     {
-        
+        if (id >= knownRecipes.Length) { return; }
+
+        crafting.Craft(knownRecipes[id]);
     }
 }

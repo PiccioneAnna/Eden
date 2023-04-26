@@ -19,6 +19,7 @@ public class Resource : Object
     public Item[] drops;
     public UnityEngine.GameObject[] droppedObjs;
     public Sprite[] sprites;
+    public Sprite selectedSprite;
     public Vector3[] rotations;
     public Vector3[] positions;
     public int health;
@@ -30,9 +31,13 @@ public class Resource : Object
 
         System.Random random = new System.Random();
 
-        if (instance.transform.GetComponent<SpriteRenderer>() != null && multisprite)
+        if (instance.transform.GetComponent<SpriteRenderer>() != null && multisprite && selectedSprite == null)
         {
             instance.transform.GetComponent<SpriteRenderer>().sprite = sprites[random.Next(sprites.Length)];
+        }
+        else if (instance.transform.GetComponent<SpriteRenderer>() != null && multisprite)
+        {
+            instance.transform.GetComponent<SpriteRenderer>().sprite = selectedSprite;
         }
     }
 

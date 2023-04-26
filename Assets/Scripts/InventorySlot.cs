@@ -5,6 +5,7 @@ using UnityEngine.EventSystems;
 public class InventorySlot : MonoBehaviour, IDropHandler
 {
     public Item item;
+    public InventoryItem inventoryItem;
     public Image image;
     public Color selectedColor, notSelectedColor;
 
@@ -30,14 +31,14 @@ public class InventorySlot : MonoBehaviour, IDropHandler
     {
         if (transform.childCount == 0)
         {
-            InventoryItem inventoryItem = eventData.pointerDrag.GetComponent<InventoryItem>();
+            inventoryItem = eventData.pointerDrag.GetComponent<InventoryItem>();
             inventoryItem.parentAfterDrag = transform;
         }
     }
 
     public void Clear()
     {
-        InventoryItem inventoryItem = GetComponentInChildren<InventoryItem>();
+        inventoryItem = GetComponentInChildren<InventoryItem>();
         inventoryItem = null;
     }
 }

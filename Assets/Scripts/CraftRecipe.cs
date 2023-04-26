@@ -7,5 +7,6 @@ using UnityEngine;
 public class CraftRecipe : ScriptableObject
 {
     public List<InventorySlot> elements;
-    public InventorySlot output;
+    public InventoryItem output;
+    public ItemRecipe recipe;
 }

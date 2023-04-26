@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: bf8d3986ace8cd545a37df171c5177b8
+guid: c4206716ae1ca3c489b3289711ec7023
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -45,9 +45,9 @@ TextureImporter:
   spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 0
+  alignment: 9
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 512
+  spritePixelsToUnits: 128
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -121,17 +121,17 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 512
-        height: 512
+        width: 256
+        height: 256
       alignment: 9
-      pivot: {x: 0.44, y: 0.1}
+      pivot: {x: 0.5, y: 0.1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4e588025a0b850342b7902fdad3608da
-      internalID: 747664382
+      spriteID: d0ab71951cef6cf4fbd144fd157aa3dd
+      internalID: -1400760870
       vertices: []
       indices: 
       edges: []
@@ -140,61 +140,19 @@ TextureImporter:
       name: Spruce_1
       rect:
         serializedVersion: 2
-        x: 512
+        x: 256
         y: 0
-        width: 512
-        height: 512
+        width: 256
+        height: 256
       alignment: 9
-      pivot: {x: 0.44, y: 0.1}
+      pivot: {x: 0.5, y: 0.1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5fdb3e0c724595d478fd08e2a5f2322b
-      internalID: 1076846943
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Spruce_2
-      rect:
-        serializedVersion: 2
-        x: 1024
-        y: 0
-        width: 512
-        height: 512
-      alignment: 9
-      pivot: {x: 0.44, y: 0.1}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fd43ffb545cf06944b6cd5be29029932
-      internalID: 73730609
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Spruce_3
-      rect:
-        serializedVersion: 2
-        x: 1536
-        y: 0
-        width: 512
-        height: 512
-      alignment: 9
-      pivot: {x: 0.44, y: 0.1}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 59058ad85a1470d4db9905e0be59077c
-      internalID: 987225262
+      spriteID: 2e83b56f37e3b1141910e16a027c6109
+      internalID: 2084878388
       vertices: []
       indices: 
       edges: []
@@ -210,10 +168,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Spruce_0: 747664382
-      Spruce_2: 73730609
-      Spruce_1: 1076846943
-      Spruce_3: 987225262
+      Spruce_0: -1400760870
+      Spruce_1: 2084878388
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 1204935880875582586}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 0}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 3085241554647827530}
@@ -78,12 +78,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: 542219802, guid: 6fca68df7a510a14280659ff9202d85a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a650f33655688834b868b60f7a192b3a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.28, y: 1.28}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -129,17 +129,20 @@ MonoBehaviour:
   instance: {fileID: 1204935880875582585}
   toolHit: {fileID: -547703759522847632}
   properTool: {fileID: 11400000, guid: 3473f411a5d106046a5f2fdb9f12e346, type: 2}
+  name: 
   maxDropCount: 5
   minDropCount: 1
-  maxScale: 3
-  minScale: 1
+  maxScale: 1.5
+  minScale: 0.15
   multisprite: 1
   drops: []
   droppedObjs:
   - {fileID: 2256325366030707764, guid: a9e18dcba3345da4f94ff2d9481f75e1, type: 3}
   sprites:
-  - {fileID: -1243704601, guid: 6fca68df7a510a14280659ff9202d85a, type: 3}
-  - {fileID: 1584255529, guid: 6fca68df7a510a14280659ff9202d85a, type: 3}
+  - {fileID: 21300000, guid: a650f33655688834b868b60f7a192b3a, type: 3}
+  - {fileID: 21300000, guid: a596dd2cea7e6c9489b2535b37f61988, type: 3}
+  rotations: []
+  positions: []
   health: 25
 --- !u!61 &7923679703390392504
 BoxCollider2D:
@@ -158,8 +161,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.2}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
+    oldSize: {x: 2, y: 2}
+    newSize: {x: 1.28, y: 1.28}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -179,6 +182,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d81832ac04260a34a87aedfa97663c84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  questManager: {fileID: 0}
   resource: {fileID: 1204935880875582585}
   nodeType: 2
 --- !u!1 &2413421777888864826
@@ -206,8 +210,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2413421777888864826}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.319, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.038, y: 0.451, z: 0}
+  m_LocalScale: {x: 0.45199, y: 0.45199, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1204935880875582564}
@@ -238,14 +242,17 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.25976294, y: -0.117791206}
-      - {x: 0.07438125, y: -0.14255565}
-      - {x: -0.14248496, y: -0.07822883}
-      - {x: -0.3156183, y: 0.0072844625}
-      - {x: -0.36791295, y: -0.0532559}
-      - {x: -0.3631548, y: -0.14072695}
-      - {x: -0.31650212, y: -0.23309779}
-      - {x: -0.14324617, y: -0.33343723}
-      - {x: 0.07564294, y: -0.39503527}
-      - {x: 0.34346104, y: -0.3193341}
-      - {x: 0.347978, y: -0.12294597}
+    - - {x: 0.049800217, y: -0.43557253}
+      - {x: -0.12990679, y: -0.494385}
+      - {x: -0.19355696, y: -0.4924795}
+      - {x: -0.287245, y: -0.48641163}
+      - {x: -0.48140627, y: -0.42778397}
+      - {x: -0.6639122, y: -0.5039058}
+      - {x: -0.7421022, y: -0.6870712}
+      - {x: -0.33275816, y: -0.90195847}
+      - {x: -0.3021369, y: -1.1165414}
+      - {x: 0.00718385, y: -1.2026947}
+      - {x: 0.5409657, y: -1.2235365}
+      - {x: 0.83148247, y: -1.0059688}
+      - {x: 0.78090185, y: -0.5703684}
+      - {x: 0.38770065, y: -0.4407273}
