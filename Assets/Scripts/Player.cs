@@ -45,12 +45,15 @@ public class Player : MonoBehaviour
     public bool useGrid = false;
     //public bool isBuild = false;
 
+    bool isActiveUI = false;
+
     public InventoryManager inventoryManager;
     public CollisionManager collisionManager;
     public Item selectedItem;
     public Item[] itemsToPickup;
 
     [SerializeField] ToolAction onTilePickUp;
+    [SerializeField] ItemHighlight itemHighlight;
 
     void Awake()
     {
@@ -109,18 +112,16 @@ public class Player : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             Interact();
-            if (!isInteract)
+            if (!isInteract && !isActiveUI && useGrid)
             {
-                // Check if user is using world tool or grid tool
-                if (useGrid)
-                {
-                    UseToolGrid();
-                    // Marks UI
-                }
-                else
-                {
-                    UseToolWorld();
-                }
+                UseToolGrid();
+            }
+        }
+        if (Input.GetMouseButtonDown(0))
+        {
+            if (!isInteract && !isActiveUI)
+            {
+                UseToolWorld();
             }
         }
     }
@@ -133,14 +134,14 @@ public class Player : MonoBehaviour
         CinemachineVirtualCamera vcam = brain.ActiveVirtualCamera as CinemachineVirtualCamera;
 
         // Page up & Page down changes camera size
-        if (Input.GetKeyDown(KeyCode.PageUp))
+        if (Input.GetKeyDown(KeyCode.PageDown))
         {
             if (vcam.m_Lens.OrthographicSize <= 10)
             {
                 vcam.m_Lens.OrthographicSize += 1;
             }
         }
-        if (Input.GetKeyDown(KeyCode.PageDown))
+        if (Input.GetKeyDown(KeyCode.PageUp))
         {
             if(vcam.m_Lens.OrthographicSize >= 2)
             {
@@ -172,8 +173,8 @@ public class Player : MonoBehaviour
 
     public void OpenInventory()
     {
-        bool isActive = !inventoryUI.gameObject.activeSelf;
-        inventoryUI.gameObject.SetActive(isActive);
+        isActiveUI = !inventoryUI.gameObject.activeSelf;
+        inventoryUI.gameObject.SetActive(isActiveUI);
         invBtns[0].gameObject.SetActive(false);
         invBtns[1].gameObject.SetActive(true);
         invBtns[2].gameObject.SetActive(true);
@@ -183,8 +184,8 @@ public class Player : MonoBehaviour
 
     public void OpenCrafting()
     {
-        bool isActive = !craftingUI.gameObject.activeSelf;
-        craftingUI.gameObject.SetActive(isActive);
+        isActiveUI = !craftingUI.gameObject.activeSelf;
+        craftingUI.gameObject.SetActive(isActiveUI);
         invBtns[0].gameObject.SetActive(true);
         invBtns[1].gameObject.SetActive(false);
         invBtns[2].gameObject.SetActive(true);
@@ -194,8 +195,8 @@ public class Player : MonoBehaviour
 
     public void OpenQuests()
     {
-        bool isActive = !questsUI.gameObject.activeSelf;
-        questsUI.gameObject.SetActive(isActive);
+        isActiveUI = !questsUI.gameObject.activeSelf;
+        questsUI.gameObject.SetActive(isActiveUI);
         invBtns[0].gameObject.SetActive(true);
         invBtns[1].gameObject.SetActive(true);
         invBtns[2].gameObject.SetActive(false);
@@ -205,8 +206,8 @@ public class Player : MonoBehaviour
 
     public void OpenSettings()
     {
-        bool isActive = !settingsUI.gameObject.activeSelf;
-        settingsUI.gameObject.SetActive(isActive);
+        isActiveUI = !settingsUI.gameObject.activeSelf;
+        settingsUI.gameObject.SetActive(isActiveUI);
         invBtns[0].gameObject.SetActive(true);
         invBtns[1].gameObject.SetActive(true);
         invBtns[2].gameObject.SetActive(true);
@@ -356,11 +357,13 @@ public class Player : MonoBehaviour
         Vector2 cameraPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         selectable = Vector2.Distance(characterPosition, cameraPosition) < maxDistance;
         markerManager.Show(selectable);
+        itemHighlight.CanSelect = selectable;
     }
 
     private void Marker()
     {
         markerManager.markedCellPosition = selectedTilePosition;
+        itemHighlight.cellPosition = selectedTilePosition;
     }
 
     private bool UseToolWorld()

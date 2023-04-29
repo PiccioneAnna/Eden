@@ -119,7 +119,8 @@ public class TilemapCropsManager : TimeAgent
 
         if (tile.Complete)
         {
-            Instantiate(tile.crop.yield.obj, new Vector3(p.x, p.y, 0), tile.renderer.gameObject.transform.rotation);
+            ItemSpawnManager.instance.SpawnItem(new Vector3(p.x, p.y, 0), tile.crop.yield);
+
             Debug.Log("Crop yielded");
             questManager.Harvest(tile.crop);
 

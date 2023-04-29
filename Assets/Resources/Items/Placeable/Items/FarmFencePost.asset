@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63baacb602b46044f932c5d17940cf5f, type: 3}
+  m_Name: FarmFencePost
+  m_EditorClassIdentifier: 
+  tile: {fileID: 0}
+  itemName: Farm Fence Post
+  type: 3
+  actionType: 5
+  usesGrid: 1
+  range: {x: 5, y: 4}
+  crop: {fileID: 0}
+  stackable: 1
+  recipe: {fileID: 11400000, guid: b84de890e881c4b498b4bdd66503dd60, type: 2}
+  obj: {fileID: 321730841027692540, guid: a1706b13828b81c4eac389b38d33ecc2, type: 3}
+  itemPrefab: {fileID: 321730841027692540, guid: a1706b13828b81c4eac389b38d33ecc2, type: 3}
+  image: {fileID: 1536052152, guid: 2f3809b577fe74345ae17d4f8c0f4053, type: 3}
+  iconHighlight: 1
+  onAction: {fileID: 0}
+  onTileMapAction: {fileID: 11400000, guid: 4e3424962f2b9894b8ae4a661cf080c2, type: 2}
+  onItemUsed: {fileID: 0}

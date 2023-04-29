@@ -9,13 +9,18 @@ public class InventorySlot : MonoBehaviour, IDropHandler
     public Image image;
     public Color selectedColor, notSelectedColor;
     public Crafting crafting;
+    public bool craftingSlot = false;
 
     public Item ItemInSlot { get{ return item; } set { item = value; } }
 
     private void Awake()
     {
         Deselect();
-        crafting = GameManager.instance.gameObject.GetComponent<CraftingManager>().crafting;
+        crafting = GameManager.instance.GetComponent<CraftingManager>().crafting;
+        if(craftingSlot == false)
+        {
+            GetComponent<Button>().interactable = false;
+        }
     }
 
     public void Select()
@@ -31,10 +36,23 @@ public class InventorySlot : MonoBehaviour, IDropHandler
     // Drag and Drop
     public void OnDrop(PointerEventData eventData)
     {
-        if (transform.childCount == 0 && !inventoryItem.isCraftingSlot)
+        inventoryItem = eventData.pointerDrag.GetComponent<InventoryItem>();
+        // If there isnt an object then set the item's parent to the slot dropped on
+        if (transform.childCount == 0)
         {
-            inventoryItem = eventData.pointerDrag.GetComponent<InventoryItem>();
             inventoryItem.parentAfterDrag = transform;
+        }
+        // Otherwise swap positions between the items
+        else
+        {
+            InventoryItem currentSlotItem = transform.GetComponentInChildren<InventoryItem>();
+            currentSlotItem.gameObject.transform.SetParent(inventoryItem.parentAfterDrag);
+
+            inventoryItem.parentAfterDrag.GetComponent<InventorySlot>().inventoryItem = currentSlotItem;
+
+            inventoryItem.parentAfterDrag = transform;
+
+            inventoryItem.parentAfterDrag.GetComponent<InventorySlot>().inventoryItem = inventoryItem;
         }
     }
 
@@ -50,7 +68,10 @@ public class InventorySlot : MonoBehaviour, IDropHandler
         {
             if (ItemInSlot.recipe != null)
             {
-                crafting.Craft(ItemInSlot.recipe);
+                if (crafting != null) 
+                {
+                    crafting.Craft(ItemInSlot.recipe);
+                }
             }
         }
     }

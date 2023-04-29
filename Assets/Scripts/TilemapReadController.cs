@@ -9,6 +9,7 @@ public class TilemapReadController : MonoBehaviour
 
     [SerializeField] Tilemap tilemap;
     [SerializeField] public CropsManager cropsManager;
+    public PlaceableObjectsReferenceManager objectsManager;
     Vector3 worldPosition;
 
     public Player player;

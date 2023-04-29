@@ -7,8 +7,6 @@ public class Item : ScriptableObject
     [Header("Only Gameplay")]
     public TileBase tile;
     public string itemName;
-    public ItemType type;
-    public ActionType actionType;
     public bool usesGrid = false;
     public Vector2Int range = new Vector2Int(5, 4);
     public Crop crop;
@@ -19,27 +17,11 @@ public class Item : ScriptableObject
 
     [Header("Both")]
     public UnityEngine.GameObject obj;
+    public GameObject itemPrefab;
     public Sprite image;
+    public bool iconHighlight;
 
     public ToolAction onAction;
     public ToolAction onTileMapAction;
     public ToolAction onItemUsed;
-}
-
-public enum ItemType
-{
-    BuildingBlock,
-    Material,
-    Seed,
-    Tool
-}
-
-public enum ActionType
-{
-    Dig,
-    Mine,
-    Chop,
-    Hoe,
-    Seed,
-    None
 }

@@ -33,6 +33,9 @@ public class CraftingManager : MonoBehaviour
         for (int i = 0; i < knownRecipes.Count; i++)
         {
             InventorySlot slot = inventorySlots[i];
+
+            if(slot == null) { return false; }
+
             InventoryItem itemInSlot = slot.GetComponentInChildren<InventoryItem>();
             if (itemInSlot == null)
             {

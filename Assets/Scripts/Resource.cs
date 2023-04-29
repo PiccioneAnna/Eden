@@ -17,7 +17,6 @@ public class Resource : Object
     private int dropCount;
 
     public Item[] drops;
-    public UnityEngine.GameObject[] droppedObjs;
     public Sprite[] sprites;
     public Sprite selectedSprite;
     public Vector3[] rotations;

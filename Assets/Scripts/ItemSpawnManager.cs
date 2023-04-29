@@ -12,4 +12,11 @@ public class ItemSpawnManager : MonoBehaviour
     }
 
     [SerializeField] public GameObject obj;
+
+    public void SpawnItem(Vector3 position, Item item, int count = 1)
+    {
+        GameObject go = Instantiate(obj, position, Quaternion.identity);
+        go.GetComponent<Drop>().item = item;
+        go.GetComponent<SpriteRenderer>().sprite = item.image;
+    }
 }

@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class InventoryManager : MonoBehaviour
 {
-    public static InventoryManager inventoryManager;
+    public InventoryManager inventoryManager;
+
+    [SerializeField] ItemHighlight itemHighlight;
 
     public InventorySlot[] inventorySlots;
     public UnityEngine.GameObject inventoryItemPrefab;
@@ -16,16 +18,7 @@ public class InventoryManager : MonoBehaviour
 
     void Awake()
     {
-        DontDestroyOnLoad(this);
-
-        if (inventoryManager == null)
-        {
-            inventoryManager = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+        inventoryManager = this;
     }
 
     private void Start()
@@ -85,6 +78,7 @@ public class InventoryManager : MonoBehaviour
         {
             selectedItem = inventorySlots[selectedSlot].GetComponentInChildren<InventoryItem>().item;
             Debug.Log("Selected Item: " + selectedItem.itemName);
+            UpdateHighlightItem(selectedSlot);
         }
         else
         {
@@ -166,6 +160,12 @@ public class InventoryManager : MonoBehaviour
 
     public void RemoveItem(Item item, int count = 1)
     {
+        if(item == selectedItem)
+        {
+            selectedItem = null;
+            UpdateHighlightItem(selectedSlot);
+        }
+
         if (item.stackable)
         {
             InventorySlot inventorySlot = null;
@@ -177,6 +177,8 @@ public class InventoryManager : MonoBehaviour
                 }
             }
             if (inventorySlot == null) { return; }
+
+            inventorySlot.inventoryItem = inventorySlot.gameObject.GetComponentInChildren<InventoryItem>();
 
             inventorySlot.inventoryItem.count -= count;
 
@@ -239,4 +241,20 @@ public class InventoryManager : MonoBehaviour
         return null;
     }
 
+    public void UpdateHighlightItem(int id)
+    {
+        Item item = selectedItem;
+        if(item == null) 
+        {
+            itemHighlight.Show = false;
+            return; 
+        }
+
+        itemHighlight.Show = item.iconHighlight;
+
+        if (item.iconHighlight) 
+        {
+            itemHighlight.Set(item.image);
+        }
+    }
 }

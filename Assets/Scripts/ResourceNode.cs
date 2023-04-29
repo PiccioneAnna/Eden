@@ -8,8 +8,8 @@ public class ResourceNode : ToolHit
     public Resource resource;
     private int health;
     // Randomized drops
-    private UnityEngine.GameObject drop;
-    UnityEngine.GameObject[] droppedObjs;
+    private Item drop;
+    Item[] droppedObjs;
     private System.Random random;
     private Vector3 position;
     private Quaternion rotation;
@@ -26,7 +26,7 @@ public class ResourceNode : ToolHit
         maxDropCount = resource.maxDropCount;
         minDropCount = resource.minDropCount;
         dropCount = random.Next(maxDropCount) + minDropCount + (int)transform.localScale.x;
-        droppedObjs = resource.droppedObjs;
+        droppedObjs = resource.drops;
         health = resource.health;
     }
 
@@ -57,8 +57,7 @@ public class ResourceNode : ToolHit
 
                 // Randomized drop
                 position = new Vector3(position.x + (multplierX * offsetX), position.y + (multplierY * offsetY), position.z);
-                Debug.Log(position);
-                Instantiate(drop, position, rotation);
+                ItemSpawnManager.instance.SpawnItem(position, drop);
             }
             Destroy(gameObject);
             questManager = GameObject.Find("GameManager").GetComponent<GameManager>().questManager;
