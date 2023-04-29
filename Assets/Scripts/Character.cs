@@ -35,18 +35,27 @@ public class Stat
 
 public class Character : MonoBehaviour
 {
+    public int level = 1;
+
     public Stat hp;
     [SerializeField] StatusBar hpBar;
     public Stat stamina;
     [SerializeField] StatusBar staminaBar;
+    public Stat xp;
+    [SerializeField] StatusBar xpBar;
+    public Stat mana;
+    [SerializeField] StatusBar manaBar;
 
     public bool isDead;
     public bool isExhausted;
+    public bool isNoManaLeft;
 
     private void Start()
     {
-        UpdateHPBar();
-        UpdateStaminaBar();
+        //UpdateHPBar();
+        //UpdateStaminaBar();
+        //UpdateXPBar();
+        //UpdateManaBar();
     }
 
     #region Update Status Bars
@@ -57,6 +66,14 @@ public class Character : MonoBehaviour
     private void UpdateStaminaBar()
     {
         staminaBar.Set(stamina.currVal, stamina.maxVal);
+    }
+    private void UpdateXPBar()
+    {
+        xpBar.Set(xp.currVal, xp.maxVal);
+    }
+    private void UpdateManaBar()
+    {
+        manaBar.Set(mana.currVal, mana.maxVal);
     }
 
     #endregion
@@ -104,6 +121,53 @@ public class Character : MonoBehaviour
     public void FullRest()
     {
         stamina.SetToMax();
+    }
+
+    #endregion
+
+    #region Mana
+
+    public void UseMana(int amount)
+    {
+        mana.Subtract(amount);
+        if(mana.currVal <= 0)
+        {
+            mana.currVal = 0;
+            isNoManaLeft = true;
+        }
+    }
+
+    public void RegenMana(int amount)
+    {
+        mana.Add(amount);
+        if(mana.currVal >= mana.maxVal)
+        {
+            mana.currVal = mana.maxVal;
+        }
+    }
+
+    public void FullRegenMana()
+    {
+        mana.SetToMax();
+    }
+
+    #endregion
+
+    #region XP
+
+    public void IncreaseXP(int amount)
+    {
+        xp.Add(amount);
+        if(xp.currVal >= xp.maxVal)
+        {
+            LevelUp();
+        }
+    }
+
+    public void LevelUp()
+    {
+        xp.currVal = 0;
+        level += 1;
     }
 
     #endregion

@@ -7,4 +7,6 @@ public class Actor : ScriptableObject
 {
     public string Name;
     public Sprite portrait;
+    public bool isMerchant;
+    public bool isQuestSource;
 }

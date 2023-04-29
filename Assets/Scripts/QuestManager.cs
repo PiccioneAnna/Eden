@@ -48,6 +48,7 @@ public class QuestManager : MonoBehaviour
 
     public void AddQuest(Quest quest)
     {
+        if (CurrentQuests.Contains(quest)) { return; }
         CurrentQuests.Add(quest);
     }
 

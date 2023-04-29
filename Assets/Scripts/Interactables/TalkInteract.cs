@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TalkInteract : Interactable
 {
-    [SerializeField] DialogueContainer dialogue;
+    [SerializeField] DialogueTree dialogue;
 
     public override void Interact(Player player)
     {
