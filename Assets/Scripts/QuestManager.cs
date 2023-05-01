@@ -19,7 +19,6 @@ public class QuestManager : MonoBehaviour
     private void Start()
     {
         questHolder.SetActive(false);
-        RefreshQuestList();
     }
 
     private void RefreshQuestList()

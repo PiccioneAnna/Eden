@@ -29,6 +29,7 @@ public class Quest : ScriptableObject
     [Header("Reward")] public Stat Reward = new Stat { currency = 10, xP = 10 };
 
     public bool Completed { get; private set; }
+    public bool Initialized = false;
     public QuestCompletedEvent QuestCompleted;
 
     public abstract class QuestGoal : ScriptableObject

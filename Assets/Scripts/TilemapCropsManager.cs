@@ -15,11 +15,13 @@ public class TilemapCropsManager : TimeAgent
     Tilemap targetTilemap;
     public Tilemap parentTilemap;
     private QuestManager questManager;
+    private InventoryManager inventoryManager;
 
     private void Start()
     {
         GameManager.instance.GetComponent<CropsManager>().cropsManager = this; // Reporting this to this to prevent multi checks
         questManager = GameManager.instance.GetComponent<CropsManager>().questManager;
+        inventoryManager = GameManager.instance.GetComponent<InventoryManager>();
         targetTilemap = GetComponent<Tilemap>();
         onTimeTick += Tick;
         Init();
@@ -106,6 +108,9 @@ public class TilemapCropsManager : TimeAgent
 
         tile.crop = toSeed;
         questManager.Seed(toSeed);
+
+        inventoryManager.RemoveItem(toSeed.seeds);
+
         Tick();
     }
 

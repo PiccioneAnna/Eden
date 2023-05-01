@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeToGrow: 16
   yield: {fileID: 11400000, guid: 15591f9192e15fb4f8a76c08abfc3288, type: 2}
+  seeds: {fileID: 11400000, guid: cf3d1de7f142f794b951ad43968685ea, type: 2}
   count: 3
   multiHarvest: 0
   sprites:

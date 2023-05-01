@@ -14,14 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tile: {fileID: 0}
   itemName: Carrot Seeds
-  type: 2
-  actionType: 4
   usesGrid: 1
   range: {x: 5, y: 4}
   crop: {fileID: 11400000, guid: 800b1d700afc806408ce31bff5f6689a, type: 2}
+  itemType: 0
   stackable: 1
+  levelRequirement: 3
   recipe: {fileID: 0}
   obj: {fileID: 0}
+  itemPrefab: {fileID: 0}
   image: {fileID: -1716292172, guid: c0e565ca15b11714aa9dd414c24e3ebd, type: 3}
   iconHighlight: 0
   onAction: {fileID: 0}

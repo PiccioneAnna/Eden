@@ -11,12 +11,13 @@ public class DialogueSystem : MonoBehaviour
     [SerializeField] TMP_Text nameText;
     [SerializeField] Image portrait;
 
-    DialogueTree dialogueTree;
+    public DialogueTree dialogueTree;
     DialogueContainer currentDialogue;
     int currentTextLine;
 
     public Player player;
     public QuestManager questManager;
+    public ShopManager shopManager;
 
     public Button talkBtn;
     public Button shopBtn;
@@ -119,6 +120,7 @@ public class DialogueSystem : MonoBehaviour
     public void Shop()
     {
         Debug.Log("Opened Shop");
+        shopManager.Refresh();
     }
 
     public void Quests()
@@ -178,6 +180,8 @@ public class DialogueSystem : MonoBehaviour
         {
             RecieveItem(currentDialogue.rewardsAQC);
         }
+
+        currentDialogue = null;
         Show(false);
     }
 

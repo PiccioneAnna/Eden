@@ -2,12 +2,13 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 [Serializable]
 public class Stat
 {
     public int maxVal;
-    public int currVal;
+    public float currVal;
 
     public Stat(int curr, int max)
     {
@@ -20,7 +21,7 @@ public class Stat
         currVal -= amount;
     }
 
-    internal void Add(int amount)
+    internal void Add(float amount)
     {
         currVal += amount;
 
@@ -46,16 +47,19 @@ public class Character : MonoBehaviour
     public Stat mana;
     [SerializeField] StatusBar manaBar;
 
+    [SerializeField] TMP_Text currentLvlText;
+    [SerializeField] TMP_Text nextLvlText;
+
     public bool isDead;
     public bool isExhausted;
     public bool isNoManaLeft;
 
     private void Start()
     {
-        //UpdateHPBar();
-        //UpdateStaminaBar();
-        //UpdateXPBar();
-        //UpdateManaBar();
+        UpdateHPBar();
+        UpdateStaminaBar();
+        UpdateXPBar();
+        UpdateManaBar();
     }
 
     #region Update Status Bars
@@ -69,6 +73,9 @@ public class Character : MonoBehaviour
     }
     private void UpdateXPBar()
     {
+        currentLvlText.text = level.ToString();
+        nextLvlText.text = (level + 1).ToString();
+
         xpBar.Set(xp.currVal, xp.maxVal);
     }
     private void UpdateManaBar()
@@ -111,16 +118,19 @@ public class Character : MonoBehaviour
         {
             isExhausted = true;
         }
+        UpdateStaminaBar();
     }
 
-    public void Rest(int amount)
+    public void Rest(float amount)
     {
         stamina.Add(amount);
+        UpdateStaminaBar();
     }
 
     public void FullRest()
     {
         stamina.SetToMax();
+        UpdateStaminaBar();
     }
 
     #endregion
@@ -162,12 +172,14 @@ public class Character : MonoBehaviour
         {
             LevelUp();
         }
+        UpdateXPBar();
     }
 
     public void LevelUp()
     {
         xp.currVal = 0;
         level += 1;
+        UpdateXPBar();
     }
 
     #endregion

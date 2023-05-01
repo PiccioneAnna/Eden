@@ -9,4 +9,6 @@ public class Actor : ScriptableObject
     public Sprite portrait;
     public bool isMerchant;
     public bool isQuestSource;
+
+    public List<Item> merchantItems;
 }

@@ -14,6 +14,8 @@ public class ShopManager : MonoBehaviour
     public Player player;
 
     int playerLevel;
+    public DialogueSystem dialogueSystem;
+    DialogueTree dialogueTree;
 
     public List<Item> merchantItems;
     public List<Item> availableMerchantItems;
@@ -28,17 +30,35 @@ public class ShopManager : MonoBehaviour
     public void Awake()
     {
         Refresh();
+        UpdatePortrait();
     }
 
     public void Refresh()
     {
+        UpdatePortrait();
+        CheckAvailableItems();
+
         // Gets Merchant Items
-        foreach (Item item in merchantItems)
+        foreach (Item item in availableMerchantItems)
         {
-            GameObject shopItem = GameObject.Instantiate(shopitemPrefab, merchantInventory.transform);
-            shopItem.GetComponent<ShopItem>().item = item;
-            shopItem.GetComponent<ShopItem>().Refresh();
-            merchantItemsUI.Add(shopItem);
+            bool hasItem = false;
+
+            // Checks each shopitem to see if that is the current item it's trying to add
+            foreach (GameObject shopitem in merchantItemsUI)
+            {
+                if(shopitem.GetComponent<ShopItem>().item == item)
+                {
+                    hasItem = true;
+                }
+            }
+
+            if(hasItem == false)
+            {
+                GameObject shopItem = GameObject.Instantiate(shopitemPrefab, merchantInventory.transform);
+                shopItem.GetComponent<ShopItem>().item = item;
+                shopItem.GetComponent<ShopItem>().Refresh();
+                merchantItemsUI.Add(shopItem);
+            }
         }
 
         // Gets Available Player Items
@@ -48,6 +68,30 @@ public class ShopManager : MonoBehaviour
             {
                 CreateShopItemInPlayerInventory(slot.item, slot.gameObject.GetComponentInChildren<InventoryItem>().count);
             }
+        }
+    }
+
+    private void CheckAvailableItems()
+    {
+        foreach (Item item in merchantItems)
+        {
+            if (item.levelRequirement <= player.character.level && (!availableMerchantItems.Contains(item)))
+            {
+                Debug.Log("Available item " + item);
+                availableMerchantItems.Add(item);
+            }
+        }
+    }
+
+    private void UpdatePortrait()
+    {
+        dialogueTree = dialogueSystem.dialogueTree;
+        merchantItems = dialogueTree.actor.merchantItems;
+
+        if (dialogueTree != null)
+        {
+            portrait.sprite = dialogueTree.actor.portrait;
+            nameText.text = dialogueTree.actor.Name;
         }
     }
 

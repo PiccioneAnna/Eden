@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tile: {fileID: 0}
   itemName: Pumpkin Seeds
-  type: 2
-  actionType: 4
   usesGrid: 1
   range: {x: 5, y: 4}
   crop: {fileID: 11400000, guid: 3c21880f2386b9e4da79a4645f6d1a03, type: 2}
+  itemType: 0
   stackable: 1
+  levelRequirement: 3
   recipe: {fileID: 0}
   obj: {fileID: 3540848023464446278, guid: 7635d856821870b49b5e8b9211720cab, type: 3}
   itemPrefab: {fileID: 3540848023464446278, guid: 7635d856821870b49b5e8b9211720cab, type: 3}

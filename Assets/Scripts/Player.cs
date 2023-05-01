@@ -47,6 +47,8 @@ public class Player : MonoBehaviour
 
     bool isActiveUI = false;
 
+    public Character character;
+
     public InventoryManager inventoryManager;
     public CollisionManager collisionManager;
     public Item selectedItem;
@@ -59,7 +61,6 @@ public class Player : MonoBehaviour
     {
         player = this;
         currentCamera = Camera.main.GetComponent<CinemachineBrain>();
-
     }
 
     public void PickupItem(int id)
@@ -92,6 +93,8 @@ public class Player : MonoBehaviour
         //isBuild = Input.GetKeyDown(KeyCode.B) ? !isBuild : isBuild;
         selectedItem = inventoryManager.selectedItem;
 
+        character.Rest(.01f);
+
         // Checks if grid needs to be displayed
         if (selectedItem == null || selectedItem.usesGrid)
         {
@@ -109,12 +112,14 @@ public class Player : MonoBehaviour
         OpenMenus();
 
         // If player interacts
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButton(0))
         {
             Interact();
             if (!isInteract && !isActiveUI && useGrid)
             {
                 UseToolGrid();
+                character.GetTired(5);
+                Debug.Log("Stamina used");
             }
         }
         if (Input.GetMouseButtonDown(0))
@@ -122,6 +127,8 @@ public class Player : MonoBehaviour
             if (!isInteract && !isActiveUI)
             {
                 UseToolWorld();
+                character.GetTired(5);
+                Debug.Log("Stamina used");
             }
         }
     }
@@ -375,6 +382,8 @@ public class Player : MonoBehaviour
 
         bool complete = selectedItem.onAction.OnApply(position);
 
+        character.IncreaseXP(5);
+
         // Checks if item used can be removed from inventory
         if (complete)
         {
@@ -400,6 +409,8 @@ public class Player : MonoBehaviour
             if(selectedItem.onTileMapAction == null) { return; }
 
             bool complete = selectedItem.onTileMapAction.OnApplyToTileMap(selectedTilePosition, tileMapReadController, selectedItem);
+
+            character.IncreaseXP(5);
 
             // Checks if item used can be removed from inventory
             if (complete)
