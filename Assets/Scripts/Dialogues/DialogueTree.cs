@@ -19,6 +19,7 @@ public class DialogueTree : ScriptableObject
         {
             if(dialogue.levelRequirement == currentPlayerLevel)
             {
+                dialogue.quest.Initialize();
                 return dialogue;
             }
         }

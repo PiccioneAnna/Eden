@@ -241,6 +241,21 @@ public class InventoryManager : MonoBehaviour
         return null;
     }
 
+    public List<Item> GetCurrentItems()
+    {
+        List<Item> currentItems = new List<Item>();
+
+        foreach (InventorySlot slot in inventorySlots)
+        {
+            if(slot != null && slot.item != null && !currentItems.Contains(slot.item))
+            {
+                currentItems.Add(slot.item);
+            }
+        }
+
+        return currentItems;
+    }
+
     public void UpdateHighlightItem(int id)
     {
         Item item = selectedItem;

@@ -35,13 +35,18 @@ public class DialogueSystem : MonoBehaviour
             if (Input.GetMouseButtonDown(0))
             {
                 // Determine if quest is complete or not to see which dialogue to display
-                if (currentDialogue.questCompletion == false)
+                if (!questManager.CurrentQuests.Contains(currentDialogue.quest) &&
+                    !questManager.CompletedQuests.Contains(currentDialogue.quest))
                 {
                     PushText(currentDialogue.linesBQC);
                 }
-                else
+                else if(questManager.CompletedQuests.Contains(currentDialogue.quest))
                 {
                     PushText(currentDialogue.linesAQC);
+                }
+                else
+                {
+                    Conclude();
                 }
             }
             TypeOutText();
@@ -129,11 +134,12 @@ public class DialogueSystem : MonoBehaviour
         player.isInteract = true;
 
         // Determine if quest is complete or not to see which dialogue to display
-        if (currentDialogue.questCompletion == false)
+        if (!questManager.CurrentQuests.Contains(currentDialogue.quest) &&
+            !questManager.CompletedQuests.Contains(currentDialogue.quest))
         {
             CycleLine(currentDialogue.linesBQC);
         }
-        else
+        else if (questManager.CompletedQuests.Contains(currentDialogue.quest))
         {
             CycleLine(currentDialogue.linesAQC);
         }
@@ -162,12 +168,13 @@ public class DialogueSystem : MonoBehaviour
     {
         Debug.Log("The dialogue has ended");
         player.isInteract = false;
-        if(currentDialogue.questCompletion == false)
+        if(!questManager.CurrentQuests.Contains(currentDialogue.quest) &&
+           !questManager.CompletedQuests.Contains(currentDialogue.quest))
         {
             RecieveItem(currentDialogue.rewardsBQC);
             RecieveQuest();
         }
-        else
+        else if(questManager.CompletedQuests.Contains(currentDialogue.quest))
         {
             RecieveItem(currentDialogue.rewardsAQC);
         }
@@ -195,7 +202,9 @@ public class DialogueSystem : MonoBehaviour
     // Adds a quest to quest manager
     private void RecieveQuest()
     {
-        if(currentDialogue.quest != null)
+        if(currentDialogue.quest != null && 
+            !questManager.CurrentQuests.Contains(currentDialogue.quest) &&
+            !questManager.CompletedQuests.Contains(currentDialogue.quest))
         {
             questManager.AddQuest(currentDialogue.quest);
             Debug.Log("Quest Active : " + currentDialogue.quest.name);

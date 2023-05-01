@@ -14,11 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tile: {fileID: 0}
   itemName: Crate
-  type: 3
-  actionType: 5
   usesGrid: 1
   range: {x: 5, y: 4}
   crop: {fileID: 0}
+  itemType: 3
   stackable: 1
   recipe: {fileID: 0}
   obj: {fileID: 6348329601208239761, guid: 34ca8b5f760c71a449755dd7b251666b, type: 3}

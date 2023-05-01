@@ -17,6 +17,7 @@ MonoBehaviour:
   usesGrid: 0
   range: {x: 5, y: 4}
   crop: {fileID: 0}
+  itemType: 3
   stackable: 1
   recipe: {fileID: 0}
   obj: {fileID: 3033675728030866726, guid: 82b06322b297c5948b36236feb12733b, type: 3}

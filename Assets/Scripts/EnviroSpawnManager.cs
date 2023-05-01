@@ -77,7 +77,6 @@ public class EnviroSpawnManager : MonoBehaviour
             !spawnArea.OverlapPoint(new Vector2(position.x, position.y)))
         {
             // While object is spawned in non spawn area or outside of map, find new position
-            Debug.Log("Collision detected in spawning object, fixing point");
             while (collider2D.OverlapPoint(new Vector2(position.x, position.y)) ||
                 !spawnArea.OverlapPoint(new Vector2(position.x, position.y)) )
             {
@@ -87,6 +86,12 @@ public class EnviroSpawnManager : MonoBehaviour
 
         UnityEngine.GameObject go = Instantiate(drop, position + transform.position, rotation, this.transform);
         go.gameObject.transform.localScale = scale;
+
+        if(go.gameObject.GetComponent<BoxCollider2D>() != null)
+        {
+            Vector3 size = go.gameObject.GetComponent<BoxCollider2D>().size;
+            go.gameObject.GetComponent<BoxCollider2D>().size = new Vector3(size.x * scale.x, size.y * scale.y, 0);
+        }
 
         go.gameObject.GetComponent<SpriteRenderer>().flipX = RandomSign();
     }

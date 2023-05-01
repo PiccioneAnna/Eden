@@ -10,9 +10,11 @@ public class Item : ScriptableObject
     public bool usesGrid = false;
     public Vector2Int range = new Vector2Int(5, 4);
     public Crop crop;
+    public ItemType itemType;
 
     [Header("Only UI")]
     public bool stackable = true;
+    public int levelRequirement = 1;
     public CraftRecipe recipe;
 
     [Header("Both")]
@@ -24,4 +26,13 @@ public class Item : ScriptableObject
     public ToolAction onAction;
     public ToolAction onTileMapAction;
     public ToolAction onItemUsed;
+
+    public enum ItemType
+    {
+        Crop,
+        Material,
+        Tool,
+        PlaceableObject,
+        Consumable
+    }
 }

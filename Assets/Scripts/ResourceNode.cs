@@ -47,7 +47,7 @@ public class ResourceNode : ToolHit
             for (int i = 0; i < dropCount; i++)
             {
                 random = new System.Random();
-                drop = droppedObjs[random.Next(droppedObjs.Length)];
+                drop = droppedObjs[random.Next(droppedObjs.Length-1)];
 
                 // Randomized drop positoning
                 offsetX = (float)random.NextDouble() / 4;

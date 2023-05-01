@@ -14,8 +14,9 @@ public class QuestManager : MonoBehaviour
     public Image QuestUI;
 
     public List<Quest> CurrentQuests;
+    public List<Quest> CompletedQuests;
 
-    private void Awake()
+    private void Start()
     {
         questHolder.SetActive(false);
         RefreshQuestList();
@@ -50,6 +51,7 @@ public class QuestManager : MonoBehaviour
     {
         if (CurrentQuests.Contains(quest)) { return; }
         CurrentQuests.Add(quest);
+        InitializeQuest(quest);
     }
 
     public void Build(string buildingName)
@@ -85,5 +87,7 @@ public class QuestManager : MonoBehaviour
     private void OnQuestCompleted(Quest quest)
     {
         questsContent.GetChild(CurrentQuests.IndexOf(quest)).Find("Checkmark").gameObject.SetActive(true);
+        CurrentQuests.Remove(quest);
+        CompletedQuests.Add(quest);
     }
 }

@@ -14,11 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tile: {fileID: 0}
   itemName: Farm Fence Post
-  type: 3
-  actionType: 5
   usesGrid: 1
   range: {x: 5, y: 4}
   crop: {fileID: 0}
+  itemType: 3
   stackable: 1
   recipe: {fileID: 11400000, guid: b84de890e881c4b498b4bdd66503dd60, type: 2}
   obj: {fileID: 321730841027692540, guid: a1706b13828b81c4eac389b38d33ecc2, type: 3}
