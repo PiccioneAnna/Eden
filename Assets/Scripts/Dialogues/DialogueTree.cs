@@ -17,7 +17,7 @@ public class DialogueTree : ScriptableObject
 
         foreach (DialogueContainer dialogue in dialogueContainers)
         {
-            if(dialogue.levelRequirement == currentPlayerLevel)
+            if(dialogue.levelRequirement <= currentPlayerLevel && dialogue.dialogueCompletion == false)
             {
                 dialogue.quest.Initialize();
                 return dialogue;

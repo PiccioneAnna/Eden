@@ -121,8 +121,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 5720093978165747622}
-  title: Shrub
-  type: Shrub
+  title: Grass
+  type: Grass
   position: {x: 0, y: 0, z: 0}
   CanDestroy: 0
   instance: {fileID: 5720093978165747641}
@@ -131,11 +131,19 @@ MonoBehaviour:
   name: 
   maxDropCount: 5
   minDropCount: 1
-  maxScale: 1
+  maxScale: 2
   minScale: 0.15
   multisprite: 1
-  drops: []
+  drops:
+  - {fileID: 11400000, guid: b67822b1281bf4146a56ac8ed4469df7, type: 2}
   sprites:
+  - {fileID: -108992883, guid: f69a38ffa69601042836673af68e5af4, type: 3}
+  - {fileID: 266339483, guid: f69a38ffa69601042836673af68e5af4, type: 3}
+  - {fileID: 886759097, guid: f69a38ffa69601042836673af68e5af4, type: 3}
+  - {fileID: -409507821, guid: f69a38ffa69601042836673af68e5af4, type: 3}
+  - {fileID: -1414093329, guid: f69a38ffa69601042836673af68e5af4, type: 3}
+  - {fileID: 1008787128, guid: f69a38ffa69601042836673af68e5af4, type: 3}
+  - {fileID: -104954882, guid: f69a38ffa69601042836673af68e5af4, type: 3}
   - {fileID: 21300000, guid: c832583be6e28eb4c99358767094ba94, type: 3}
   selectedSprite: {fileID: 0}
   rotations: []

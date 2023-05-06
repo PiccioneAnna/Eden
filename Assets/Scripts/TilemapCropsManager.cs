@@ -98,6 +98,7 @@ public class TilemapCropsManager : TimeAgent
     public void Till(Vector3Int position)
     {
         parentTilemap.SetTile(new Vector3Int(position.x, position.y, 0), tilled);
+        questManager.Till();
     }
 
     public void Seed(Vector3Int position, Crop toSeed)
@@ -105,6 +106,8 @@ public class TilemapCropsManager : TimeAgent
         CropTile tile = container.Get(position);
 
         if (tile == null) { return; }
+
+        if(tile.crop != null) { return; }
 
         tile.crop = toSeed;
         questManager.Seed(toSeed);

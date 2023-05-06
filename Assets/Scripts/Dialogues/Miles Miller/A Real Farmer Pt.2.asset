@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ede6a44c90166ea4eb6a6ca8646dfeb6, type: 3}
+  m_Name: A Real Farmer Pt.2
+  m_EditorClassIdentifier: 
+  linesBQC:
+  - dialogueType: 0
+    playerChoice: 0
+    lineA: "____, I\u2019m glad you came by. I\u2019ve got some more seeds for you.
+      I need you to plant these carrot seeds. Plant 20, and show me your harvest
+      when it\u2019s ready."
+    lineB: 
+    lineC: 
+  linesAQC:
+  - dialogueType: 0
+    playerChoice: 0
+    lineA: "You\u2019re getting good at this. Stop by tomorrow and I\u2019ll give
+      you some more seeds."
+    lineB: 
+    lineC: 
+  rewardsBQC:
+  - item: {fileID: 11400000, guid: cfb57fc5a65e67747988283b1017cb8e, type: 2}
+    itemCount: 20
+  rewardsAQC: []
+  addedShopItems:
+  - {fileID: 11400000, guid: cfb57fc5a65e67747988283b1017cb8e, type: 2}
+  - {fileID: 11400000, guid: 1a34fe4d624a70e4da291bd76400de7e, type: 2}
+  quest: {fileID: 11400000, guid: f03e584f24e25d948aae692398fb71e3, type: 2}
+  levelRequirement: 3
+  dialogueCompletion: 0

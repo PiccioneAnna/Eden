@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ede6a44c90166ea4eb6a6ca8646dfeb6, type: 3}
+  m_Name: The New Farmhand
+  m_EditorClassIdentifier: 
+  linesBQC:
+  - dialogueType: 2
+    playerChoice: 0
+    lineA: Hello.
+    lineB: Are you the boss around here?
+    lineC: 
+  - dialogueType: 1
+    playerChoice: 0
+    lineA: "Hi. . . You must be the new farmhand.I\u2019m Miles. Your name is ______,
+      right? Well _____, I\u2019ll let you explore the farm before we get to work.
+      Come and find me when you\u2019re ready."
+    lineB: "W-what? Boss. . .? No. We\u2019re a team around here. You must be the
+      new farmhand, ____ right? Right. Get settled in and come see me after. We have
+      work to do."
+    lineC: 
+  linesAQC: []
+  rewardsBQC: []
+  rewardsAQC: []
+  addedShopItems: []
+  quest: {fileID: 0}
+  levelRequirement: 0
+  dialogueCompletion: 0

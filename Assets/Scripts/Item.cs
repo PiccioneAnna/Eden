@@ -14,6 +14,7 @@ public class Item : ScriptableObject
 
     [Header("Only UI")]
     public bool stackable = true;
+    public bool shopItem = false;
     public int levelRequirement = 1;
     public CraftRecipe recipe;
 

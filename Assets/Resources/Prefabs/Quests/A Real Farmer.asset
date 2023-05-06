@@ -49,11 +49,13 @@ MonoBehaviour:
   Information:
     Name: A Real Farmer
     Icon: {fileID: 0}
-    Description: Time to put on your overals and grab your hoes
+    Description: Miles needs you to hoe 20 plots, plant 20 potatoes, and harvest
+      20 potatoes
   Reward:
     currency: 10
     items: []
     xP: 10
+  Initialized: 0
   Goals:
   - {fileID: 5412273894174514125}
   - {fileID: 707962721902216185}

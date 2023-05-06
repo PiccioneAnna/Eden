@@ -160,7 +160,7 @@ public class InventoryManager : MonoBehaviour
 
     public void RemoveItem(Item item, int count = 1)
     {
-        if(item == selectedItem)
+        if(item == selectedItem && !item.stackable)
         {
             selectedItem = null;
             UpdateHighlightItem(selectedSlot);
@@ -180,12 +180,15 @@ public class InventoryManager : MonoBehaviour
 
             inventorySlot.inventoryItem = inventorySlot.gameObject.GetComponentInChildren<InventoryItem>();
 
+            if (inventorySlot.inventoryItem == null) { return; }
+
             inventorySlot.inventoryItem.count -= count;
 
             inventorySlot.inventoryItem.RefreshCount();
 
             if(inventorySlot.inventoryItem.count <= 0)
             {
+                selectedItem = null;
                 inventorySlot.Clear();
             }
         }

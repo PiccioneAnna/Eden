@@ -19,6 +19,7 @@ MonoBehaviour:
   crop: {fileID: 11400000, guid: b6d0612adc22cc24bb2dc2423c6782f5, type: 2}
   itemType: 0
   stackable: 1
+  shopItem: 0
   levelRequirement: 3
   recipe: {fileID: 0}
   obj: {fileID: 0}

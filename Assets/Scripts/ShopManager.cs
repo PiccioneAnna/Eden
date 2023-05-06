@@ -75,7 +75,9 @@ public class ShopManager : MonoBehaviour
     {
         foreach (Item item in merchantItems)
         {
-            if (item.levelRequirement <= player.character.level && (!availableMerchantItems.Contains(item)))
+            if (item.levelRequirement <= player.character.level 
+                && (!availableMerchantItems.Contains(item))
+                && item.shopItem == true)
             {
                 Debug.Log("Available item " + item);
                 availableMerchantItems.Add(item);

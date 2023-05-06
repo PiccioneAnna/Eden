@@ -10,14 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f62c75f3734215140895d8f9c4d169a5, type: 3}
-  m_Name: Making Contact
+  m_Name: Missing Lumber
   m_EditorClassIdentifier: 
   Information:
-    Name: 
+    Name: Missing Lumber
     Icon: {fileID: 0}
-    Description: 
+    Description: Miles is short on some wood, head out to the local forests and get
+      some
   Reward:
     currency: 10
-    items: []
+    items:
+    - {fileID: 0}
     xP: 10
+  Initialized: 0
   Goals: []

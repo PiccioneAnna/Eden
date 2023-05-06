@@ -16,9 +16,23 @@ public class BuildingGameEvent : GameEvent
     }
 }
 
+public class TalkGameEvent : GameEvent
+{
+    public Actor actor;
+    public TalkGameEvent(Actor a)
+    {
+        actor = a;
+    }
+}
+
 public class HoeGameEvent : GameEvent
 {
     public HoeGameEvent() { }
+}
+
+public class TillGameEvent : GameEvent
+{
+    public TillGameEvent() { }
 }
 
 public class SeedGameEvent : GameEvent

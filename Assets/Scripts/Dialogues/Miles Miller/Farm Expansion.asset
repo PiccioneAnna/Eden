@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ede6a44c90166ea4eb6a6ca8646dfeb6, type: 3}
+  m_Name: Farm Expansion
+  m_EditorClassIdentifier: 
+  linesBQC:
+  - dialogueType: 0
+    playerChoice: 0
+    lineA: "Thanks for meeting me. You\u2019ve been doing a lot of good work around
+      here, so I wanted to give you something."
+    lineB: 
+    lineC: 
+  - dialogueType: 2
+    playerChoice: 0
+    lineA: "Oh, I don\u2019t need anything! I\u2019ve grown to love this farm, it\u2019s
+      rewarding enough to work on it."
+    lineB: "It\u2019s about time I get some recognition around here!"
+    lineC: 
+  - dialogueType: 1
+    playerChoice: 0
+    lineA: "Well, it\u2019s an honor to work with you. I was thinking you\u2019ve
+      earned the right to plant wherever you please. You know the farm pretty well
+      now. Use this stone shovel to make plots wherever you want."
+    lineB: "Oh. I\u2019m sorry if I haven\u2019t expressed my gratitude enough. Either
+      way, I was thinking you\u2019ve earned the right to plant wherever you please.
+      You know the farm pretty well now. Use this stone shovel to make plots wherever
+      you want."
+    lineC: 
+  - dialogueType: 0
+    playerChoice: 0
+    lineA: Enjoy some more freedom.
+    lineB: 
+    lineC: 
+  linesAQC:
+  - dialogueType: 0
+    playerChoice: 0
+    lineA: You have a pretty good eye for optimal growth spots. Nicely done.
+    lineB: 
+    lineC: 
+  rewardsBQC:
+  - item: {fileID: 11400000, guid: 04403ba07f62c7244912013ddf16a24e, type: 2}
+    itemCount: 1
+  rewardsAQC: []
+  addedShopItems:
+  - {fileID: 11400000, guid: 04403ba07f62c7244912013ddf16a24e, type: 2}
+  quest: {fileID: 11400000, guid: 09c32a7989a397a40b95a375339c7f18, type: 2}
+  levelRequirement: 10
+  dialogueCompletion: 0

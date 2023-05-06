@@ -13,17 +13,59 @@ MonoBehaviour:
   m_Name: A Real Farmer
   m_EditorClassIdentifier: 
   linesBQC:
-  - Hi There!
-  - Welcome to Milherst
-  - Your first quest is to hoe 20 tiles, plant 20 potatoes, and harvest 20 potatoes
+  - dialogueType: 0
+    playerChoice: 0
+    lineA: Hello again. Ready to get to work?
+    lineB: 
+    lineC: 
+  - dialogueType: 0
+    playerChoice: 0
+    lineA: Before we get started, have you ever planted anything before?
+    lineB: 
+    lineC: 
+  - dialogueType: 2
+    playerChoice: 0
+    lineA: Yes.
+    lineB: No.
+    lineC: 
+  - dialogueType: 1
+    playerChoice: 1
+    lineA: "Ah, perfect, you shouldn\u2019t have any questions then."
+    lineB: "Here\u2019s a stone hoe and some potato seeds. Plant and harvest the
+      seeds. You can choose anywhere you see a plot. Familiarize yourself with the
+      area and the land, you\u2019ll be spending a lot of time here."
+    lineC: 
+  - dialogueType: 0
+    playerChoice: 0
+    lineA: "Plant 20 seeds and care for them till they\u2019re done growing."
+    lineB: 
+    lineC: 
+  - dialogueType: 0
+    playerChoice: 0
+    lineA: "Come and show me your harvest when it\u2019s ready."
+    lineB: 
+    lineC: 
   linesAQC:
-  - Good job!
+  - dialogueType: 0
+    playerChoice: 0
+    lineA: Ah, a good harvest. Congratulations.
+    lineB: 
+    lineC: 
+  - dialogueType: 0
+    playerChoice: 0
+    lineA: "Oh\u2014 By the way, I\u2019m opening up a shop and selling some seeds
+      and tools there. If you\u2019re ever looking for supplies for personal projects,
+      come by."
+    lineB: 
+    lineC: 
   rewardsBQC:
   - item: {fileID: 11400000, guid: 1a34fe4d624a70e4da291bd76400de7e, type: 2}
     itemCount: 1
   - item: {fileID: 11400000, guid: ccb14c8e6c362504cb4244c8a77871ec, type: 2}
     itemCount: 20
   rewardsAQC: []
+  addedShopItems:
+  - {fileID: 11400000, guid: ccb14c8e6c362504cb4244c8a77871ec, type: 2}
   quest: {fileID: 11400000, guid: dbb20eb1a891a4d4fa3a0c5810776cd6, type: 2}
-  levelRequirement: 1
-  questCompletion: 0
+  levelRequirement: 2
+  dialogueCompletion: 0

@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-7909501586821654205
+--- !u!114 &-4287181889717093317
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9,14 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 945461058e31ec44dbea379d32260b37, type: 3}
+  m_Script: {fileID: 11500000, guid: 6eaeedb7da669854b8b025e8c06409eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RequiredAmount: 10
+  RequiredAmount: 50
   GoalCompleted:
     m_PersistentCalls:
       m_Calls: []
-  obj: {fileID: 4947889941481394425, guid: 1965736996279c34981ef14222dd8094, type: 3}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27,15 +26,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f62c75f3734215140895d8f9c4d169a5, type: 3}
-  m_Name: ClearPine
+  m_Name: Farm Expansion
   m_EditorClassIdentifier: 
   Information:
-    Name: Clear 50 Willow
+    Name: Farm Expansion
     Icon: {fileID: 0}
-    Description: clear 10 willow
+    Description: Miles gave you a shovel to dig out some new crop plots
   Reward:
     currency: 10
     items: []
-    xP: 10
+    xP: 100
+  Initialized: 0
   Goals:
-  - {fileID: -7909501586821654205}
+  - {fileID: -4287181889717093317}

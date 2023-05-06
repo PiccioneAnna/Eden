@@ -13,12 +13,15 @@ public class QuestManager : MonoBehaviour
     [SerializeField] private UnityEngine.GameObject questHolder;
     public Image QuestUI;
 
+    public Player player;
+
     public List<Quest> CurrentQuests;
     public List<Quest> CompletedQuests;
 
     private void Start()
     {
         questHolder.SetActive(false);
+        RefreshQuestList();
     }
 
     private void RefreshQuestList()
@@ -37,6 +40,7 @@ public class QuestManager : MonoBehaviour
         GameObject questObj = Instantiate(questPrefab, questsContent);
         //questObj.transform.Find("Icon").GetComponent<Image>().sprite = quest.Information.Icon;
         questObj.transform.Find("Title").GetComponent<TMP_Text>().text = quest.Information.Name;
+        questHolder.GetComponent<QuestWindow>().Initialize(quest);
 
         questObj.GetComponent<Button>().onClick.AddListener(delegate
         {
@@ -63,6 +67,11 @@ public class QuestManager : MonoBehaviour
         EventManager.Instance.TriggerEvent(new HoeGameEvent());
     }
 
+    public void Till()
+    {
+        EventManager.Instance.TriggerEvent(new TillGameEvent());
+    }
+
     public void Seed(Crop crop)
     {
         EventManager.Instance.TriggerEvent(new SeedGameEvent(crop));
@@ -85,8 +94,9 @@ public class QuestManager : MonoBehaviour
 
     private void OnQuestCompleted(Quest quest)
     {
-        questsContent.GetChild(CurrentQuests.IndexOf(quest)).Find("Checkmark").gameObject.SetActive(true);
+        //questsContent.GetChild(CurrentQuests.IndexOf(quest)).Find("Checkmark").gameObject.SetActive(true);
         CurrentQuests.Remove(quest);
         CompletedQuests.Add(quest);
+        player.character.IncreaseXP(quest.Reward.xP);
     }
 }
