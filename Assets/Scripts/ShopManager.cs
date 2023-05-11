@@ -64,7 +64,7 @@ public class ShopManager : MonoBehaviour
         // Gets Available Player Items
         foreach (InventorySlot slot in inventoryManager.inventorySlots)
         {
-            if (slot.item != null && slot.item.itemType == Item.ItemType.Crop)
+            if (slot.item != null && slot.item.itemType == Item.ItemType.Crop && slot.gameObject.GetComponentInChildren<InventoryItem>() != null)
             {
                 CreateShopItemInPlayerInventory(slot.item, slot.gameObject.GetComponentInChildren<InventoryItem>().count);
             }
@@ -76,7 +76,7 @@ public class ShopManager : MonoBehaviour
         foreach (Item item in merchantItems)
         {
             if (item.levelRequirement <= player.character.level 
-                && (!availableMerchantItems.Contains(item))
+                && !availableMerchantItems.Contains(item)
                 && item.shopItem == true)
             {
                 Debug.Log("Available item " + item);
@@ -105,15 +105,18 @@ public class ShopManager : MonoBehaviour
         {
             if(go.GetComponent<ShopItem>().item == item)
             {
-                go.GetComponent<ShopItem>().itemCount += 1;
-                go.GetComponent<ShopItem>().Refresh();
+                if(count == 1)
+                {
+                    go.GetComponent<ShopItem>().itemCount += count;
+                    go.GetComponent<ShopItem>().Refresh();
+                }
                 return;
             }
         }
 
         GameObject shopItem = GameObject.Instantiate(shopitemPrefab, playerInventory.transform);
         shopItem.GetComponent<ShopItem>().item = item;
-        shopItem.GetComponent<ShopItem>().itemCount += count;
+        shopItem.GetComponent<ShopItem>().itemCount = count;
         shopItem.GetComponent<ShopItem>().Refresh();
         shopItem.GetComponent<ShopItem>().inPlayerInventory = true;
         playerItemsUI.Add(shopItem);

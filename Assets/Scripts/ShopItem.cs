@@ -39,7 +39,7 @@ public class ShopItem : MonoBehaviour
         nameText.text = item.name;
 
         // If there is only one object then don't display the count text
-        if(itemCount == 1)
+        if(itemCount == 1 || itemCount == 0)
         {
             countText.text = "";
         }

@@ -5394,8 +5394,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 8.5776, y: 6.1088}
+  m_SizeDelta: {x: 464.27, y: 42.2175}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &492310293
 MonoBehaviour:
@@ -6950,8 +6950,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 65}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 11.631, y: 74.16312}
+  m_SizeDelta: {x: 458.16, y: 48.3263}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &581020561
 MonoBehaviour:
@@ -10755,6 +10755,7 @@ MonoBehaviour:
   questHolder: {fileID: 1157534916}
   QuestUI: {fileID: 544130002}
   player: {fileID: 275464363}
+  questUINodes: []
   CurrentQuests:
   - {fileID: 11400000, guid: 70257a0fcf547d24380e650e284b795f, type: 2}
   CompletedQuests: []
@@ -17825,8 +17826,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -62}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 11.63, y: -51.309685}
+  m_SizeDelta: {x: 458.16, y: 51.3806}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1598689946
 MonoBehaviour:
@@ -21799,7 +21800,7 @@ MonoBehaviour:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 0
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []

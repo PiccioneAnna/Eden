@@ -17,8 +17,9 @@ MonoBehaviour:
   isMerchant: 1
   isQuestSource: 1
   merchantItems:
-  - {fileID: 11400000, guid: 49657e6904a3f364b8403c2af05bf097, type: 2}
+  - {fileID: 11400000, guid: ccb14c8e6c362504cb4244c8a77871ec, type: 2}
   - {fileID: 11400000, guid: cfb57fc5a65e67747988283b1017cb8e, type: 2}
-  - {fileID: 11400000, guid: cf3d1de7f142f794b951ad43968685ea, type: 2}
   - {fileID: 11400000, guid: 3d45de32abbc51f40b7a9103682d136d, type: 2}
   - {fileID: 11400000, guid: dba84e0d86e76004da4dc85b9c7bd2c7, type: 2}
+  - {fileID: 11400000, guid: 49657e6904a3f364b8403c2af05bf097, type: 2}
+  - {fileID: 11400000, guid: cf3d1de7f142f794b951ad43968685ea, type: 2}

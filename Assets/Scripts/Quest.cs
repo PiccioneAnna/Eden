@@ -30,7 +30,7 @@ public class Quest : ScriptableObject
 
     public bool Completed { get; private set; }
     public bool Initialized = false;
-    public QuestCompletedEvent QuestCompleted;
+    public QuestCompletedEvent QuestCompleted = null;
 
     public abstract class QuestGoal : ScriptableObject
     {

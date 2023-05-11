@@ -9,6 +9,15 @@ public class DialogueTree : ScriptableObject
     public Actor actor;
 
     private int currentPlayerLevel;
+
+    private void Refresh()
+    {
+        // Temporary quest reset for now, long term would be refresh upon new save file
+        foreach (DialogueContainer dialogue in dialogueContainers)
+        {
+            dialogue.dialogueCompletion = false;
+        }
+    }
     
     // Theoretically goes through dialogue list and returns dialogue matching player's level
     public DialogueContainer GetCurrentDialogue()

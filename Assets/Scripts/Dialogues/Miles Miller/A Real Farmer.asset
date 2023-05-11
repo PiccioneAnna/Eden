@@ -66,6 +66,9 @@ MonoBehaviour:
   rewardsAQC: []
   addedShopItems:
   - {fileID: 11400000, guid: ccb14c8e6c362504cb4244c8a77871ec, type: 2}
+  removedPlayerItems:
+  - item: {fileID: 11400000, guid: 55a9b8ff516e475489be60f702748924, type: 2}
+    itemCount: 20
   quest: {fileID: 11400000, guid: dbb20eb1a891a4d4fa3a0c5810776cd6, type: 2}
   levelRequirement: 2
   dialogueCompletion: 0

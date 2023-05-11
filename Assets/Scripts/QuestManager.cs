@@ -15,6 +15,8 @@ public class QuestManager : MonoBehaviour
 
     public Player player;
 
+    public List<GameObject> questUINodes;
+
     public List<Quest> CurrentQuests;
     public List<Quest> CompletedQuests;
 
@@ -34,10 +36,23 @@ public class QuestManager : MonoBehaviour
 
     private void InitializeQuest(Quest quest)
     {
+        GameObject questObj = Instantiate(questPrefab, questsContent);
+
+        // If the quest has already been initialized then break out 
+        foreach (GameObject q in questUINodes)
+        {
+            if (q.transform.Find("Title").GetComponent<TMP_Text>().text == quest.Information.Name) 
+            {
+                Destroy(questObj);
+                return; 
+            }
+        }
+
+        questUINodes.Add(questObj);
+
         quest.Initialize();
         quest.QuestCompleted.AddListener(OnQuestCompleted);
 
-        GameObject questObj = Instantiate(questPrefab, questsContent);
         //questObj.transform.Find("Icon").GetComponent<Image>().sprite = quest.Information.Icon;
         questObj.transform.Find("Title").GetComponent<TMP_Text>().text = quest.Information.Name;
         questHolder.GetComponent<QuestWindow>().Initialize(quest);
@@ -54,7 +69,7 @@ public class QuestManager : MonoBehaviour
     {
         if (CurrentQuests.Contains(quest)) { return; }
         CurrentQuests.Add(quest);
-        InitializeQuest(quest);
+        RefreshQuestList();
     }
 
     public void Build(string buildingName)

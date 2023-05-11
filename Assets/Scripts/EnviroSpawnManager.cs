@@ -10,7 +10,7 @@ public class EnviroSpawnManager : MonoBehaviour
     public int maxSpawnCount;
     public int spawnCount;
 
-    public List<UnityEngine.GameObject> objects;
+    public List<GameObject> objects;
 
     public SpriteRenderer outerSpawnArea;
     public SpriteRenderer innerSpawnArea;
@@ -40,6 +40,8 @@ public class EnviroSpawnManager : MonoBehaviour
         random = new System.Random();
         spawnCount = random.Next(maxSpawnCount) + minSpawnCount;
 
+        // Divide up spawncoutn by object rarity;
+
         // For the amount of items, spawn
         for (int i = 0; i < spawnCount; i++)
         {
@@ -58,7 +60,7 @@ public class EnviroSpawnManager : MonoBehaviour
     }
 
     // Get a random object to spawn;
-    private UnityEngine.GameObject RandomObjectPrefab()
+    private GameObject RandomObjectPrefab()
     {
         return objects[random.Next(objects.Count)];
     }
@@ -84,7 +86,7 @@ public class EnviroSpawnManager : MonoBehaviour
             }
         }
 
-        UnityEngine.GameObject go = Instantiate(drop, position + transform.position, rotation, this.transform);
+        GameObject go = Instantiate(drop, position + transform.position, rotation, this.transform);
         go.gameObject.transform.localScale = scale;
 
         if(go.gameObject.GetComponent<BoxCollider2D>() != null)
