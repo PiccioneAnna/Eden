@@ -38,6 +38,6 @@ MonoBehaviour:
   - item: {fileID: 11400000, guid: 840addbd6688b3248a9ae4d989663af1, type: 2}
     itemCount: 20
   quests:
-  - {fileID: 11400000, guid: dbb20eb1a891a4d4fa3a0c5810776cd6, type: 2}
+  - {fileID: 11400000, guid: f03e584f24e25d948aae692398fb71e3, type: 2}
   levelRequirement: 3
   dialogueCompletion: 0

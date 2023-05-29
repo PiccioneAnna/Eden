@@ -12,9 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Essential.unity
     guid: f48b232a72d3ffd43aa0609d76e04340
   - enabled: 1
-    path: Assets/Scenes/Eden.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
     path: Assets/Scenes/Purgatory.unity
     guid: e182662860bc07f4383a7979a2e9357a
   - enabled: 1
@@ -22,7 +19,7 @@ EditorBuildSettings:
     guid: 82ae9335288dde040ae64b287a78fed9
   - enabled: 0
     path: 
-    guid: b2533548ed7fdad48a1bb360731a7878
+    guid: 00000000000000000000000000000000
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
@@ -41,4 +38,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Milherst/Milherst Forest.unity
     guid: 1bad13910f8983e48bf483c3cc56e22a
+  - enabled: 1
+    path: Assets/Scenes/Eden.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
   m_configObjects: {}
