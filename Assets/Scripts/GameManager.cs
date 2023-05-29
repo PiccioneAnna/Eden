@@ -15,5 +15,6 @@ public class GameManager : MonoBehaviour
     public DayTimeController timeController;
     public QuestManager questManager;
     public DialogueSystem dialogueSystem;
+    public OnScreenMessageSystem messageSystem;
     public PlaceableObjectsReferenceManager placeableObjects;
 }

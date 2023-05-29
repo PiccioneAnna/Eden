@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ResourceNode : ToolHit
 {
+    public static ResourceNode instance;
     public QuestManager questManager;
     public Resource resource;
     private int health;
@@ -20,6 +21,7 @@ public class ResourceNode : ToolHit
 
     private void Awake()
     {
+        instance = this;
         random = new System.Random();
         position = transform.position;
         rotation = transform.rotation;

@@ -70,3 +70,8 @@ public class VisitGameEvent : GameEvent
         scene = s;
     }
 }
+
+public class ItemGameEvent : GameEvent
+{
+    public ItemGameEvent() { }
+}

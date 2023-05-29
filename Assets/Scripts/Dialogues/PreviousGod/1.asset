@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ed8d51b691bddb4a9f53e1ba2122590, type: 3}
+  m_Name: 1
+  m_EditorClassIdentifier: 
+  lines:
+  - 'Hey there. '
+  - "You don\u2019t know what you\u2019re doing here do you? "
+  - "It\u2019s okay. "
+  - "I didn\u2019t either."
+  - "I still don\u2019t honestly."
+  - . . .
+  - I left you something.
+  - I used to fill it with all the things from my travels that made me happy.
+  - I called it Eden, but you can call it whatever you like.
+  - There might still be some of my stuff leftover on it.
+  - 'Oh well. Anything you find is yours now. '
+  - What do you want to name your new home?
+  - ".  .  . \u201CInsert name\u201D "
+  - "\u201CInsert name.\u201D Interesting"
+  - "Well, the story\u2019s up to you now. "
+  - "I\u2019ll be watching you closely."
+  - "Not like there\u2019s much else to do anyways. "
+  - "If you need anything, I\u2019ll be around."
+  - Consider sharing some of your findings with me as well.
+  - 'I miss being in your shoes sometimes. '
+  - "I\u2019ll even give you something back for the trouble. "
+  - 'Good luck. '
+  - ':) '

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1204935880875582585}
   - component: {fileID: 7923679703390392504}
   - component: {fileID: -547703759522847632}
+  - component: {fileID: 4021695029809632363}
   m_Layer: 0
   m_Name: Boulder
   m_TagString: Untagged
@@ -78,12 +79,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: 21300000, guid: a650f33655688834b868b60f7a192b3a, type: 3}
+  m_Sprite: {fileID: 463940750, guid: db8802bcf76c39f4aa3cd8c956ea0321, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.28, y: 1.28}
+  m_Size: {x: 2.53125, y: 2.46875}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -99,7 +100,7 @@ Animator:
   m_GameObject: {fileID: 1204935880875582586}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 63d3c8dbc52077145a8a115c036ad05e, type: 2}
+  m_Controller: {fileID: 9100000, guid: 02a17721f893956468d13ba93567946f, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -132,15 +133,26 @@ MonoBehaviour:
   name: 
   maxDropCount: 5
   minDropCount: 1
-  maxScale: 1.5
+  maxScale: 1.15
   minScale: 0.15
   multisprite: 1
-  drops: []
-  droppedObjs:
-  - {fileID: 2256325366030707764, guid: a9e18dcba3345da4f94ff2d9481f75e1, type: 3}
+  drops:
+  - {fileID: 11400000, guid: 1f987a64e6cbe1141962347790493333, type: 2}
   sprites:
-  - {fileID: 21300000, guid: a650f33655688834b868b60f7a192b3a, type: 3}
-  - {fileID: 21300000, guid: a596dd2cea7e6c9489b2535b37f61988, type: 3}
+  - {fileID: -1434241596, guid: db8802bcf76c39f4aa3cd8c956ea0321, type: 3}
+  - {fileID: -1129018910, guid: db8802bcf76c39f4aa3cd8c956ea0321, type: 3}
+  - {fileID: 1283676781, guid: db8802bcf76c39f4aa3cd8c956ea0321, type: 3}
+  - {fileID: 2019200884, guid: db8802bcf76c39f4aa3cd8c956ea0321, type: 3}
+  - {fileID: 1874127543, guid: db8802bcf76c39f4aa3cd8c956ea0321, type: 3}
+  - {fileID: -57681207, guid: db8802bcf76c39f4aa3cd8c956ea0321, type: 3}
+  - {fileID: 463940750, guid: db8802bcf76c39f4aa3cd8c956ea0321, type: 3}
+  - {fileID: -1640428525, guid: db8802bcf76c39f4aa3cd8c956ea0321, type: 3}
+  - {fileID: -349364626, guid: db8802bcf76c39f4aa3cd8c956ea0321, type: 3}
+  - {fileID: -440966066, guid: db8802bcf76c39f4aa3cd8c956ea0321, type: 3}
+  - {fileID: -249885810, guid: db8802bcf76c39f4aa3cd8c956ea0321, type: 3}
+  - {fileID: 30590112, guid: db8802bcf76c39f4aa3cd8c956ea0321, type: 3}
+  - {fileID: 255717176, guid: db8802bcf76c39f4aa3cd8c956ea0321, type: 3}
+  selectedSprite: {fileID: 0}
   rotations: []
   positions: []
   health: 25
@@ -157,18 +169,18 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.016857415, y: 0.17908292}
+  m_Offset: {x: 0.026929379, y: 1.0754786}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.2}
-    oldSize: {x: 2, y: 2}
-    newSize: {x: 1.28, y: 1.28}
+    pivot: {x: 0.5, y: 0.15}
+    oldSize: {x: 2.21875, y: 2.078125}
+    newSize: {x: 2.53125, y: 2.46875}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.29199022, y: 0.3117098}
+  m_Size: {x: 1.7893398, y: 1.4733315}
   m_EdgeRadius: 0
 --- !u!114 &-547703759522847632
 MonoBehaviour:
@@ -185,6 +197,20 @@ MonoBehaviour:
   questManager: {fileID: 0}
   resource: {fileID: 1204935880875582585}
   nodeType: 2
+--- !u!114 &4021695029809632363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1204935880875582586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf094301f6b4f2e478bb489eaa4e5684, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  renderers:
+  - {fileID: 1204935880875582565}
 --- !u!1 &2413421777888864826
 GameObject:
   m_ObjectHideFlags: 0
@@ -210,7 +236,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2413421777888864826}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.038, y: 0.451, z: 0}
+  m_LocalPosition: {x: -0.118, y: 0.969, z: 0}
   m_LocalScale: {x: 0.45199, y: 0.45199, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -242,17 +268,15 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.049800217, y: -0.43557253}
-      - {x: -0.12990679, y: -0.494385}
-      - {x: -0.19355696, y: -0.4924795}
-      - {x: -0.287245, y: -0.48641163}
-      - {x: -0.48140627, y: -0.42778397}
-      - {x: -0.6639122, y: -0.5039058}
-      - {x: -0.7421022, y: -0.6870712}
-      - {x: -0.33275816, y: -0.90195847}
-      - {x: -0.3021369, y: -1.1165414}
-      - {x: 0.00718385, y: -1.2026947}
-      - {x: 0.5409657, y: -1.2235365}
-      - {x: 0.83148247, y: -1.0059688}
-      - {x: 0.78090185, y: -0.5703684}
-      - {x: 0.38770065, y: -0.4407273}
+    - - {x: 0.79382455, y: -0.848524}
+      - {x: 0.21782446, y: -0.81496847}
+      - {x: -0.6873046, y: -0.71581936}
+      - {x: -1.0538447, y: -0.8104813}
+      - {x: -1.6130419, y: -1.3661435}
+      - {x: -0.9137052, y: -1.7845472}
+      - {x: 0.26442647, y: -1.9367098}
+      - {x: 1.1907287, y: -1.9387577}
+      - {x: 1.792523, y: -1.8654858}
+      - {x: 2.2190673, y: -1.3032049}
+      - {x: 1.8280832, y: -0.8513985}
+      - {x: 1.4397504, y: -0.74417096}

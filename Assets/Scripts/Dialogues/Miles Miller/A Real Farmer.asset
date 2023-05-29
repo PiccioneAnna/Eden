@@ -69,6 +69,7 @@ MonoBehaviour:
   removedPlayerItems:
   - item: {fileID: 11400000, guid: 55a9b8ff516e475489be60f702748924, type: 2}
     itemCount: 20
-  quest: {fileID: 11400000, guid: dbb20eb1a891a4d4fa3a0c5810776cd6, type: 2}
+  quests:
+  - {fileID: 11400000, guid: f03e584f24e25d948aae692398fb71e3, type: 2}
   levelRequirement: 2
   dialogueCompletion: 0

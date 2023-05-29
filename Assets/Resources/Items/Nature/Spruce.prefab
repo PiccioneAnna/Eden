@@ -313,6 +313,7 @@ GameObject:
   - component: {fileID: 1727514393013738731}
   - component: {fileID: 4541249033370592462}
   - component: {fileID: 3440885217023447463}
+  - component: {fileID: 3015662405034602108}
   m_Layer: 0
   m_Name: Spruce
   m_TagString: Untagged
@@ -450,3 +451,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &3015662405034602108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8559853259831936996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf094301f6b4f2e478bb489eaa4e5684, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  renderers:
+  - {fileID: 5730065087888588545}
+  - {fileID: 7518299795851890751}

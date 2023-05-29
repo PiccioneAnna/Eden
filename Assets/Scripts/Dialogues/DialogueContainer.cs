@@ -40,7 +40,7 @@ public class DialogueContainer : ScriptableObject
     public List<Reward> rewardsAQC; // After Quest Completion Rewards
     public List<Item> addedShopItems;
     public List<Reward> removedPlayerItems;
-    public Quest quest;
+    public List<Quest> quests;
     public int levelRequirement;
     public bool dialogueCompletion;
 }

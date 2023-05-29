@@ -17,6 +17,11 @@ public class MainMenu : MonoBehaviour
     public void StartNewGame()
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene(nameNewGameStartScene, LoadSceneMode.Single);
+    }
+
+    public void LoadGame()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene(nameNewGameStartScene, LoadSceneMode.Single);
         UnityEngine.SceneManagement.SceneManager.LoadScene(nameEssentialScene, LoadSceneMode.Additive);
     }
 }

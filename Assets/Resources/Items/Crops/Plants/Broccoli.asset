@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c437bb003d9dc8342afcba4aa0539dab, type: 3}
+  m_Name: Broccoli
+  m_EditorClassIdentifier: 
+  timeToGrow: 15
+  yield: {fileID: 11400000, guid: 0cb32550d95def44c94376364cef7529, type: 2}
+  seeds: {fileID: 11400000, guid: e017c325952fa9544aa1856422cf3a16, type: 2}
+  count: 1
+  multiHarvest: 0
+  sprites:
+  - {fileID: 1568411379, guid: a6f38350c5bbde947823887e73f5136c, type: 3}
+  - {fileID: 92458476, guid: a6f38350c5bbde947823887e73f5136c, type: 3}
+  - {fileID: 813336710, guid: a6f38350c5bbde947823887e73f5136c, type: 3}
+  - {fileID: -1034507447, guid: a6f38350c5bbde947823887e73f5136c, type: 3}
+  growthStageTime: 0000000004000000070000000f000000

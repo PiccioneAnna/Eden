@@ -18,12 +18,15 @@ EditorBuildSettings:
     path: Assets/Scenes/Purgatory.unity
     guid: e182662860bc07f4383a7979a2e9357a
   - enabled: 1
-    path: Assets/Scenes/Milherst.unity
+    path: Assets/Scenes/Milherst/Milherst.unity
     guid: 82ae9335288dde040ae64b287a78fed9
   - enabled: 1
-    path: Assets/Scenes/Milherst Forest.unity
+    path: Assets/Scenes/Milherst/MF1.unity
     guid: b2533548ed7fdad48a1bb360731a7878
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/PreviousGodCutscene.unity
+    guid: 0e9473241e57bb341aa7c0fe6c370e4a
   m_configObjects: {}

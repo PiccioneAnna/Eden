@@ -6,9 +6,14 @@ using UnityEngine;
 public class DialogueTree : ScriptableObject
 {
     public List<DialogueContainer> dialogueContainers;
+
+    public DialogueContainer taskContainer;
+
     public Actor actor;
 
     private int currentPlayerLevel;
+
+    private int dialogueIndex = 0;
 
     private void Refresh()
     {
@@ -24,14 +29,22 @@ public class DialogueTree : ScriptableObject
     {
         currentPlayerLevel = GameManager.instance.player.GetComponent<Character>().level;
 
-        foreach (DialogueContainer dialogue in dialogueContainers)
+        DialogueContainer dialogue = dialogueContainers[dialogueIndex];
+
+        if (dialogue.dialogueCompletion == true)
         {
-            if(dialogue.levelRequirement <= currentPlayerLevel && dialogue.dialogueCompletion == false)
-            {
-                dialogue.quest.Initialize();
-                return dialogue;
-            }
+            dialogueIndex++;
         }
+
+        if (dialogue.levelRequirement <= currentPlayerLevel && dialogue.dialogueCompletion == false)
+        {
+            if(dialogue.quests.Count > 0)
+            {
+                dialogue.quests[0].Initialize();
+            }
+            return dialogue;
+        }
+
         return null;
     }
 

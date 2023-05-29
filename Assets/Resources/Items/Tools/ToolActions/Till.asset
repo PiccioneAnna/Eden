@@ -13,6 +13,5 @@ MonoBehaviour:
   m_Name: Till
   m_EditorClassIdentifier: 
   canTill:
-  - {fileID: 11400000, guid: b95097a0bba417f47af7a5845f892e7c, type: 2}
-  - {fileID: 11400000, guid: 17683848736e56c4d9d9820ffcdf0eb8, type: 2}
-  - {fileID: 11400000, guid: 2c06b2b7e56834e40a289443a907d284, type: 2}
+  - {fileID: 11400000, guid: 6133959704623ca4083034395f6b520b, type: 2}
+  - {fileID: 11400000, guid: 24e0f39567de57e4f91bf57ea92b3c1a, type: 2}

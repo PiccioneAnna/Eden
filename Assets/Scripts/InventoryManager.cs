@@ -5,6 +5,7 @@ using UnityEngine;
 public class InventoryManager : MonoBehaviour
 {
     public InventoryManager inventoryManager;
+    public QuestManager questManager;
 
     [SerializeField] ItemHighlight itemHighlight;
 
@@ -19,6 +20,8 @@ public class InventoryManager : MonoBehaviour
     void Awake()
     {
         inventoryManager = this;
+
+        questManager = GameManager.instance.GetComponent<GameManager>().questManager;
     }
 
     private void Start()
@@ -101,6 +104,7 @@ public class InventoryManager : MonoBehaviour
             {
                 itemInSlot.count++;
                 itemInSlot.RefreshCount();
+                questManager.CheckIfPlayerHasObject();
                 return true;
             }
         }
@@ -114,6 +118,8 @@ public class InventoryManager : MonoBehaviour
             {
                 SpawnNewItem(item, slot);
                 slot.ItemInSlot = item;
+                Debug.Log(questManager);
+                questManager.CheckIfPlayerHasObject();
                 return true;
             }
         }
@@ -133,6 +139,27 @@ public class InventoryManager : MonoBehaviour
             }
         }
         return false;
+    }
+
+    public int CheckItemCount(Item i)
+    {
+        InventorySlot inventorySlot = null;
+
+        foreach (InventorySlot slot in inventorySlots)
+        {
+            slot.inventoryItem = slot.gameObject.GetComponentInChildren<InventoryItem>();
+
+            if (slot.inventoryItem != null &&
+                slot.inventoryItem.item != null &&
+                slot.inventoryItem.item == i)
+            {
+                inventorySlot = slot;
+            }
+        }
+
+        if (inventorySlot == null) { return 0; }
+
+        return inventorySlot.gameObject.GetComponentInChildren<InventoryItem>().count;
     }
 
     public bool CheckItem(RecipeElement itemtoCheck)

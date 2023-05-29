@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ed8d51b691bddb4a9f53e1ba2122590, type: 3}
+  m_Name: 2
+  m_EditorClassIdentifier: 
+  lines:
+  - 'I see you found the shrine.  '
+  - 'Look at you. Quick learner.  '
+  - "The place you\u2019re going to enter soon is called Purgatory.  "
+  - 'It serves as a link between here and the human world.  '
+  - "Traverse the gates to step your shoes into some else\u2019s life.  "
+  - 'Explore the worlds as much as you like, but be careful getting attached to the
+    residents  '
+  - 'Eventually all things come to an end.  '
+  - "In the human world you\u2019ll retain all of your god given abilities, but do
+    be careful. Humans get scared at the idea of the unknown. "
+  - "I\u2019ll give you this in case anything happens. It grants you the ability
+    to teleport back to \u2018______\u2019 at any time. "
+  - 'Best of luck friend. '
+  - :)

@@ -31,6 +31,8 @@ MonoBehaviour:
   rewardsBQC: []
   rewardsAQC: []
   addedShopItems: []
-  quest: {fileID: 0}
+  removedPlayerItems: []
+  quests:
+  - {fileID: 0}
   levelRequirement: 0
   dialogueCompletion: 0

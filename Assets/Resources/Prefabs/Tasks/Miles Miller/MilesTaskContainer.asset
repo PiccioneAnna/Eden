@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ede6a44c90166ea4eb6a6ca8646dfeb6, type: 3}
+  m_Name: MilesTaskContainer
+  m_EditorClassIdentifier: 
+  linesBQC:
+  - dialogueType: 0
+    playerChoice: 0
+    lineA: Hey there. We got some new crop orders.
+    lineB: 
+    lineC: 
+  - dialogueType: 0
+    playerChoice: 0
+    lineA: I wrote everything down for your convienience.
+    lineB: 
+    lineC: 
+  linesAQC: []
+  rewardsBQC: []
+  rewardsAQC: []
+  addedShopItems: []
+  removedPlayerItems: []
+  quests:
+  - {fileID: 11400000, guid: 8af38a4efd5d2cd4795316e397722228, type: 2}
+  levelRequirement: 0
+  dialogueCompletion: 0

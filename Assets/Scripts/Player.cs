@@ -425,16 +425,20 @@ public class Player : MonoBehaviour
 
     private void Interact()
     {
-        Vector2 position = rigidBody.position + direction * offsetDistance;
-
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(position, sizeOfIA);
-
-        foreach (Collider2D c in colliders)
+        /// Handles collision for key input instead of mouse
+        if (Input.GetMouseButtonDown(0))
         {
-            Interactable obj = c.GetComponent<Interactable>();
-            if(obj != null)
+            Vector2 position = rigidBody.position + direction * offsetDistance;
+            Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Collider2D[] colliders = Physics2D.OverlapCircleAll(position, sizeOfIA);
+
+            foreach (Collider2D c in colliders)
             {
-                obj.Interact(player);
+                Interactable obj = c.GetComponent<Interactable>();
+                if (obj != null)
+                {
+                    obj.Interact(player);
+                }
             }
         }
     }

@@ -107,9 +107,15 @@ public class QuestManager : MonoBehaviour
         EventManager.Instance.TriggerEvent(new VisitGameEvent(scene));
     }
 
+    public void CheckIfPlayerHasObject()
+    {
+        EventManager.Instance.TriggerEvent(new ItemGameEvent());
+    }
+
     private void OnQuestCompleted(Quest quest)
     {
         //questsContent.GetChild(CurrentQuests.IndexOf(quest)).Find("Checkmark").gameObject.SetActive(true);
+        Debug.Log("QuestComplete");
         CurrentQuests.Remove(quest);
         CompletedQuests.Add(quest);
         player.character.IncreaseXP(quest.Reward.xP);

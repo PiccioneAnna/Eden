@@ -21,9 +21,12 @@ public class DialogueSystem : MonoBehaviour
 
     List<DialogueLine> lines;
 
+    public Quest currentQuest;
+
     public Button talkBtn;
     public Button shopBtn;
     public Button questsBtn;
+    public Button taskBtn;
 
     public GameObject intitialOptionsMenu;
     public GameObject talkOptionContainer;
@@ -62,13 +65,13 @@ public class DialogueSystem : MonoBehaviour
     private void UpdateDialogue()
     {
         // Determine if quest is complete or not to see which dialogue to display
-        if (!questManager.CurrentQuests.Contains(currentDialogue.quest) &&
-            !questManager.CompletedQuests.Contains(currentDialogue.quest))
+        if (!questManager.CurrentQuests.Contains(currentQuest) &&
+            !questManager.CompletedQuests.Contains(currentQuest))
         {
             lines = currentDialogue.linesBQC;
             PushText();
         }
-        else if (questManager.CompletedQuests.Contains(currentDialogue.quest))
+        else if (questManager.CompletedQuests.Contains(currentQuest))
         {
             lines = currentDialogue.linesAQC;
             PushText();
@@ -219,26 +222,43 @@ public class DialogueSystem : MonoBehaviour
         shopManager.Refresh();
     }
 
+    public void Task()
+    {
+        ButtonsVisibility(false);
+
+        currentDialogue = dialogueTree.taskContainer;
+
+        // FInd a task that is within the player range
+        while(currentQuest == null || currentQuest.levelRequirement > player.character.level)
+        {
+            currentQuest = currentDialogue.quests[UnityEngine.Random.Range(0, currentDialogue.quests.Count)];
+        }
+
+        lines = currentDialogue.linesBQC;
+        CycleLine();
+    }
+
     public void Quests()
     {
         Debug.Log("Opened Quests");
         ButtonsVisibility(false);
 
         currentDialogue = dialogueTree.GetCurrentDialogue();
+        currentQuest = currentDialogue.quests[0];
 
-        if(currentDialogue == null) { return; }
+        if (currentDialogue == null) { return; }
 
         currentTextLine = 0;
         player.isInteract = true;
 
         // Determine if quest is complete or not to see which dialogue to display
-        if (!questManager.CurrentQuests.Contains(currentDialogue.quest) &&
-            !questManager.CompletedQuests.Contains(currentDialogue.quest))
+        if (!questManager.CurrentQuests.Contains(currentQuest) &&
+            !questManager.CompletedQuests.Contains(currentQuest))
         {
             lines = currentDialogue.linesBQC;
             CycleLine();
         }
-        else if (questManager.CompletedQuests.Contains(currentDialogue.quest))
+        else if (questManager.CompletedQuests.Contains(currentQuest))
         {
             lines = currentDialogue.linesAQC;
             CycleLine();
@@ -256,11 +276,12 @@ public class DialogueSystem : MonoBehaviour
         }
         else
         {
-            shopBtn.gameObject.SetActive(s);
+            shopBtn.gameObject.SetActive(!s);
         }
 
         talkBtn.gameObject.SetActive(s);
         questsBtn.gameObject.SetActive(s);
+        taskBtn.gameObject.SetActive(s);
         targetText.gameObject.SetActive(!s);
     }
 
@@ -279,15 +300,16 @@ public class DialogueSystem : MonoBehaviour
     {
         Debug.Log("The dialogue has ended");
         player.isInteract = false;
-        if(!questManager.CurrentQuests.Contains(currentDialogue.quest) &&
-           !questManager.CompletedQuests.Contains(currentDialogue.quest))
+        if(!questManager.CurrentQuests.Contains(currentQuest) &&
+           !questManager.CompletedQuests.Contains(currentQuest))
         {
             RecieveItem(currentDialogue.rewardsBQC);
+            questManager.CheckIfPlayerHasObject();
             RecieveQuest();
         }
-        else if(questManager.CompletedQuests.Contains(currentDialogue.quest))
+        else if(questManager.CompletedQuests.Contains(currentQuest))
         {
-            player.character.IncreaseXP(currentDialogue.quest.Reward.xP);
+            player.character.IncreaseXP(currentQuest.Reward.xP);
             RecieveItem(currentDialogue.rewardsAQC);
             currentDialogue.dialogueCompletion = true;
 
@@ -342,12 +364,12 @@ public class DialogueSystem : MonoBehaviour
     // Adds a quest to quest manager
     private void RecieveQuest()
     {
-        if(currentDialogue.quest != null && 
-            !questManager.CurrentQuests.Contains(currentDialogue.quest) &&
-            !questManager.CompletedQuests.Contains(currentDialogue.quest))
+        if(currentDialogue.quests[0] != null && 
+            !questManager.CurrentQuests.Contains(currentQuest) &&
+            !questManager.CompletedQuests.Contains(currentQuest))
         {
-            questManager.AddQuest(currentDialogue.quest);
-            Debug.Log("Quest Active : " + currentDialogue.quest.name);
+            questManager.AddQuest(currentQuest);
+            Debug.Log("Quest Active : " + currentQuest.name);
         }
     }
 

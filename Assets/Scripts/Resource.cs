@@ -26,15 +26,23 @@ public class Resource : Object
 
     void Awake()
     {
+        instance = this;
+
         originalHealth = health;
 
+        DetermineSprite();
+    }
+
+    public void DetermineSprite()
+    {
         System.Random random = new System.Random();
 
         if (instance.transform.GetComponent<SpriteRenderer>() != null && multisprite && selectedSprite == null)
         {
             instance.transform.GetComponent<SpriteRenderer>().sprite = sprites[random.Next(sprites.Length)];
+            selectedSprite = instance.transform.GetComponent<SpriteRenderer>().sprite;
         }
-        else if (instance.transform.GetComponent<SpriteRenderer>() != null && multisprite)
+        else if (selectedSprite != null && multisprite)
         {
             instance.transform.GetComponent<SpriteRenderer>().sprite = selectedSprite;
         }
@@ -67,11 +75,11 @@ public class Resource : Object
             index = 2;
         }
 
-        Vector3 newRotation = rotations[index];
-        Vector3 newPosition = positions[index];
+        //Vector3 newRotation = rotations[index];
+        //Vector3 newPosition = positions[index];
 
-        gameObject.transform.rotation = Quaternion.Euler(newRotation);
-        gameObject.transform.localPosition = newPosition;
+        //gameObject.transform.rotation = Quaternion.Euler(newRotation);
+        //gameObject.transform.localPosition = newPosition;
     }
 
     public void TakeDamage() 
