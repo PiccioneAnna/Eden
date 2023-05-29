@@ -545,7 +545,7 @@ MonoBehaviour:
   name: 
   maxDropCount: 10
   minDropCount: 5
-  maxScale: 5
+  maxScale: 2
   minScale: 0.25
   multisprite: 0
   drops:
