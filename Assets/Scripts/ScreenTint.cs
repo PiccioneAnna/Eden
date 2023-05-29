@@ -8,7 +8,7 @@ public class ScreenTint : MonoBehaviour
     [SerializeField] Color unTintedColor;
     [SerializeField] Color tintedColor;
     float f;
-    public float speed = 0.5f;
+    public float speed = 1f;
 
     Image image;
 
