@@ -23,8 +23,8 @@ MonoBehaviour:
   linesAQC:
   - dialogueType: 0
     playerChoice: 0
-    lineA: "You\u2019re getting good at this. Stop by tomorrow and I\u2019ll give
-      you some more seeds."
+    lineA: "You\u2019re getting good at this. Stop by later and I\u2019ll give you
+      some more seeds."
     lineB: 
     lineC: 
   rewardsBQC:

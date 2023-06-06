@@ -26,26 +26,52 @@ MonoBehaviour:
     lineC: 
   - dialogueType: 1
     playerChoice: 0
-    lineA: "Well, I appreciate it. Phoebe is looking to pickle some veggies. She
-      does it before every winter season. I\u2019d plant it myself, but I have to
-      cut down some more trees for logs. Here are the seeds. She likes zucchini and
-      squash. Plant and harvest 30 of each."
-    lineB: "Oh. Well, I\u2019m glad you were available anyway. Phoebe is looking
-      to pickle some veggies. She does it before every winter season. I\u2019d plant
-      it myself, but I have to cut down some more trees for logs. Here are the seeds.
-      She likes zucchini and squash. Plant and harvest 30 of each."
+    lineA: 'Well, I appreciate it. '
+    lineB: "Oh. Well, I\u2019m glad you were available anyway. "
+    lineC: 
+  - dialogueType: 0
+    playerChoice: 0
+    lineA: 'Phoebe is looking to pickle some veggies. She does it before every winter
+      season. '
+    lineB: 
+    lineC: 
+  - dialogueType: 0
+    playerChoice: 0
+    lineA: "I\u2019d plant it myself, but I have to cut down some more trees for
+      fire wood. "
+    lineB: 
+    lineC: 
+  - dialogueType: 0
+    playerChoice: 0
+    lineA: Here are the seeds. She likes zucchini and squash. Plant and harvest 30
+      of each.
+    lineB: 
     lineC: 
   linesAQC:
   - dialogueType: 0
     playerChoice: 0
-    lineA: "Oh, thank you so much! Phoebe will love these. Between me and you she
-      hasn\u2019t seemed very high in spirits lately. . . I\u2019m hoping this will
-      help. She\u2019s never happier than when she\u2019s pickling, as silly as that
-      sounds. Well, thank you again."
+    lineA: 'Oh, thank you so much! Phoebe will love these. '
+    lineB: 
+    lineC: 
+  - dialogueType: 0
+    playerChoice: 0
+    lineA: "Between me and you, she hasn\u2019t seemed very high in spirits lately.
+      . . I\u2019m hoping this will help. "
+    lineB: 
+    lineC: 
+  - dialogueType: 0
+    playerChoice: 0
+    lineA: "She\u2019s never happier than when she\u2019s pickling, as silly as that
+      sounds."
+    lineB: 
+    lineC: 
+  - dialogueType: 0
+    playerChoice: 0
+    lineA: Well, thank you again.
     lineB: 
     lineC: 
   rewardsBQC:
-  - item: {fileID: 11400000, guid: dba84e0d86e76004da4dc85b9c7bd2c7, type: 2}
+  - item: {fileID: 11400000, guid: 64285f1289afbf54686c421044ba0315, type: 2}
     itemCount: 30
   - item: {fileID: 11400000, guid: 3d45de32abbc51f40b7a9103682d136d, type: 2}
     itemCount: 30

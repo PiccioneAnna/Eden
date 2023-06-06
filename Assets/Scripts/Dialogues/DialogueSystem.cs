@@ -244,9 +244,10 @@ public class DialogueSystem : MonoBehaviour
         ButtonsVisibility(false);
 
         currentDialogue = dialogueTree.GetCurrentDialogue();
-        currentQuest = currentDialogue.quests[0];
 
         if (currentDialogue == null) { return; }
+
+        currentQuest = currentDialogue.quests[0];
 
         currentTextLine = 0;
         player.isInteract = true;

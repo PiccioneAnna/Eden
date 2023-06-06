@@ -37,7 +37,7 @@ MonoBehaviour:
     lineC: 
   - dialogueType: 0
     playerChoice: 0
-    lineA: "Plant 20 seeds and care for them till they\u2019re done growing."
+    lineA: "Plant 20 potato seeds and care for them till they\u2019re done growing."
     lineB: 
     lineC: 
   - dialogueType: 0
@@ -71,5 +71,5 @@ MonoBehaviour:
     itemCount: 20
   quests:
   - {fileID: 11400000, guid: dbb20eb1a891a4d4fa3a0c5810776cd6, type: 2}
-  levelRequirement: 2
+  levelRequirement: 1
   dialogueCompletion: 0

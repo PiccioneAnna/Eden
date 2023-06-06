@@ -16,13 +16,13 @@ MonoBehaviour:
   - dialogueType: 0
     playerChoice: 0
     lineA: "Hey ___, we\u2019ve got a bit of a problem. It\u2019s getting colder
-      and all of the wood I cut seems to have gone missing. Dad must\u2019ve it,
-      but I don\u2019t have time to look for it."
+      and all of the wood I cut seems to have gone missing. Dad must\u2019ve moved
+      it, but I don\u2019t have time to look for it."
     lineB: 
     lineC: 
   - dialogueType: 0
     playerChoice: 0
-    lineA: Here, take this stone ax. I need you to cut down some trees and collect
+    lineA: Here, take this stone axe. I need you to cut down some trees and collect
       50 wood.
     lineB: 
     lineC: 

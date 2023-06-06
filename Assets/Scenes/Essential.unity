@@ -3385,7 +3385,6 @@ MonoBehaviour:
   selectedItem: {fileID: 0}
   itemsToPickup:
   - {fileID: 11400000, guid: d93a060399b6000468e2b1207022b66e, type: 2}
-  - {fileID: 11400000, guid: ca7f346815de91c489c36074fa22e9f9, type: 2}
   onTilePickUp: {fileID: 11400000, guid: ac0d6b9e817c1394d94e2895c5d07360, type: 2}
   itemHighlight: {fileID: 465615122}
 --- !u!114 &275464364
