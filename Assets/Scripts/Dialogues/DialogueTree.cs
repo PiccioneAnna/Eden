@@ -21,6 +21,7 @@ public class DialogueTree : ScriptableObject
         foreach (DialogueContainer dialogue in dialogueContainers)
         {
             dialogue.dialogueCompletion = false;
+            dialogue.quests[0].Initialized = false;
         }
     }
     
@@ -38,7 +39,7 @@ public class DialogueTree : ScriptableObject
 
         if (dialogue.levelRequirement <= currentPlayerLevel && dialogue.dialogueCompletion == false)
         {
-            if(dialogue.quests.Count > 0)
+            if(dialogue.quests.Count > 0 && dialogue.quests[0].Initialized == false)
             {
                 dialogue.quests[0].Initialize();
             }

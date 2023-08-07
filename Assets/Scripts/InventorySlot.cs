@@ -40,6 +40,7 @@ public class InventorySlot : MonoBehaviour, IDropHandler
         // If there isnt an object then set the item's parent to the slot dropped on
         if (transform.childCount == 0)
         {
+            Debug.Log(inventoryItem);
             inventoryItem.parentAfterDrag = transform;
         }
         // Otherwise swap positions between the items

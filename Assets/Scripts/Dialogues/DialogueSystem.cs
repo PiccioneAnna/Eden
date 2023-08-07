@@ -252,6 +252,14 @@ public class DialogueSystem : MonoBehaviour
         currentTextLine = 0;
         player.isInteract = true;
 
+        Debug.Log("Does quest exist already  " + questManager.CurrentQuests.Contains(currentQuest));
+
+        // If the quest already exists then exit, if its active
+        if (questManager.CurrentQuests.Contains(currentQuest) == true)
+        {
+            return;
+        }
+
         // Determine if quest is complete or not to see which dialogue to display
         if (!questManager.CurrentQuests.Contains(currentQuest) &&
             !questManager.CompletedQuests.Contains(currentQuest))

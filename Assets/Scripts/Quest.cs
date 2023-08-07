@@ -75,6 +75,7 @@ public class Quest : ScriptableObject
     public void Initialize()
     {
         Completed = false;
+        Initialized = true;
         QuestCompleted = new QuestCompletedEvent();
 
         foreach (var goal in Goals)

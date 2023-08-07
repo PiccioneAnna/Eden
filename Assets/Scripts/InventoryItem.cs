@@ -42,7 +42,7 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
             countText.raycastTarget = false;
             parentAfterDrag = transform.parent;
             transform.SetParent(transform.parent.parent.parent.parent);
-            //transform.SetAsLastSibling();
+            transform.SetAsLastSibling();
         }
     }
 

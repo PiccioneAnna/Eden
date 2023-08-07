@@ -42,10 +42,7 @@ public class QuestWindow : MonoBehaviour
     {
         gameObject.SetActive(false);
 
-        for (int i = 0; i < goalsContent.childCount; i++)
-        {
-            Destroy(goalsContent.GetChild(i).gameObject);
-        }
+        ClearWindow();
     }
 
     public void ClearWindow()
