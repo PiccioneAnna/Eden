@@ -120,9 +120,19 @@ public class InventoryManager : MonoBehaviour
                 slot.ItemInSlot = item;
                 Debug.Log(questManager);
                 questManager.CheckIfPlayerHasObject();
+
+                // If the item is added to selected slot, item is changed to selected item
+                if(selectedSlot == i)
+                {
+                    selectedItem = inventorySlots[selectedSlot].GetComponentInChildren<InventoryItem>().item;
+                }
+
                 return true;
             }
         }
+
+
+
         return false;
     }
 

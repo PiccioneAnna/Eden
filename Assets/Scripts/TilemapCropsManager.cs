@@ -141,6 +141,8 @@ public class TilemapCropsManager : TimeAgent
                 tile.Regrowth();
             }
             VisualizeTile(tile);
+
+            Tick();
         }
     }
 
