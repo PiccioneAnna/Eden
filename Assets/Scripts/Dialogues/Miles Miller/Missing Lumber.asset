@@ -23,7 +23,7 @@ MonoBehaviour:
   - dialogueType: 0
     playerChoice: 0
     lineA: Here, take this stone axe. I need you to cut down some trees and collect
-      50 wood.
+      25 wood.
     lineB: 
     lineC: 
   linesAQC:
@@ -37,9 +37,10 @@ MonoBehaviour:
     itemCount: 1
   rewardsAQC: []
   addedShopItems: []
+  addedRecipes: []
   removedPlayerItems:
   - item: {fileID: 11400000, guid: 15fd54112a70eb94ba22bfd4ae1ea609, type: 2}
-    itemCount: 50
+    itemCount: 25
   quests:
   - {fileID: 11400000, guid: e796a3f1d53c8d04b9545b9bfa99d010, type: 2}
   levelRequirement: 0

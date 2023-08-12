@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-4132311263487576346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 751d9d1d707e6dd48a7335f674321046, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RequiredAmount: 10
+  GoalCompleted:
+    m_PersistentCalls:
+      m_Calls: []
+  item: {fileID: 11400000, guid: 8499560304f271747b455145e64f0dac, type: 2}
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f62c75f3734215140895d8f9c4d169a5, type: 3}
+  m_Name: Fenced In
+  m_EditorClassIdentifier: 
+  Information:
+    Name: Fenced In
+    Icon: {fileID: 0}
+    Description: The farm needs some new chicken coop fences
+  Reward:
+    currency: 10
+    items: []
+    xP: 10
+  Initialized: 0
+  levelRequirement: 1
+  Goals:
+  - {fileID: -4132311263487576346}

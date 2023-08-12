@@ -81,13 +81,14 @@ public class InventoryManager : MonoBehaviour
         {
             selectedItem = inventorySlots[selectedSlot].GetComponentInChildren<InventoryItem>().item;
             Debug.Log("Selected Item: " + selectedItem.itemName);
-            UpdateHighlightItem(selectedSlot);
         }
         else
         {
             selectedItem = null;
             Debug.Log("Selected Item: Null");
         }
+
+        UpdateHighlightItem(selectedSlot);
     }
 
     public bool AddItem(Item item)

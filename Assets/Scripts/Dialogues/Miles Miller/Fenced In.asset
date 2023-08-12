@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ede6a44c90166ea4eb6a6ca8646dfeb6, type: 3}
+  m_Name: Fenced In
+  m_EditorClassIdentifier: 
+  linesBQC:
+  - dialogueType: 0
+    playerChoice: 0
+    lineA: "Lovely day today isn\u2019t it?"
+    lineB: 
+    lineC: 
+  - dialogueType: 2
+    playerChoice: 0
+    lineA: "It\u2019s been so nice connecting with nature. "
+    lineB: "It\u2019s the same as it always is."
+    lineC: 
+  - dialogueType: 1
+    playerChoice: 0
+    lineA: "I agree! There\u2019s something so peaceful about this kind of life,
+      as difficult as it may be at times haha."
+    lineB: "I suppose that\u2019s true. Doesn\u2019t have to be a bad thing though."
+    lineC: 
+  - dialogueType: 0
+    playerChoice: 0
+    lineA: "Now that you\u2019re getting more familiar with the resources we use
+      around here, I want to task you with some more hands-on work."
+    lineB: 
+    lineC: 
+  - dialogueType: 0
+    playerChoice: 0
+    lineA: "I\u2019ve been meaning to expand the chicken coop to give the birdies
+      some more room. "
+    lineB: 
+    lineC: 
+  - dialogueType: 0
+    playerChoice: 0
+    lineA: "Here\u2019s the recipe for a wooden fence, collect some wood and then
+      meet back up with me after you\u2019ve crafted 10 wooden fences. "
+    lineB: 
+    lineC: 
+  linesAQC:
+  - dialogueType: 0
+    playerChoice: 0
+    lineA: Wonderful. We can get to work on the new coop together soon.
+    lineB: 
+    lineC: 
+  rewardsBQC: []
+  rewardsAQC: []
+  addedShopItems: []
+  addedRecipes:
+  - {fileID: 11400000, guid: b84de890e881c4b498b4bdd66503dd60, type: 2}
+  removedPlayerItems:
+  - item: {fileID: 11400000, guid: 8499560304f271747b455145e64f0dac, type: 2}
+    itemCount: 10
+  quests:
+  - {fileID: 11400000, guid: b033963076be3cc47ade530bd3f93c9f, type: 2}
+  levelRequirement: 0
+  dialogueCompletion: 0

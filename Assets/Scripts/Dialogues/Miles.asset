@@ -18,5 +18,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b030a45a026d4fd41b8f141401bfaa86, type: 2}
   - {fileID: 11400000, guid: 3c81a02dff8bd0446b013c6b27a22900, type: 2}
   - {fileID: 11400000, guid: 88a1ae93695935149826be638620d36a, type: 2}
+  - {fileID: 11400000, guid: 72fb4a220c1b12645ae05fefa02ebf51, type: 2}
+  - {fileID: 11400000, guid: 171fc5fad4cbdf2489c7ac3e372e810b, type: 2}
   taskContainer: {fileID: 11400000, guid: e320f7ea3f1d5a943a5d9bc88fdd7939, type: 2}
   actor: {fileID: 11400000, guid: 6bddd037ce650af4bb16dd016bd36f80, type: 2}

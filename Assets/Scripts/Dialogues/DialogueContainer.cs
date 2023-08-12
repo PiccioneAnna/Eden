@@ -39,6 +39,7 @@ public class DialogueContainer : ScriptableObject
     public List<Reward> rewardsBQC; // Before Quest Completion Rewards
     public List<Reward> rewardsAQC; // After Quest Completion Rewards
     public List<Item> addedShopItems;
+    public List<CraftRecipe> addedRecipes; //can be split into recipes gained before quest completion and after
     public List<Reward> removedPlayerItems;
     public List<Quest> quests;
     public int levelRequirement;

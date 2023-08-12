@@ -1499,6 +1499,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameEssentialScene: Essential
   nameNewGameStartScene: PreviousGodCutscene
+  dialogueTrees:
+  - {fileID: 11400000, guid: ce5c38c0b2f7468468af7e97fa688dd5, type: 2}
+  crops:
+  - {fileID: 11400000, guid: 0a5c0496c6baaa34ba1ffcc39bcb63b8, type: 2}
+  - {fileID: 11400000, guid: b35befbbb9c8cce4aa1dd9711634be1b, type: 2}
 --- !u!114 &1577779737
 MonoBehaviour:
   m_ObjectHideFlags: 0

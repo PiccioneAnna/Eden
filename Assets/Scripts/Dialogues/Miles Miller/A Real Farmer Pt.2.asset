@@ -34,10 +34,11 @@ MonoBehaviour:
   addedShopItems:
   - {fileID: 11400000, guid: cfb57fc5a65e67747988283b1017cb8e, type: 2}
   - {fileID: 11400000, guid: 1a34fe4d624a70e4da291bd76400de7e, type: 2}
+  addedRecipes: []
   removedPlayerItems:
   - item: {fileID: 11400000, guid: 840addbd6688b3248a9ae4d989663af1, type: 2}
     itemCount: 20
   quests:
   - {fileID: 11400000, guid: f03e584f24e25d948aae692398fb71e3, type: 2}
-  levelRequirement: 3
-  dialogueCompletion: 0
+  levelRequirement: 0
+  dialogueCompletion: 1

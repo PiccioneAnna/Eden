@@ -79,6 +79,7 @@ MonoBehaviour:
   addedShopItems:
   - {fileID: 11400000, guid: dba84e0d86e76004da4dc85b9c7bd2c7, type: 2}
   - {fileID: 11400000, guid: 3d45de32abbc51f40b7a9103682d136d, type: 2}
+  addedRecipes: []
   removedPlayerItems:
   - item: {fileID: 11400000, guid: 49fab251eae45f344810019ba4465970, type: 2}
     itemCount: 30
@@ -86,5 +87,5 @@ MonoBehaviour:
     itemCount: 30
   quests:
   - {fileID: 11400000, guid: eaa3596b33501f8479b4ee4fbc42926c, type: 2}
-  levelRequirement: 4
-  dialogueCompletion: 0
+  levelRequirement: 0
+  dialogueCompletion: 1

@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ede6a44c90166ea4eb6a6ca8646dfeb6, type: 3}
+  m_Name: Stone Age
+  m_EditorClassIdentifier: 
+  linesBQC:
+  - dialogueType: 0
+    playerChoice: 0
+    lineA: "Hey ____ , I\u2019m thinking of expanding the fire pit into a proper
+      fireplace now that we have more lumber."
+    lineB: 
+    lineC: 
+  - dialogueType: 2
+    playerChoice: 0
+    lineA: "That\u2019s a good idea. What do you need? "
+    lineB: "I didn\u2019t ask. "
+    lineC: 
+  - dialogueType: 1
+    playerChoice: 0
+    lineA: Thank you!
+    lineB: Oh. Alright, well-
+    lineC: 
+  - dialogueType: 0
+    playerChoice: 0
+    lineA: Take this stone pickaxe and gather 25 stones from the forest up north,
+      once you return we can move onto the next step.
+    lineB: 
+    lineC: 
+  linesAQC:
+  - dialogueType: 0
+    playerChoice: 0
+    lineA: 'This is great ____ thank you for all your hard work.I should have the
+      new fireplace up in a few days. '
+    lineB: 
+    lineC: 
+  rewardsBQC:
+  - item: {fileID: 11400000, guid: 3473f411a5d106046a5f2fdb9f12e346, type: 2}
+    itemCount: 1
+  rewardsAQC: []
+  addedShopItems: []
+  removedPlayerItems:
+  - item: {fileID: 11400000, guid: 1f987a64e6cbe1141962347790493333, type: 2}
+    itemCount: 25
+  quests:
+  - {fileID: 11400000, guid: 89840460dbbef6b4a95c3aa9e3d6db88, type: 2}
+  levelRequirement: 0
+  dialogueCompletion: 0

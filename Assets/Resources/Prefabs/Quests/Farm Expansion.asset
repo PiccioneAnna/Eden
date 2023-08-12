@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6eaeedb7da669854b8b025e8c06409eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RequiredAmount: 50
+  RequiredAmount: 25
   GoalCompleted:
     m_PersistentCalls:
       m_Calls: []
@@ -37,5 +37,6 @@ MonoBehaviour:
     items: []
     xP: 100
   Initialized: 0
+  levelRequirement: 1
   Goals:
   - {fileID: -4287181889717093317}

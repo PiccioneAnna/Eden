@@ -3519,7 +3519,8 @@ MonoBehaviour:
   collisionManager: {fileID: 275464362}
   selectedItem: {fileID: 0}
   itemsToPickup:
-  - {fileID: 11400000, guid: d93a060399b6000468e2b1207022b66e, type: 2}
+  - item: {fileID: 11400000, guid: 15fd54112a70eb94ba22bfd4ae1ea609, type: 2}
+    count: 100
   onTilePickUp: {fileID: 11400000, guid: ac0d6b9e817c1394d94e2895c5d07360, type: 2}
   itemHighlight: {fileID: 465615122}
 --- !u!114 &275464364
@@ -15356,9 +15357,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   crafting: {fileID: 1515085603}
-  knownRecipes:
-  - {fileID: 11400000, guid: ae808d5bc471da7429f745729957cac8, type: 2}
-  - {fileID: 11400000, guid: b84de890e881c4b498b4bdd66503dd60, type: 2}
+  knownRecipes: []
   player: {fileID: 275464363}
   inventorySlots:
   - {fileID: 1934565767}
@@ -22305,6 +22304,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameEssentialScene: 
   nameNewGameStartScene: 
+  dialogueTrees: []
+  crops: []
+  placedObjects: []
 --- !u!1 &2083362311
 GameObject:
   m_ObjectHideFlags: 0
@@ -22480,6 +22482,7 @@ MonoBehaviour:
   player: {fileID: 275464363}
   questManager: {fileID: 928949958}
   shopManager: {fileID: 2131874352}
+  craftingManager: {fileID: 1407656762}
   currentQuest: {fileID: 0}
   talkBtn: {fileID: 563906168}
   shopBtn: {fileID: 591717600}

@@ -5,6 +5,13 @@ using Cinemachine;
 using UnityEngine.Tilemaps;
 using UnityEngine.UI;
 
+[System.Serializable]
+public struct ItemStruct
+{
+    public Item item;
+    public int count;
+}
+
 public class Player : MonoBehaviour
 {
     public static Player player;
@@ -52,7 +59,8 @@ public class Player : MonoBehaviour
     public InventoryManager inventoryManager;
     public CollisionManager collisionManager;
     public Item selectedItem;
-    public Item[] itemsToPickup;
+    
+    [SerializeField] public ItemStruct[] itemsToPickup;
 
     [SerializeField] ToolAction onTilePickUp;
     [SerializeField] ItemHighlight itemHighlight;
@@ -65,7 +73,15 @@ public class Player : MonoBehaviour
 
     public void PickupItem(int id)
     {
-        inventoryManager.AddItem(itemsToPickup[id]);
+        // Can be condensed later to add the specific number of items rather 
+        // then cyling through x amount of times
+        foreach (ItemStruct item in itemsToPickup)
+        {
+            for (int i = 0; i < item.count; i++)
+            {
+                inventoryManager.AddItem(item.item);
+            }
+        }
     }
 
     // Start is called before the first frame update

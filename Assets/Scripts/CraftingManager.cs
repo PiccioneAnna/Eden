@@ -27,6 +27,12 @@ public class CraftingManager : MonoBehaviour
         }
     }
 
+    public void LearnRecipe(CraftRecipe recipe)
+    {
+        knownRecipes.Add(recipe);
+        AddItem(recipe.output);
+    }
+
     public bool AddItem(Item item)
     {
         // Find any empty slot

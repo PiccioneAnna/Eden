@@ -15,7 +15,7 @@ public class DialogueTree : ScriptableObject
 
     private int dialogueIndex = 0;
 
-    private void Refresh()
+    public void Refresh()
     {
         // Temporary quest reset for now, long term would be refresh upon new save file
         foreach (DialogueContainer dialogue in dialogueContainers)

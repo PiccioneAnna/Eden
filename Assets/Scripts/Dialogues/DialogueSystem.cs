@@ -18,6 +18,7 @@ public class DialogueSystem : MonoBehaviour
     public Player player;
     public QuestManager questManager;
     public ShopManager shopManager;
+    public CraftingManager craftingManager;
 
     List<DialogueLine> lines;
 
@@ -332,6 +333,12 @@ public class DialogueSystem : MonoBehaviour
             }
         }
 
+        // Learn given recipes
+        foreach (CraftRecipe recipe in currentDialogue.addedRecipes)
+        {
+            RecieveRecipe(recipe);
+        }
+
         currentDialogue = null;
         Show(false);
     }
@@ -379,6 +386,16 @@ public class DialogueSystem : MonoBehaviour
         {
             questManager.AddQuest(currentQuest);
             Debug.Log("Quest Active : " + currentQuest.name);
+        }
+    }
+
+    // Adds recipe to crafting manager
+    private void RecieveRecipe(CraftRecipe recipe)
+    {
+        if (!craftingManager.knownRecipes.Contains(recipe))
+        {
+            Debug.Log(recipe + "learned");
+            craftingManager.LearnRecipe(recipe);
         }
     }
 

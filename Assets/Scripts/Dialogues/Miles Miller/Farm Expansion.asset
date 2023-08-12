@@ -40,6 +40,11 @@ MonoBehaviour:
     lineA: Enjoy some more freedom.
     lineB: 
     lineC: 
+  - dialogueType: 0
+    playerChoice: 0
+    lineA: Try it out and let me know what you think.
+    lineB: 
+    lineC: 
   linesAQC:
   - dialogueType: 0
     playerChoice: 0
@@ -52,8 +57,9 @@ MonoBehaviour:
   rewardsAQC: []
   addedShopItems:
   - {fileID: 11400000, guid: 04403ba07f62c7244912013ddf16a24e, type: 2}
+  addedRecipes: []
   removedPlayerItems: []
   quests:
   - {fileID: 11400000, guid: 09c32a7989a397a40b95a375339c7f18, type: 2}
-  levelRequirement: 10
+  levelRequirement: 0
   dialogueCompletion: 0
