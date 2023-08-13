@@ -1504,6 +1504,9 @@ MonoBehaviour:
   crops:
   - {fileID: 11400000, guid: 0a5c0496c6baaa34ba1ffcc39bcb63b8, type: 2}
   - {fileID: 11400000, guid: b35befbbb9c8cce4aa1dd9711634be1b, type: 2}
+  placedObjects:
+  - {fileID: 11400000, guid: 471293fc9150ed340ae3203dd721ed6d, type: 2}
+  - {fileID: 11400000, guid: 8abf7eede0c3c384c9631df59e8595a7, type: 2}
 --- !u!114 &1577779737
 MonoBehaviour:
   m_ObjectHideFlags: 0

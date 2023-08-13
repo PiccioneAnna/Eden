@@ -41,4 +41,4 @@ MonoBehaviour:
   quests:
   - {fileID: 11400000, guid: f03e584f24e25d948aae692398fb71e3, type: 2}
   levelRequirement: 0
-  dialogueCompletion: 1
+  dialogueCompletion: 0

@@ -23,6 +23,8 @@ public class Item : ScriptableObject
     public GameObject itemPrefab;
     public Sprite image;
     public bool iconHighlight;
+    public bool isWeapon;
+    public int damage = 5;
 
     public ToolAction onAction;
     public ToolAction onTileMapAction;

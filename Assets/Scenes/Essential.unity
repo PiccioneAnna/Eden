@@ -3318,6 +3318,7 @@ GameObject:
   - component: {fileID: 275464362}
   - component: {fileID: 275464363}
   - component: {fileID: 275464364}
+  - component: {fileID: 275464365}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -3519,8 +3520,8 @@ MonoBehaviour:
   collisionManager: {fileID: 275464362}
   selectedItem: {fileID: 0}
   itemsToPickup:
-  - item: {fileID: 11400000, guid: 15fd54112a70eb94ba22bfd4ae1ea609, type: 2}
-    count: 100
+  - item: {fileID: 11400000, guid: 57e2a73aceebf974da09fbd72700485d, type: 2}
+    count: 1
   onTilePickUp: {fileID: 11400000, guid: ac0d6b9e817c1394d94e2895c5d07360, type: 2}
   itemHighlight: {fileID: 465615122}
 --- !u!114 &275464364
@@ -3557,6 +3558,20 @@ MonoBehaviour:
   isDead: 0
   isExhausted: 0
   isNoManaLeft: 0
+--- !u!114 &275464365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 275464354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb35a5f49d3ea1c40b7b908a0ce3e0c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  offsetDistance: 1.2
+  attackAreaSize: {x: 1, y: 1}
 --- !u!1 &277468435
 GameObject:
   m_ObjectHideFlags: 3
@@ -15587,10 +15602,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33d4f4598b79c0d4fbf5b1905383915e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textPrefab: {fileID: 5563228476110042219, guid: c6e92f466d4b9464ebddd6bc5b173735, type: 3}
+  textPrefab: {fileID: 6037128788158609774, guid: fbb5d6ec9149ea44d946e80969e87bc9, type: 3}
   horizontalScatter: 0.5
   verticalScatter: 1
-  timeToLive: 3
+  timeToLive: 0.75
 --- !u!1001 &1410320242
 PrefabInstance:
   m_ObjectHideFlags: 0

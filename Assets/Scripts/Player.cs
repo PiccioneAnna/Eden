@@ -18,6 +18,7 @@ public class Player : MonoBehaviour
 
     [SerializeField] MarkerManager markerManager;
     [SerializeField] TilemapReadController tileMapReadController;
+    AttackController attackController;
 
     private Rigidbody2D rigidBody;
     public Vector3 position;
@@ -69,6 +70,7 @@ public class Player : MonoBehaviour
     {
         player = this;
         currentCamera = Camera.main.GetComponent<CinemachineBrain>();
+        attackController = GetComponent<AttackController>();
     }
 
     public void PickupItem(int id)
@@ -128,6 +130,11 @@ public class Player : MonoBehaviour
         OpenMenus();
 
         // If player interacts
+        if (Input.GetMouseButtonDown(0))
+        {
+            WeaponAction();
+        }
+
         if (Input.GetMouseButton(0))
         {
             Interact();
@@ -146,6 +153,15 @@ public class Player : MonoBehaviour
                 character.GetTired(5);
                 Debug.Log("Stamina used");
             }
+        }
+    }
+
+    private void WeaponAction()
+    {
+        //Player can only attack withitems marked as weapons
+        if(selectedItem!= null && selectedItem.isWeapon)
+        {
+            attackController.Attack(selectedItem.damage, direction);
         }
     }
 

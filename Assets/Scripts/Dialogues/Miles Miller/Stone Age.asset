@@ -47,6 +47,7 @@ MonoBehaviour:
     itemCount: 1
   rewardsAQC: []
   addedShopItems: []
+  addedRecipes: []
   removedPlayerItems:
   - item: {fileID: 11400000, guid: 1f987a64e6cbe1141962347790493333, type: 2}
     itemCount: 25
