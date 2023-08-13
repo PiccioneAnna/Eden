@@ -62,6 +62,15 @@ public class ClearObjectGameEvent : GameEvent
     }
 }
 
+public class KillMobGameEvent : GameEvent
+{
+    public Mob mob;
+    public KillMobGameEvent(Mob m)
+    {
+        mob = m;
+    }
+}
+
 public class VisitGameEvent : GameEvent
 {
     public string scene;

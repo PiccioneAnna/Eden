@@ -102,6 +102,11 @@ public class QuestManager : MonoBehaviour
         EventManager.Instance.TriggerEvent(new ClearObjectGameEvent(resource));
     }
 
+    public void KillMob(Mob mob)
+    {
+        EventManager.Instance.TriggerEvent(new KillMobGameEvent(mob));
+    }
+
     public void Visit(string scene)
     {
         EventManager.Instance.TriggerEvent(new VisitGameEvent(scene));

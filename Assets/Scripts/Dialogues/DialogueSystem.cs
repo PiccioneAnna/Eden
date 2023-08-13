@@ -66,7 +66,7 @@ public class DialogueSystem : MonoBehaviour
     private void UpdateDialogue()
     {
         // Determine if quest is complete or not to see which dialogue to display
-        if (!questManager.CurrentQuests.Contains(currentQuest) &&
+        if (currentQuest == null || !questManager.CurrentQuests.Contains(currentQuest) &&
             !questManager.CompletedQuests.Contains(currentQuest))
         {
             lines = currentDialogue.linesBQC;
@@ -130,11 +130,11 @@ public class DialogueSystem : MonoBehaviour
 
         talkOptionA.gameObject.SetActive(b);
         talkOptionB.gameObject.SetActive(b);
-        talkOptionC.gameObject.SetActive(b);
+        //talkOptionC.gameObject.SetActive(b);
 
         talkOptionAText.text = lines[currentTextLine].lineA;
         talkOptionBText.text = lines[currentTextLine].lineB;
-        talkOptionCText.text = lines[currentTextLine].lineC;
+        //talkOptionCText.text = lines[currentTextLine].lineC;
     }
 
     public void SelectionTalkOptionA()

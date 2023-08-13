@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Phoebe
   m_EditorClassIdentifier: 
   dialogueContainers:
-  - {fileID: 11400000, guid: 70080aeffd98d1840b32f08104cd7bea, type: 2}
+  - {fileID: 11400000, guid: 8694c4432d9fabb4b89687523e68941d, type: 2}
+  taskContainer: {fileID: 0}
   actor: {fileID: 11400000, guid: 52e1b100608d0024f85dd9974389e149, type: 2}

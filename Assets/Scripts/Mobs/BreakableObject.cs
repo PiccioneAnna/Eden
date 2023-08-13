@@ -5,6 +5,13 @@ using UnityEngine;
 public class BreakableObject : MonoBehaviour, IDamageable
 {
     [SerializeField] int hp = 10;
+    QuestManager questManager;
+    public Mob mob;
+
+    public void Awake()
+    {
+        questManager = GameManager.instance.GetComponent<GameManager>().questManager;
+    }
 
     public void ApplyDamage(int damage)
     {
@@ -20,6 +27,8 @@ public class BreakableObject : MonoBehaviour, IDamageable
     {
         if(hp <= 0) 
         {
+            Debug.Log(mob);
+            questManager.KillMob(mob);
             Destroy(gameObject); 
         }
     }

@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-2129944232235194430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a1ac65a646e89941bada04f68f6daee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RequiredAmount: 5
+  GoalCompleted:
+    m_PersistentCalls:
+      m_Calls: []
+  obj: {fileID: 9085192142314226968, guid: c0e059b3722edc048b2e91e1369cbd46, type: 3}
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f62c75f3734215140895d8f9c4d169a5, type: 3}
+  m_Name: Venturing Further Out
+  m_EditorClassIdentifier: 
+  Information:
+    Name: Venturing Further Out
+    Icon: {fileID: 0}
+    Description: Miles has challenged you to venture out and slay 5 Madshrooms
+  Reward:
+    currency: 10
+    items: []
+    xP: 10
+  Initialized: 0
+  levelRequirement: 1
+  Goals:
+  - {fileID: -2129944232235194430}
